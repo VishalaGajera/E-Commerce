@@ -119,33 +119,6 @@ const Product = () => {
           </div>
           <div className='grid md:grid-cols-4 grid-cols-1 w-full py-20 h-screen  overflow-hidden'>
             <div className="md:flex flex-col gap-1 w-full border-r-2">
-              <div className="md:flex flex-col gap-3 bg-white mr-5 px-3  hidden">
-                <p className="font-bold">Applied Filters :</p>
-                <ul className="flex flex-col gap-2">
-                  {selectedFilters.map((filter, index) => (
-                    <li
-                      key={index}
-                      className="p-2 border flex gap-2 justify-between items-center"
-                    >
-                      {filter}
-                      <span
-                        onClick={() => removeFilter(filter)}
-                        className="cursor-pointer"
-                      >
-                        <RxCross2 />
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                {selectedFilters.length > 0 && (
-                  <p
-                    className="text-[#A10550] cursor-pointer pb-3"
-                    onClick={clearAllFilters}
-                  >
-                    Clear All Filters
-                  </p>
-                )}
-              </div>
               <div
                 className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${viewFilters ? "translate-x-0 overflow-y-scroll z-50" : "translate-x-full"
                   } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${viewFilters ? "h-full w-full" : ""
@@ -176,20 +149,7 @@ const Product = () => {
                       <ul className={`${activeCategory === index ? "block p-3" : "hidden"}`}>
                         {menu?.items &&
                           menu?.items?.map((item, itemIndex) => (
-                            <li key={itemIndex} className="flex py-1 gap-2">
-                              <input
-                                type="checkbox"
-                                name={item}
-                                id={item}
-                                checked={selectedFilters.includes(item)}
-                                onChange={(e) => {
-                                  if (e.target.checked) {
-                                    handleItemList(e.target.name);
-                                  } else {
-                                    removeFilter(e.target.name);
-                                  }
-                                }}
-                              />
+                            <li key={itemIndex} className="flex py-2 gap-2 cursor-pointer border-b">
                               <span className="text-sm">{item}</span>
                             </li>
                           ))}

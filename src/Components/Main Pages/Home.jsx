@@ -70,9 +70,6 @@ const Home = () => {
   };
   return (
     <div className='flex justify-center items-center bg-BgColor'>
-      <div classsName="container">
-
-      </div>
       <div className='flex flex-col justify-center items-center'>
         <div className='relative flex flex-col justify-center items-center w-full'>
           <img src={HomeImg} alt="" className='w-full' />
@@ -174,8 +171,8 @@ const Home = () => {
 
           </div>
         </div>
-        <div className='container'>
-          <div className='flex flex-col mx-5 justify-center items-center bg-white py-10'>
+        {/* <div className='container'> */}
+          <div className='flex flex-col justify-center items-center bg-white py-10'>
             <div className='py-10'>
               <h1 className='font-bold text-4xl'>Our Blogs</h1>
               <div className="flex items-center justify-center mt-5">
@@ -221,12 +218,12 @@ const Home = () => {
                 },
               }}
               // className="flex md:flex-row flex-col  md:container w-72 md:p-5"
-              className="grid grid-cols-4 gap-5"
+              className="grid grid-cols-4 gap-5 mx-5"
             >
               {blog?.map((data, index) => (
                 <SwiperSlide className='flex flex-col justify-center items-center rounded-tr-3xl rounded-bl-3xl border-2 border-BgGolden overflow-hidden cursor-pointer'>
                   <div className='w-full'>
-                    <img src={data.imageUrl} alt="" className='w-full h-60' />
+                    <img src={data.imageUrl} alt="" className='w-full h-72' />
                   </div>
                   <div className='flex flex-col gap-3 p-5'>
                     <h1 className='font-bold text-2xl'>{data.title}</h1>
@@ -249,7 +246,7 @@ const Home = () => {
             {/* </div> */}
           </div>
 
-        </div>
+        {/* </div> */}
 
 
         <div className='relative w-full flex flex-col justify-center items-center py-10 gap-10'>
@@ -282,7 +279,7 @@ const Home = () => {
 
 
         <div className='w-full flex justify-center items-center '>
-          <div className='flex flex-col justify-center items-center mx-5 py-10 bg-white'>
+          <div className='flex flex-col justify-center items-center py-10 bg-white'>
             <div className='flex flex-col justify-center items-center gap-3 py-10'>
               <div>
                 <h1 className='font-bold text-4xl'>Testimonal</h1>
@@ -330,10 +327,10 @@ const Home = () => {
                 },
               }}
               // className="flex md:flex-row flex-col  md:container w-72 md:p-5"
-              className="grid grid-cols-4 gap-5 md:p-5 p-0"
+              className="grid grid-cols-4 gap-5 md:p-5 p-0 mx-5 "
             >
               {Array.from({ length: 5 }).map((_, index) => (
-                <SwiperSlide className='flex flex-col justify-center items-center rounded-2xl border-l-4 border border-BgGolden overflow-hidden p-5 gap-5 bg-white'>
+                <SwiperSlide className='flex flex-col justify-center items-center rounded-2xl border-l-4 border-b-4 border border-BgGolden overflow-hidden p-5 gap-5 bg-white'>
                   <div className='flex justify-between items-center w-full text-BgGolden'>
                     <span className='flex justify-center items-center gap-1 text-xl'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span>
                     <FaQuoteLeft className='text-3xl' />

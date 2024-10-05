@@ -115,50 +115,85 @@ export default function AboutUs() {
 
         <section className="max-w-6xl mx-auto my-16 flex flex-col gap-20">
           <div className="flex items-center justify-center">
-            <div className="w-1/3 pr-8">
+            <div className="">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
+                src="https://www.mahmoodrice.com/Media/Uploads/4kg_web.png  "
                 alt="Product image"
                 width={300}
                 height={300}
-                className="rounded-tr-3xl rounded-bl-3xl border-r-2 p-5"
+                className="rounded-tr-3xl rounded-bl-3xl border-r-2 border-b-2 border-BgGolden bg-BgColor"
               />
             </div>
-            <div className="w-1/2 pl-8">
+            <div className="w-1/2 text-center bg-BgColor px-5 py-10 border-r-2 border-BgGolden border-t-2 rounded-r-3xl">
               <h2 className="text-3xl font-bold mb-4">Content of vision</h2>
               <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
           <div className="flex items-center justify-center ">
-            <div className="w-1/2 pr-8">
+            <div className="w-1/2 text-center bg-BgColor px-5 py-10 border-l-2 border-BgGolden border-t-2 rounded-l-3xl">
               <h2 className="text-3xl font-bold mb-4">Content of mission</h2>
               <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-            <div className="w-1/3 pl-8">
+            <div className="">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
+                src="https://www.mahmoodrice.com/Media/Uploads/4kg_web.png"
                 alt="Product image"
                 width={300}
                 height={300}
-                className="rounded-tr-3xl rounded-bl-3xl"
+                className="rounded-br-3xl rounded-tl-3xl border-l-2 border-b-2 border-BgGolden bg-BgColor"
               />
             </div>
           </div>
         </section>
 
         <section className="relative py-16 h-screen mb-20">
-          <img
-            src={aboutImg}
-            alt="Fresh vegetables"
-            layout="fill"
-            objectFit="contain"
-            className='h-[50vh] w-full'
-          />
+          <div className='relative w-full h-full'>
+            <img
+              src={aboutImg}
+              alt="Fresh vegetables"
+              layout="fill"
+              objectFit="contain"
+              className='h-[50vh] w-full'
+            />
+            {/* <div className='absolute -top-8 left-0 w-full inset-0 h-20 backdrop-blur-xl'></div> */}
+            <div className="absolute inset-0 backdrop-blur-md h-20"></div>
+          </div>
           <div className="absolute top-16 bg-opacity-50 w-full h-[50vh] bg-black flex justify-center items-center flex-col gap-5 text-black mx-auto">
             <div className='pt-96'>
               <h2 className="text-5xl font-bold text-white mb-10 text-center">Our Team</h2>
               <div className="flex justify-center items-center space-x-8">
-                {/* <Swiper
+                <span className="w-fit h-fit custom-prev-review md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
+                  <BsArrowLeft />
+                </span>
+                {[...Array(2)].map((i) => (
+                  <div key={i} className="p-6 rounded-lg w-96">
+                    <div className='rounded-tr-3xl rounded-bl-3xl  p-1 border-2 border-white w-80 h-80'>
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
+                        alt={`Team member ${i}`}
+                        className="bg-white rounded-tr-3xl rounded-bl-3xl p-10 w-full h-full"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold text-center mb-2 text-BgGolden">Neil G. Soni</h3>
+                    <p className="text-center mb-4 text-BgGolden">Position</p>
+                    <p className="bg-BgColor p-3 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                ))}
+                <span className="h-fit w-fit custom-next-review md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
+                  <BsArrowRight />
+                </span>
+              </div>
+              {/* <div className="flex flex-row gap-2 items-center py-5"> */}
+              {/* </div> */}
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  )
+}
+
+{/* <Swiper
                   modules={[Autoplay, Navigation]}
                   slidesPerView={2}
                   spaceBetween={24}
@@ -206,33 +241,3 @@ export default function AboutUs() {
                     </SwiperSlide>
                   ))}
                 </Swiper> */}
-              <span className="w-fit h-fit custom-prev-review md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
-                <BsArrowLeft />
-              </span>
-                  {[...Array(2)].map((i) => (
-                    <div key={i} className="p-6 rounded-lg w-96">
-                      <div className='rounded-tr-3xl rounded-bl-3xl  p-1 border-2 border-white w-80 h-80'>
-                        <img
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
-                          alt={`Team member ${i}`}
-                          className="bg-white rounded-tr-3xl rounded-bl-3xl p-10 w-full h-full"
-                        />
-                      </div>
-                      <h3 className="text-xl font-bold text-center mb-2 text-BgGolden">Neil G. Soni</h3>
-                      <p className="text-center mb-4 text-BgGolden">Position</p>
-                      <p className="bg-BgColor p-3 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                  ))}
-              <span className="h-fit w-fit custom-next-review md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
-                <BsArrowRight />
-              </span>
-              </div>
-              {/* <div className="flex flex-row gap-2 items-center py-5"> */}
-            {/* </div> */}
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-  )
-}
