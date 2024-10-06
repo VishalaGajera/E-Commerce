@@ -146,7 +146,7 @@ export default function AboutUs() {
           </div>
         </section>
 
-        <section className="relative py-16 h-screen mb-20">
+        <section className="relative py-16 h-screen mb-20 overflow-hidden">
           <div className='relative w-full h-full'>
             <img
               src={aboutImg}
@@ -155,8 +155,9 @@ export default function AboutUs() {
               objectFit="contain"
               className='h-[50vh] w-full'
             />
-            {/* <div className='absolute -top-8 left-0 w-full inset-0 h-20 backdrop-blur-xl'></div> */}
-            <div className="absolute inset-0 backdrop-blur-md h-20"></div>
+            <div className='gradient-blur '></div>
+            <div className='gradient-blur2'></div>
+            <div className='gradient-blur3'></div>
           </div>
           <div className="absolute top-16 bg-opacity-50 w-full h-[50vh] bg-black flex justify-center items-center flex-col gap-5 text-black mx-auto">
             <div className='pt-96'>

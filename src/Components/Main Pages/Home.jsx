@@ -172,79 +172,79 @@ const Home = () => {
           </div>
         </div>
         {/* <div className='container'> */}
-          <div className='flex flex-col justify-center items-center bg-white py-10'>
-            <div className='py-10'>
-              <h1 className='font-bold text-4xl'>Our Blogs</h1>
-              <div className="flex items-center justify-center mt-5">
-                <div className='relative flex justify-center items-center'>
-                  <div className='w-36 h-0.5 bg-BgGolden z-20'></div>
-                  <div className='absolute w-4 h-4 bg-BgGolden rotate-45 z-10'></div>
-                  <div className='absolute w-4 h-4 left-[75px] bg-BgGolden rotate-45 opacity-30'></div>
-                  <div className='absolute w-4 h-4 right-[75px] bg-BgGolden rotate-45 opacity-30'></div>
-                </div>
+        <div className='flex flex-col justify-center items-center bg-white py-10'>
+          <div className='py-10'>
+            <h1 className='font-bold text-4xl'>Our Blogs</h1>
+            <div className="flex items-center justify-center mt-5">
+              <div className='relative flex justify-center items-center'>
+                <div className='w-36 h-0.5 bg-BgGolden z-20'></div>
+                <div className='absolute w-4 h-4 bg-BgGolden rotate-45 z-10'></div>
+                <div className='absolute w-4 h-4 left-[75px] bg-BgGolden rotate-45 opacity-30'></div>
+                <div className='absolute w-4 h-4 right-[75px] bg-BgGolden rotate-45 opacity-30'></div>
               </div>
             </div>
-            {/* <div className='grid grid-cols-4 gap-5 '> */}
-            <Swiper
-              modules={[Autoplay, Navigation]}
-              slidesPerView={4}
-              spaceBetween={24}
-              loop={true}
-              onSlideChange={handleSlideChange}
-              autoplay={{
-                delay: 3500,
-                disableOnInteraction: false,
-              }}
-              navigation={{
-                nextEl: ".custom-next-blog",
-                prevEl: ".custom-prev-blog",
-              }}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                  spaceBetween: 20,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 24,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 24,
-                },
-              }}
-              // className="flex md:flex-row flex-col  md:container w-72 md:p-5"
-              className="grid grid-cols-4 gap-5 mx-5"
-            >
-              {blog?.map((data, index) => (
-                <SwiperSlide className='flex flex-col justify-center items-center rounded-tr-3xl rounded-bl-3xl border-2 border-BgGolden overflow-hidden cursor-pointer'>
-                  <div className='w-full'>
-                    <img src={data.imageUrl} alt="" className='w-full h-72' />
-                  </div>
-                  <div className='flex flex-col gap-3 p-5'>
-                    <h1 className='font-bold text-2xl'>{data.title}</h1>
-                    <p>{data.description}</p>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <div className="flex flex-row gap-2 items-center pt-5">
-              <span className="custom-prev-blog md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
-                <BsArrowLeft />
-              </span>
-              <span className="">
-                <CustomPagination />
-              </span>
-              <span className="custom-next-blog md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
-                <BsArrowRight />
-              </span>
-            </div>
-            {/* </div> */}
           </div>
+          {/* <div className='grid grid-cols-4 gap-5 '> */}
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            slidesPerView={4}
+            spaceBetween={24}
+            loop={true}
+            onSlideChange={handleSlideChange}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
+            navigation={{
+              nextEl: ".custom-next-blog",
+              prevEl: ".custom-prev-blog",
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+              },
+            }}
+            // className="flex md:flex-row flex-col  md:container w-72 md:p-5"
+            className="grid grid-cols-4 gap-5 mx-5"
+          >
+            {blog?.map((data, index) => (
+              <SwiperSlide className='flex flex-col justify-center items-center rounded-tr-3xl rounded-bl-3xl border-2 border-BgGolden overflow-hidden cursor-pointer'>
+                <div className='w-full'>
+                  <img src={data.imageUrl} alt="" className='w-full h-72' />
+                </div>
+                <div className='flex flex-col gap-3 p-5'>
+                  <h1 className='font-bold text-2xl'>{data.title}</h1>
+                  <p>{data.description}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="flex flex-row gap-2 items-center pt-5">
+            <span className="custom-prev-blog md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
+              <BsArrowLeft />
+            </span>
+            <span className="">
+              <CustomPagination />
+            </span>
+            <span className="custom-next-blog md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
+              <BsArrowRight />
+            </span>
+          </div>
+          {/* </div> */}
+        </div>
 
         {/* </div> */}
 
@@ -297,7 +297,7 @@ const Home = () => {
             <Swiper
               modules={[Autoplay, Navigation]}
               slidesPerView={3}
-              spaceBetween={24}
+              // spaceBetween={24}
               loop={true}
               onSlideChange={handleSlideChange}
               autoplay={{
@@ -311,26 +311,26 @@ const Home = () => {
               breakpoints={{
                 320: {
                   slidesPerView: 1,
-                  spaceBetween: 20,
+                  // spaceBetween: 20,
                 },
                 640: {
                   slidesPerView: 2,
-                  spaceBetween: 20,
+                  // spaceBetween: 20,
                 },
                 768: {
                   slidesPerView: 3,
-                  spaceBetween: 24,
+                  // spaceBetween: 24,
                 },
                 1024: {
                   slidesPerView: 3,
-                  spaceBetween: 24,
+                  // spaceBetween: 24,
                 },
               }}
               // className="flex md:flex-row flex-col  md:container w-72 md:p-5"
-              className="grid grid-cols-4 gap-5 md:p-5 p-0 mx-5 "
+              className="grid grid-cols-4 gap-5 md:p-5 p-0 mx-5 w-10/12"
             >
               {Array.from({ length: 5 }).map((_, index) => (
-                <SwiperSlide className='flex flex-col justify-center items-center rounded-2xl border-l-4 border-b-4 border border-BgGolden overflow-hidden p-5 gap-5 bg-white'>
+                <SwiperSlide className='flex flex-col justify-center items-center shadow-custom rounded-2xl border-l-4 border-b-4 border border-BgGolden overflow-hidden p-5 gap-5 bg-white'>
                   <div className='flex justify-between items-center w-full text-BgGolden'>
                     <span className='flex justify-center items-center gap-1 text-xl'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span>
                     <FaQuoteLeft className='text-3xl' />
