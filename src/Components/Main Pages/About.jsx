@@ -167,17 +167,19 @@ export default function AboutUs() {
                   <BsArrowLeft />
                 </span>
                 {[...Array(2)].map((i) => (
-                  <div key={i} className="p-6 rounded-lg w-96">
-                    <div className='rounded-tr-3xl rounded-bl-3xl  p-1 border-2 border-white w-80 h-80'>
+                  <div key={i} className="p-6 rounded-lg w-96 flex flex-col gap-3">
+                    <div className='rounded-tr-3xl rounded-bl-3xl  p-1 border-2 border-black w-80 h-80'>
                       <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
                         alt={`Team member ${i}`}
                         className="bg-white rounded-tr-3xl rounded-bl-3xl p-10 w-full h-full"
                       />
                     </div>
-                    <h3 className="text-xl font-bold text-center mb-2 text-BgGolden">Neil G. Soni</h3>
-                    <p className="text-center mb-4 text-BgGolden">Position</p>
-                    <p className="bg-BgColor p-3 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div className='flex gap-2 items-center flex-col'>
+                      <h3 className="text-xl font-bold text-center text-BgGolden">Neil G. Soni</h3>
+                      <p className="text-center text-BgGolden">Position</p>
+                      <p className="bg-BgColor p-5 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
                   </div>
                 ))}
                 <span className="h-fit w-fit custom-next-review md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">

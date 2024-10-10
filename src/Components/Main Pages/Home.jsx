@@ -155,7 +155,8 @@ const Home = () => {
           backgroundImage: 'url(https://www.mahmoodrice.com/content/images/tariflerbg.jpg)',
           backgroundPosition: 'fixed',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
+          backgroundAttachment:'fixed'
         }}>
           <div className='absolute -top-40 lg:right-0 -right-10 hidden md:flex'>
             <img src="https://www.mahmoodrice.com/Content/images/parallax/domates.png" alt="" className='lg:w-80 w-72' />
@@ -297,7 +298,7 @@ const Home = () => {
             <Swiper
               modules={[Autoplay, Navigation]}
               slidesPerView={3}
-              // spaceBetween={24}
+              spaceBetween={24}
               loop={true}
               onSlideChange={handleSlideChange}
               autoplay={{
@@ -311,42 +312,46 @@ const Home = () => {
               breakpoints={{
                 320: {
                   slidesPerView: 1,
-                  // spaceBetween: 20,
+                  spaceBetween: 20,
                 },
                 640: {
                   slidesPerView: 2,
-                  // spaceBetween: 20,
+                  spaceBetween: 20,
                 },
                 768: {
                   slidesPerView: 3,
-                  // spaceBetween: 24,
+                  spaceBetween: 24,
                 },
                 1024: {
                   slidesPerView: 3,
-                  // spaceBetween: 24,
+                  spaceBetween: 24,
                 },
               }}
               // className="flex md:flex-row flex-col  md:container w-72 md:p-5"
-              className="grid grid-cols-4 gap-5 md:p-5 p-0 mx-5 w-10/12"
+              className="grid grid-cols-4 gap-5 md:p-5 p-0 mx-5"
             >
-              {Array.from({ length: 5 }).map((_, index) => (
-                <SwiperSlide className='flex flex-col justify-center items-center shadow-custom rounded-2xl border-l-4 border-b-4 border border-BgGolden overflow-hidden p-5 gap-5 bg-white'>
-                  <div className='flex justify-between items-center w-full text-BgGolden'>
-                    <span className='flex justify-center items-center gap-1 text-xl'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span>
-                    <FaQuoteLeft className='text-3xl' />
-                  </div>
-                  <div className='flex flex-col gap-3'>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus aliquid dolores nemo consectetur doloremque. Asperiores debitis, tempore aspernatur perspiciatis nihil et consequatur nam ad maiores qui provident, libero, quia ex?</p>
-                  </div>
-                  <div className='flex justify-start items-center gap-3 w-full'>
-                    <img src="https://hongo.themezaa.com/wp-content/uploads/2018/07/image-1-1.png.webp" alt="" className='rounded-full w-14' />
-                    <div>
-                      <h1 className='text-lg font-bold'>Shoko Mugikura</h1>
-                      <p className='text-sm'>Apple Studio</p>
+              {Array.from({ length: 5 }).map((_, index) => {
+                console.log(activeIndex+1, index);
+
+                return (
+                  <SwiperSlide className={`flex flex-col justify-center items-center rounded-2xl border-l-4 border-b-4 border border-BgGolden overflow-hidden p-5 gap-5 bg-white ${activeIndex+1 === index ? 'shadow-custom' : ''}`}>
+                    <div className='flex justify-between items-center w-full text-BgGolden'>
+                      <span className='flex justify-center items-center gap-1 text-xl'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span>
+                      <FaQuoteLeft className='text-3xl' />
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))}
+                    <div className='flex flex-col gap-3'>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus aliquid dolores nemo consectetur doloremque. Asperiores debitis, tempore aspernatur perspiciatis nihil et consequatur nam ad maiores qui provident, libero, quia ex?</p>
+                    </div>
+                    <div className='flex justify-start items-center gap-3 w-full'>
+                      <img src="https://hongo.themezaa.com/wp-content/uploads/2018/07/image-1-1.png.webp" alt="" className='rounded-full w-14' />
+                      <div>
+                        <h1 className='text-lg font-bold'>Shoko Mugikura</h1>
+                        <p className='text-sm'>Apple Studio</p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                )
+              })}
             </Swiper>
             <div className="flex flex-row gap-2 items-center py-5">
               <span className="custom-prev-review md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
