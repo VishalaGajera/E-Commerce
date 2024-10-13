@@ -21,6 +21,10 @@ const Navbar = () => {
                         </div>
                         <div className='md:flex hidden'>
                             <ul className='flex justify-center items-center gap-10'>
+                                <li className='relative'><Link to={'/'} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/")
+                                    ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
+                                    : ""
+                                    }`}>Home</Link></li>
                                 <li className='relative'><Link to={'/about'} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/about")
                                     ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
                                     : ""
@@ -29,7 +33,7 @@ const Navbar = () => {
                                     ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
                                     : ""
                                     }`}>Products</Link></li>
-                                <li className='relative'><Link to={'/recipes'} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/recipes")
+                                {/* <li className='relative'><Link to={'/recipes'} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/recipes")
                                     ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
                                     : ""
                                     }`}>Recipes</Link></li>
@@ -40,7 +44,7 @@ const Navbar = () => {
                                 <li className='relative'><Link to={'/catalog'} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/catalog")
                                     ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
                                     : ""
-                                    }`}>E-Catalog</Link></li>
+                                    }`}>E-Catalog</Link></li> */}
                                 <li className='relative'><Link to={'/contact'} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/contact")
                                     ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
                                     : ""
@@ -53,14 +57,14 @@ const Navbar = () => {
                             </span>
                         </div>
                         <div className='gap-3 items-center lg:flex hidden'>
-                            <div className='flex items-center gap-3 border-r border-BgGolden px-3 '>
+                            <div className='flex items-center gap-3 px-3 '>
                                 <span><CiSearch className='text-xl' /></span>
                                 <span className=''>Search</span>
                             </div>
-                            <div className='flex items-center gap-3'>
+                            {/* <div className='flex items-center gap-3'>
                                 <span><FaRegCircleUser className='text-lg' /></span>
                                 <span className=''>Sign In</span>
-                            </div>
+                            </div> */}
 
                         </div>
                         {showMenu && (

@@ -168,7 +168,7 @@ export default function AboutUs() {
                 </span>
                 {[...Array(2)].map((i) => (
                   <div key={i} className="p-6 rounded-lg w-96 flex flex-col gap-3">
-                    <div className='rounded-tr-3xl rounded-bl-3xl  p-1 border-2 border-black w-80 h-80'>
+                    <div className='rounded-tr-3xl rounded-bl-3xl  p-1 border-2 border-white w-80 h-72'>
                       <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
                         alt={`Team member ${i}`}

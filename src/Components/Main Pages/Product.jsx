@@ -115,7 +115,7 @@ const Product = () => {
                 <div className='absolute w-4 h-4 right-[75px] bg-BgGolden rotate-45 opacity-30'></div>
               </div>
             </div>
-            <div className='pt-5 w-2/3 text-center'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque optio ad eveniet non eos consequatur, maiores mollitia culpa similique odio?</div>
+            {/* <div className='pt-5 w-2/3 text-center'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque optio ad eveniet non eos consequatur, maiores mollitia culpa similique odio?</div> */}
           </div>
           <div className='grid md:grid-cols-4 grid-cols-1 w-full py-20 h-screen  overflow-hidden'>
             <div className="md:flex flex-col gap-1 w-full border-r-2">
@@ -177,10 +177,7 @@ const Product = () => {
             </div>
             <div className="md:col-span-3 no-scrollbar overflow-y-auto ">
               <main className="flex-1 md:px-5">
-                <div className="flex justify-between items-center mb-6">
-                  <h1 className="text-3xl font-bold">
-                    {/* {selectedSubcategory || selectedCategory || 'All Products'} */}
-                  </h1>
+                {/* <div className="flex justify-between items-center mb-6">
                   <div className="flex items-center space-x-2">
                     <span>Showing of {products.length} products</span>
                     <button
@@ -202,7 +199,7 @@ const Product = () => {
                       IIII
                     </button>
                   </div>
-                </div>
+                </div> */}
                 <div className={`grid ${getGridClass()} gap-6`}>
                   {products.map((product) => (
                     <div
@@ -219,9 +216,9 @@ const Product = () => {
                         />
                         {hoveredProduct === product.id && (
                           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center space-x-4 transition-opacity duration-300">
-                            <button className="p-2 bg-white rounded-full hover:bg-gray-200 transition-colors duration-200">
+                            {/* <button className="p-2 bg-white rounded-full hover:bg-gray-200 transition-colors duration-200">
                               <FaShoppingCart className="text-xl text-gray-800" />
-                            </button>
+                            </button> */}
                             <button className="p-2 bg-white rounded-full hover:bg-gray-200 transition-colors duration-200">
                               <FaEye className="text-xl text-gray-800" />
                             </button>
@@ -246,9 +243,10 @@ const Product = () => {
                       </div>
                       <div className="p-4 bg-gray-50 flex items-center justify-between">
                         <span className="text-xl font-bold">${product.price.toFixed(2)}</span>
-                        <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
+                        <span>10KG</span>
+                        {/* <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
                           Add to Cart
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   ))}

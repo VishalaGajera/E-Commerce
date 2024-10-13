@@ -12,13 +12,12 @@ const Footer = () => {
         <div className="container ">
           <div className="flex justify-center items-start flex-col mx-5">
             <div className="grid lg:grid-cols-5  md:grid-cols-3 grid-cols-2 py-10 md:gap-0 gap-10 border-b w-full">
-              
               <div className="lg:col-span-1 col-span-2 flex flex-col gap-3 md:p-5">
-                <h1 className="md:text-2xl text-xl font-bold">Support</h1>
+                <h1 className="md:text-2xl text-xl font-bold"> CrossContinents Traders Ltd.</h1>
                 <div className="flex flex-col gap-2 md:text-base text-sm">
                   <p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p>
-                  <p>exclusive@gmail.com</p>
-                  <p>+88015-88888-9999</p>
+                  <p className="break-words">smit.dhaduk@crosscontinentstraders.com</p>
+                  <p>+1 (437) 606-3251</p>
                 </div>
               </div>
               <div className="flex flex-col gap-3 md:p-5">
@@ -26,9 +25,6 @@ const Footer = () => {
                 <div>
                   <ul className="flex flex-col gap-2 md:text-base text-sm">
                     <li>My Account</li>
-                    <li>Login / Register</li>
-                    <li>Cart</li>
-                    <li>Wishlist</li>
                     <li>Shop</li>
                   </ul>
                 </div>
