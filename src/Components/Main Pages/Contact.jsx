@@ -2,40 +2,65 @@ import React from 'react'
 import ContactImg from '../../assets/Images/ContactImg.jpg'
 import { BsPhone } from 'react-icons/bs'
 import { FaPhone } from "react-icons/fa";
+import { FiPhone } from "react-icons/fi";
 
 const Contact = () => {
   return (
     <div className='flex justify-center items-center w-full flex-col bg-white'>
       <div className='flex justify-center items-center  w-full h-full flex-col gap-10'>
-        <div className='w-full h-96 flex items-end' style={{
-          backgroundImage: `url(${ContactImg})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat'
-        }}>
-          <span className='font-extrabold text-5xl p-5 w-80  h-40 text-center'>
-            Contact
-            <div className="flex items-center justify-center mt-5">
-              <div className='relative flex justify-center items-center'>
-                <div className='w-36 h-0.5 bg-slate-600 z-20'></div>
-                <div className='absolute w-4 h-4 bg-slate-600 rotate-45 z-10'></div>
-                <div className='absolute w-4 h-4 left-[75px] bg-slate-600 rotate-45 opacity-50'></div>
-                <div className='absolute w-4 h-4 right-[75px] bg-slate-600 rotate-45 opacity-50'></div>
+        {/* <div className='w-full h-96 flex items-end' style={{
+            backgroundImage: `url(${ContactImg})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}>
+            <span className='font-extrabold text-5xl p-5 w-80  h-40 text-center'>
+              Contact
+              <div className="flex items-center justify-center mt-5">
+                <div className='relative flex justify-center items-center'>
+                  <div className='w-36 h-0.5 bg-slate-600 z-20'></div>
+                  <div className='absolute w-4 h-4 bg-slate-600 rotate-45 z-10'></div>
+                  <div className='absolute w-4 h-4 left-[75px] bg-slate-600 rotate-45 opacity-50'></div>
+                  <div className='absolute w-4 h-4 right-[75px] bg-slate-600 rotate-45 opacity-50'></div>
+                </div>
+              </div>
+            </span>
+          </div> */}
+
+        <section className="relative h-[80vh] w-full">
+          <img
+            src={ContactImg}
+            alt="Fresh salad"
+            layout="fill"
+            objectFit="cover"
+            className='h-full w-full'
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col gap-5 items-center justify-center text-white">
+            <div>
+              <h1 className="text-6xl font-bold">Contact Us</h1>
+              <div className="flex items-center justify-center mt-3">
+                <div className='relative flex justify-center items-center'>
+                  <div className='w-36 h-0.5 bg-white z-20'></div>
+                  <div className='absolute w-4 h-4 bg-white rotate-45 z-10'></div>
+                  <div className='absolute w-4 h-4 left-[75px] bg-white rotate-45 opacity-50'></div>
+                  <div className='absolute w-4 h-4 right-[75px] bg-white rotate-45 opacity-50'></div>
+                </div>
               </div>
             </div>
-          </span>
-        </div>
+            <p className='w-1/2 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum id quibusdam voluptatem expedita consequatur quod, quidem veritatis repudiandae deserunt dolores!</p>
+          </div>
+        </section>
         <div className='container'>
           <div className='grid md:grid-cols-2 grid-cols-1 md:p-20 p-0 gap-10 py-10'>
-            <div className='w-4/5 md:h-full h-96 flex flex-col justify-start items-start p-10 rounded-xl gap-8'>
-              <h2 className="text-4xl font-bold ">We would love to hear from you!</h2>
-              <p className=" text-gray-600">
+            <div className='md:h-full h-96 flex flex-col justify-start items-start p-10 rounded-xl gap-8'>
+              <h2 className="text-5xl font-bold ">We would love to hear from you!</h2>
+              <p className=" text-gray-600 w-3/4">
                 Thank you for considering Base Foods. We value your inquiries, feedback, and the opportunity to assist you.
                 Feel free to reach out to us through the following channels:
               </p>
               <div className="flex items-center gap-3">
-                <span className='bg-BgGolden text-white p-3 rounded-full'><FaPhone className="text-2xl" /></span>
-                <div className='flex flex-col gap-2'>
+                <span className='bg-BgGolden text-white p-3 rounded-full'><FiPhone className="text-2xl -rotate-90" /></span>
+                <div className='flex flex-col'>
                   <span className="font-semibold">Call us</span>
                   <p className="text-xl font-bold">+1 (437) 606-3251</p>
                 </div>

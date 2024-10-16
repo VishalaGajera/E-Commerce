@@ -107,8 +107,18 @@ export default function AboutUs() {
             objectFit="cover"
             className='h-full w-full'
           />
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col gap-2 items-center justify-center text-white">
+          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col gap-5 items-center justify-center text-white">
+            <div>
             <h1 className="text-6xl font-bold">About Us</h1>
+            <div className="flex items-center justify-center mt-3">
+                <div className='relative flex justify-center items-center'>
+                  <div className='w-36 h-0.5 bg-white z-20'></div>
+                  <div className='absolute w-4 h-4 bg-white rotate-45 z-10'></div>
+                  <div className='absolute w-4 h-4 left-[75px] bg-white rotate-45 opacity-50'></div>
+                  <div className='absolute w-4 h-4 right-[75px] bg-white rotate-45 opacity-50'></div>
+                </div>
+              </div>
+            </div>
             <p className='w-1/2 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum id quibusdam voluptatem expedita consequatur quod, quidem veritatis repudiandae deserunt dolores!</p>
           </div>
         </section>
@@ -146,7 +156,7 @@ export default function AboutUs() {
           </div>
         </section>
 
-        <section className="relative py-16 h-screen mb-20 overflow-hidden">
+        {/* <section className="relative py-16 h-screen mb-20 overflow-hidden">
           <div className='relative w-full h-full'>
             <img
               src={aboutImg}
@@ -186,11 +196,9 @@ export default function AboutUs() {
                   <BsArrowRight />
                 </span>
               </div>
-              {/* <div className="flex flex-row gap-2 items-center py-5"> */}
-              {/* </div> */}
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   )

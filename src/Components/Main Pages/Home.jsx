@@ -151,7 +151,7 @@ const Home = () => {
             <p className='text-lg md:w-5/6 w-full'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium saepe iure a nihil commodi, corrupti reprehenderit illum ab velit iusto voluptatum neque, odio sit vitae tempora. Voluptatum dolorem officiis esse ipsum nostrum voluptates sint, vel magnam quo dolorum ullam hic reprehenderit neque est distinctio nemo fugit perferendis enim totam nobis.</p>
           </div>
         </div>
-        <div className='relative w-full flex justify-center items-center text-white' style={{
+        {/* <div className='relative w-full flex justify-center items-center text-white' style={{
           backgroundImage: 'url(https://www.mahmoodrice.com/content/images/tariflerbg.jpg)',
           backgroundPosition: 'fixed',
           backgroundRepeat: 'no-repeat',
@@ -168,12 +168,9 @@ const Home = () => {
             </span>
             <p className='md:w-4/5 text-center'>Be sure to take a look at these recipes to prepare delicious meals with Mahmood Rice and add health to your tables.</p>
           </div>
-          <div>
-
-          </div>
-        </div>
+        </div> */}
         {/* <div className='container'> */}
-        <div className='flex flex-col justify-center items-center bg-white py-10'>
+        {/* <div className='flex flex-col justify-center items-center bg-white py-10'>
           <div className='py-10'>
             <h1 className='font-bold text-4xl'>Our Blogs</h1>
             <div className="flex items-center justify-center mt-5">
@@ -185,7 +182,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* <div className='grid grid-cols-4 gap-5 '> */}
+           <div className='grid grid-cols-4 gap-5 '> 
           <Swiper
             modules={[Autoplay, Navigation]}
             slidesPerView={4}
@@ -244,8 +241,8 @@ const Home = () => {
               <BsArrowRight />
             </span>
           </div>
-          {/* </div> */}
-        </div>
+          </div> 
+        </div> */}
 
         {/* </div> */}
 
@@ -279,7 +276,7 @@ const Home = () => {
         </div>
 
 
-        <div className='w-full flex justify-center items-center '>
+        {/* <div className='w-full flex justify-center items-center '>
           <div className='flex flex-col justify-center items-center py-10 bg-white'>
             <div className='flex flex-col justify-center items-center gap-3 py-10'>
               <div>
@@ -365,10 +362,10 @@ const Home = () => {
               </span>
             </div>
           </div>
-        </div>
-        <div className='flex justify-center items-center md:w-2/3 w-full py-10'>
+        </div> */}
+        {/* <div className='flex justify-center items-center md:w-2/3 w-full py-10'>
           <FAQs />
-        </div>
+        </div> */}
       </div>
     </div>
   )
