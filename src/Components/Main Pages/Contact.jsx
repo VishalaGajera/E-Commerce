@@ -6,7 +6,7 @@ import { FiPhone } from "react-icons/fi";
 
 const Contact = () => {
   return (
-    <div className='flex justify-center items-center w-full flex-col bg-white'>
+    <div className='flex justify-center items-center w-full flex-col bg-white pb-10'>
       <div className='flex justify-center items-center  w-full h-full flex-col gap-10'>
         {/* <div className='w-full h-96 flex items-end' style={{
             backgroundImage: `url(${ContactImg})`,
@@ -27,7 +27,7 @@ const Contact = () => {
             </span>
           </div> */}
 
-        <section className="relative h-[80vh] w-full">
+        <section className="relative md:h-[80vh] h-52 w-full">
           <img
             src={ContactImg}
             alt="Fresh salad"
@@ -35,26 +35,26 @@ const Contact = () => {
             objectFit="cover"
             className='h-full w-full'
           />
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col gap-5 items-center justify-center text-white">
+          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col gap-5 md:items-center items-start justify-center text-white p-5">
             <div>
-              <h1 className="text-6xl font-bold">Contact Us</h1>
+              <h1 className="md:text-6xl text-2xl font-bold">Contact Us</h1>
               <div className="flex items-center justify-center mt-3">
                 <div className='relative flex justify-center items-center'>
-                  <div className='w-36 h-0.5 bg-white z-20'></div>
+                  <div className='md:w-36 w-24 h-0.5 bg-white z-20'></div>
                   <div className='absolute w-4 h-4 bg-white rotate-45 z-10'></div>
-                  <div className='absolute w-4 h-4 left-[75px] bg-white rotate-45 opacity-50'></div>
-                  <div className='absolute w-4 h-4 right-[75px] bg-white rotate-45 opacity-50'></div>
+                  <div className='absolute w-4 h-4 md:left-[75px] left-[53px] bg-white rotate-45 opacity-50'></div>
+                  <div className='absolute w-4 h-4 md:right-[75px] right-[53px] bg-white rotate-45 opacity-50'></div>
                 </div>
               </div>
             </div>
-            <p className='w-1/2 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum id quibusdam voluptatem expedita consequatur quod, quidem veritatis repudiandae deserunt dolores!</p>
+            <p className='md:w-1/2 pt-5 md:text-center text-pretty md:text-base text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum id quibusdam voluptatem expedita consequatur quod, quidem veritatis repudiandae deserunt dolores!</p>
           </div>
         </section>
-        <div className='container'>
-          <div className='grid md:grid-cols-2 grid-cols-1 md:p-20 p-0 gap-10 py-10'>
-            <div className='md:h-full h-96 flex flex-col justify-start items-start p-10 rounded-xl gap-8'>
-              <h2 className="text-5xl font-bold ">We would love to hear from you!</h2>
-              <p className=" text-gray-600 w-3/4">
+        <div className='container flex justify-center items-center'>
+          <div className='grid md:grid-cols-2 grid-cols-1 lg:p-10 p-5 gap-10 py-10 2xl:w-5/6'>
+            <div className='h-full flex flex-col justify-start items-start rounded-xl gap-8'>
+              <h2 className="lg:text-5xl md:text-4xl text-3xl font-bold ">We would love to hear from you!</h2>
+              <p className=" text-gray-600 lg:w-3/4">
                 Thank you for considering Base Foods. We value your inquiries, feedback, and the opportunity to assist you.
                 Feel free to reach out to us through the following channels:
               </p>
@@ -66,7 +66,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <div className='flex flex-col gap-5 mx-5 bg-BgColor border-BgGolden border-2 rounded-xl p-10'>
+            <div className='flex flex-col gap-5 bg-BgColor border-BgGolden border-2 rounded-xl lg:p-10 p-5'>
               <div className="pb-5">
                 <h1 className="font-semibold text-4xl  relative">Write to us</h1>
                 {/* <div className="flex items-center justify-center mt-5">
@@ -80,7 +80,7 @@ const Contact = () => {
                 <p className='mt-5'>Send us a message</p>
               </div>
               <div className='flex flex-col gap-3'>
-                <div className='grid grid-cols-2 gap-3 '>
+                <div className='grid md:grid-cols-2 gap-3 '>
                   <div className='border p-3 rounded-lg bg-white'>
                     <input type="text" name="" id="" placeholder='First Name' className='w-full outline-none bg-transparent' />
                   </div>

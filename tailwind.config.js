@@ -13,7 +13,7 @@ export default {
       },
       animation: {
         'spin-slow': 'spin 20s linear infinite',
-        'loop-scroll': 'loop-scroll 50s linear infinite',
+        'loop-scroll': 'loop-scroll 20s linear infinite',
       },
       keyframes: {
         "loop-scroll": {

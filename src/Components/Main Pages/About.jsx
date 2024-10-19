@@ -97,9 +97,9 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 export default function AboutUs() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen pb-5">
       <main className="flex-grow">
-        <section className="relative h-[80vh]">
+        <section className="relative md:h-[80vh] h-52">
           <img
             src={aboutImg}
             alt="Fresh salad"
@@ -107,44 +107,40 @@ export default function AboutUs() {
             objectFit="cover"
             className='h-full w-full'
           />
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col gap-5 items-center justify-center text-white">
+          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col gap-5 md:items-center items-start justify-center text-white p-5">
             <div>
-            <h1 className="text-6xl font-bold">About Us</h1>
+            <h1 className="md:text-6xl text-2xl font-bold">About Us</h1>
             <div className="flex items-center justify-center mt-3">
                 <div className='relative flex justify-center items-center'>
-                  <div className='w-36 h-0.5 bg-white z-20'></div>
+                  <div className='md:w-36 w-24 h-0.5 bg-white z-20'></div>
                   <div className='absolute w-4 h-4 bg-white rotate-45 z-10'></div>
-                  <div className='absolute w-4 h-4 left-[75px] bg-white rotate-45 opacity-50'></div>
-                  <div className='absolute w-4 h-4 right-[75px] bg-white rotate-45 opacity-50'></div>
+                  <div className='absolute w-4 h-4 md:left-[75px] left-[53px] bg-white rotate-45 opacity-50'></div>
+                  <div className='absolute w-4 h-4 md:right-[75px] right-[53px] bg-white rotate-45 opacity-50'></div>
                 </div>
               </div>
             </div>
-            <p className='w-1/2 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum id quibusdam voluptatem expedita consequatur quod, quidem veritatis repudiandae deserunt dolores!</p>
+            <p className='md:w-1/2 pt-5 md:text-center text-pretty md:text-base text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum id quibusdam voluptatem expedita consequatur quod, quidem veritatis repudiandae deserunt dolores!</p>
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto my-16 flex flex-col gap-20">
-          <div className="flex items-center justify-center">
+        <section className="max-w-full px-5 my-16 flex flex-col  gap-20">
+          <div className="flex md:flex-row flex-col items-center justify-center md:gap-0 gap-5">
             <div className="">
               <img
                 src="https://www.mahmoodrice.com/Media/Uploads/4kg_web.png  "
                 alt="Product image"
                 width={300}
                 height={300}
-                className="rounded-tr-3xl rounded-bl-3xl border-r-2 border-b-2 border-BgGolden bg-BgColor"
+                className="rounded-tr-3xl rounded-bl-3xl md:border-r-2 md:border-l-0 border-l-2 border-b-2 border-BgGolden bg-BgColor"
               />
             </div>
-            <div className="w-1/2 text-center bg-BgColor px-5 py-10 border-r-2 border-BgGolden border-t-2 rounded-r-3xl">
-              <h2 className="text-3xl font-bold mb-4">Content of vision</h2>
-              <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div className="md:w-1/2  md:text-center text-start bg-BgColor px-5 py-10 border-r-2 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-r-3xl">
+              <h2 className="md:text-3xl text-2xl font-bold mb-4">Content of vision</h2>
+              <p className="text-gray-600 md:text-base text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
-          <div className="flex items-center justify-center ">
-            <div className="w-1/2 text-center bg-BgColor px-5 py-10 border-l-2 border-BgGolden border-t-2 rounded-l-3xl">
-              <h2 className="text-3xl font-bold mb-4">Content of mission</h2>
-              <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div className="">
+          <div className="flex  md:flex-row flex-col items-center justify-center md:gap-0 gap-5">
+            <div className="md:order-2 order-first">
               <img
                 src="https://www.mahmoodrice.com/Media/Uploads/4kg_web.png"
                 alt="Product image"
@@ -152,6 +148,10 @@ export default function AboutUs() {
                 height={300}
                 className="rounded-br-3xl rounded-tl-3xl border-l-2 border-b-2 border-BgGolden bg-BgColor"
               />
+            </div>
+            <div className="md:w-1/2 md:text-center text-start bg-BgColor px-5 py-10 md:border-l-2 border-r-2 md:border-r-0 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-l-3xl">
+              <h2 className="md:text-3xl text-2xl font-bold mb-4">Content of mission</h2>
+              <p className="text-gray-600 md:text-base text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
         </section>

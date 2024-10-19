@@ -24,52 +24,79 @@ const Product = () => {
 
   const menuData = [
     {
-      title: "Cuisines",
+      title: "Beans",
       items: [
-        "Italian",
-        "Chinese",
-        "Mexican",
-        "Indian",
-        "Japanese",
-        "Thai",
-        "Mediterranean",
-        "American",
+        "Whole Red Lentils",
+        "Red Split Lentils",
+        "Red Football Lentils",
+        "Lairds Lentils",
+        "Eston Lentils",
+        "8mm Chickpeas",
+        "9mm Chickpeas",
+        "Yellow Split Peas",
+        "Whole Yellow Peas",
+        "Whole Green Peas",
+        "Whole Green Peas",
+        "Urad Gota",
+        "Urad Dal",
+        "Urad Whole (Australian) ",
+        "Urad Whole",
+        "Urad Chilka",
+        "Black Eyed Beans - Premium Quality",
+        "Light Red Kidney Beans",
+        "Dark Red Kidney Beans",
+        "Toor Dal Dry",
+        "Toor Whole",
+        "Moong Whole Jumb",
       ],
     },
     {
-      title: "Dietary Preferences",
+      title: "Flours",
       items: [
-        "Vegetarian",
-        "Vegan",
-        "Gluten-Free",
-        "Keto",
-        "Paleo",
-        "Low-Carb",
-        "Dairy-Free",
-        "Nut-Free",
+        "Sher Besan 40lb",
+        "Sher Durum Atta 20lb ",
+        "Sher Whole Wheat Atta 20lb ",
+        "Sher Besan 4lb ",
+        "Sher Corn Flour 4lb ",
+        "Sher Corn Flour 8lb ",
+        "Sher Corn Flour 20lb ",
+        "Golden Temple Durum Atta",
+        "Golden Temple Wheat Atta Purple",
       ],
     },
     {
-      title: "Meal Types",
+      title: "Rice",
       items: [
-        "Breakfast",
-        "Lunch",
-        "Dinner",
-        "Snacks",
-        "Desserts",
-        "Beverages",
-        "Appetizers",
-        "Salads",
+        "IC 1121 Basmati Long Grain Steam Rice 40lbs(Blue) ",
+        "IC 1121 Basmati Long Grain Steam Rice 10lbs(Blue)",
+        "IC 1121 Basmati Long Grain Creamy Sella Rice 40lbs(Pink) ",
+        "IC 1121 Basmati Long Grain Creamy Sella Rice 10lbs(Pink) ",
+        "IC Rozana Basmati 40lbs ",
+        "IC Rozana Basmati 10lbs ",
+        "Marhaba Basmati Steam Rice(40lbs) ",
+        "Handi Golden Sella Basmati Ric"
       ],
     },
     {
-      title: "Price Range",
+      title: "Spices",
       items: [
-        "$5.00 - $15.00",
-        "$15.00 - $30.00",
-        "$30.00 - $50.00",
-        "$50.00 - $100.00",
-        "Above $100.00",
+        "Bay Leaves",
+        "Black Cardamom",
+        "Black Pepper Ground",
+        "Black Pepper Whole",
+        "Chilli Powder Extra Hot",
+        "Chilli Powder Kashmiri",
+        "Chilli Powder Regular",
+        "Chilli Whole",
+        "Cinnamon Ground",
+        "Cinnamon Whole Roll",
+        "Cinnamon Whole Flat",
+        "Clove Powder",
+        "Clove Whole",
+        "Coriander Ground",
+        "Coriander Whole",
+        "Crushed Chilli (Chilli Flakes)",
+        "Cumin Ground",
       ],
     },
   ];
@@ -102,7 +129,7 @@ const Product = () => {
   };
 
   return (
-    <div className='flex justify-center items-center'>
+    <div className='flex justify-center items-center bg-BgColor'>
       <div className='container h-full'>
         <div className='flex flex-col justify-center items-center mx-5 py-10 h-full'>
           <div className='flex justify-center items-center flex-col'>
@@ -117,7 +144,7 @@ const Product = () => {
             </div>
             {/* <div className='pt-5 w-2/3 text-center'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque optio ad eveniet non eos consequatur, maiores mollitia culpa similique odio?</div> */}
           </div>
-          <div className='grid md:grid-cols-4 grid-cols-1 w-full py-20 h-screen  overflow-hidden'>
+          <div className='grid md:grid-cols-4 grid-cols-1 w-full py-20  overflow-hidden'>
             <div className="md:flex flex-col gap-1 w-full border-r-2">
               <div
                 className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${viewFilters ? "translate-x-0 overflow-y-scroll z-50" : "translate-x-full"
@@ -135,7 +162,7 @@ const Product = () => {
                 </div>
                 <div>
                   {menuData.map((menu, index) => (
-                    <div key={index} className="bg-white border-b">
+                    <div key={index} className="bg-BgColor border-b">
                       <div
                         className={`flex flex-row justify-between items-center cursor-pointer p-3 ${activeCategory === index ? "text-BgGolden" : "text-black"
                           }`}
@@ -149,7 +176,7 @@ const Product = () => {
                       <ul className={`${activeCategory === index ? "block p-3" : "hidden"}`}>
                         {menu?.items &&
                           menu?.items?.map((item, itemIndex) => (
-                            <li key={itemIndex} className="flex py-2 gap-2 cursor-pointer border-b">
+                            <li key={itemIndex} className="flex py-2 gap-2 cursor-pointer">
                               <span className="text-sm">{item}</span>
                             </li>
                           ))}

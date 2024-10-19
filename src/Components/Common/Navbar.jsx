@@ -3,8 +3,9 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 import { CiSearch } from "react-icons/ci";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
-import { FaRegCircleUser } from "react-icons/fa6";
+// import { FaRegCircleUser } from "react-icons/fa6";
 import Footer from './Footer';
+import Aparna_Foods from '../../assets/Images/Aparna_Foods_1.png';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -13,12 +14,15 @@ const Navbar = () => {
 
     return (
         <div className='flex flex-col justify-center items-center w-full'>
-            <div className='sticky top-0 z-50 flex justify-center items-center w-full h-20 shadow-lg px-5 bg-white'>
+            <div className='sticky top-0 z-50 flex justify-center items-center w-full h-24 shadow-lg px-5 bg-white'>
                 <div className='container'>
                     <header className='flex justify-between items-center w-full'>
-                        <div>
-                            <Link to={'/'}>Logo</Link>
-                        </div>
+                        {/* <div> */}
+                            <Link to={'/'} className='flex justify-center items-center'>
+                                <img src={Aparna_Foods} alt="" className='w-40 h-24' />
+                                {/* Logo */}
+                            </Link>
+                        {/* </div> */}
                         <div className='md:flex hidden'>
                             <ul className='flex justify-center items-center gap-10'>
                                 <li className='relative'><Link to={'/'} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/")
@@ -50,22 +54,22 @@ const Navbar = () => {
                                     : ""
                                     }`}>Contact</Link></li>
                             </ul>
+                            <div className='gap-3 items-center lg:flex hidden'>
+                                <div className='flex items-center gap-3 px-3 '>
+                                    <span><CiSearch className='text-xl' /></span>
+                                    <span className=''>Search</span>
+                                </div>
+                                {/* <div className='flex items-center gap-3'>
+                                <span><FaRegCircleUser className='text-lg' /></span>
+                                <span className=''>Sign In</span>
+                            </div> */}
+
+                            </div>
                         </div>
                         <div className='md:hidden flex'>
                             <span className='text-2xl cursor-pointer' onClick={() => setShowMenu(true)}>
                                 <HiMenuAlt3 />
                             </span>
-                        </div>
-                        <div className='gap-3 items-center lg:flex hidden'>
-                            <div className='flex items-center gap-3 px-3 '>
-                                <span><CiSearch className='text-xl' /></span>
-                                <span className=''>Search</span>
-                            </div>
-                            {/* <div className='flex items-center gap-3'>
-                                <span><FaRegCircleUser className='text-lg' /></span>
-                                <span className=''>Sign In</span>
-                            </div> */}
-
                         </div>
                         {showMenu && (
                             <div className="lg:hidden fixed inset-0 bg-gray-800 bg-opacity-75 z-50 flex justify-end">
