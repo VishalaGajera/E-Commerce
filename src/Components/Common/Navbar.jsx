@@ -18,10 +18,10 @@ const Navbar = () => {
                 <div className='container'>
                     <header className='flex justify-between items-center w-full'>
                         {/* <div> */}
-                            <Link to={'/'} className='flex justify-center items-center'>
-                                <img src={Aparna_Foods} alt="" className='w-40 h-24' />
-                                {/* Logo */}
-                            </Link>
+                        <Link to={'/'} className='flex justify-center items-center'>
+                            <img src={Aparna_Foods} alt="" className='w-40 h-24' />
+                            {/* Logo */}
+                        </Link>
                         {/* </div> */}
                         <div className='md:flex hidden'>
                             <ul className='flex justify-center items-center gap-10'>
@@ -72,8 +72,9 @@ const Navbar = () => {
                             </span>
                         </div>
                         {showMenu && (
-                            <div className="lg:hidden fixed inset-0 bg-gray-800 bg-opacity-75 z-50 flex justify-end">
-                                <div className="flex flex-col w-80 bg-[#f7f7f7] h-full">
+                            <div className={`lg:hidden fixed inset-0 bg-gray-800 bg-opacity-75 z-50 flex justify-end ${showMenu ? "block" : "hidden"}`}>
+                                <div className={`flex flex-col w-80 bg-[#f7f7f7] h-full transform transition-transform duration-300 ease-in-out ${showMenu ? "translate-x-0" : "translate-x-full"
+                                    }`}>
                                     <div className="flex flex-row justify-between items-center font-bold p-5 bg-[#251f1d] text-white">
                                         <p>Menu</p>
                                         <button onClick={() => setShowMenu(false)}>
@@ -82,22 +83,25 @@ const Navbar = () => {
                                     </div>
                                     <div className="">
                                         <ul className="flex flex-col bg-white font-bold">
-                                            <li className="p-4 border-b">
+                                            <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
+                                                <Link to={"/"}>Home</Link>
+                                            </li>
+                                            <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
                                                 <Link to={"/about"}>About Us</Link>
                                             </li>
-                                            <li className="p-4 border-b">
+                                            <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
                                                 <Link to={"/products"}>Products</Link>
                                             </li>
-                                            <li className="p-4 border-b">
+                                            {/* <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
                                                 <Link to={"/recipes"}>Recipes</Link>
                                             </li>
-                                            <li className="p-4 border-b">
+                                            <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
                                                 <Link to={"/brand"}>Our Brand</Link>
                                             </li>
-                                            <li className="p-4 border-b">
+                                            <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
                                                 <Link to={"/catalog"}>E-Catalog</Link>
-                                            </li>
-                                            <li className="p-4 border-b">
+                                            </li> */}
+                                            <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
                                                 <Link to={"/contact"}>Contact</Link>
                                             </li>
                                         </ul>

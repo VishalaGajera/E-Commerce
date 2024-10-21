@@ -54,7 +54,7 @@ const Contact = () => {
           <div className='grid md:grid-cols-2 grid-cols-1 lg:p-10 p-5 gap-10 py-10 2xl:w-5/6'>
             <div className='h-full flex flex-col justify-start items-start rounded-xl gap-8'>
               <h2 className="lg:text-5xl md:text-4xl text-3xl font-bold ">We would love to hear from you!</h2>
-              <p className=" text-gray-600 lg:w-3/4">
+              <p className=" text-gray-600 lg:w-3/4 md:text-base text-sm">
                 Thank you for considering Base Foods. We value your inquiries, feedback, and the opportunity to assist you.
                 Feel free to reach out to us through the following channels:
               </p>
