@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { FaCaretUp, FaCaretDown, FaStar, FaShoppingCart, FaEye } from "react-icons/fa";
+import Pagination from "@mui/material/Pagination";
+import PaginationItem from "@mui/material/PaginationItem";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from 'react-router-dom';
-import {
-  FiChevronRight,
-  FiChevronLeft,
-} from "react-icons/fi";
 import { FaFilter } from "react-icons/fa";
 import Conventional_Red_Quinoa from "/src/assets/Images/Beans_Lentils/Conventional_Red_Quinoa.png"
 
@@ -14,8 +13,9 @@ const Product = () => {
   const [viewFilters, setViewFilters] = useState(false);
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 10;
+  const productsPerPage = 16;
   // const [viewFilters, setShowFilters]=useState(false);
   const [gridColumns, setGridColumns] = useState(3);
 
@@ -33,80 +33,80 @@ const Product = () => {
 
   const menuData = [
     {
-      title: "Beans",
-      items: [
-        "Whole Red Lentils",
-        "Red Split Lentils",
-        "Red Football Lentils",
-        "Lairds Lentils",
-        "Eston Lentils",
-        "8mm Chickpeas",
-        "9mm Chickpeas",
-        "Yellow Split Peas",
-        "Whole Yellow Peas",
-        "Whole Green Peas",
-        "Whole Green Peas",
-        "Urad Gota",
-        "Urad Dal",
-        "Urad Whole (Australian) ",
-        "Urad Whole",
-        "Urad Chilka",
-        "Black Eyed Beans - Premium Quality",
-        "Light Red Kidney Beans",
-        "Dark Red Kidney Beans",
-        "Toor Dal Dry",
-        "Toor Whole",
-        "Moong Whole Jumb",
-      ],
+      title: "Beans & Lentils",
+      // items: [
+      //   "Whole Red Lentils",
+      //   "Red Split Lentils",
+      //   "Red Football Lentils",
+      //   "Lairds Lentils",
+      //   "Eston Lentils",
+      //   "8mm Chickpeas",
+      //   "9mm Chickpeas",
+      //   "Yellow Split Peas",
+      //   "Whole Yellow Peas",
+      //   "Whole Green Peas",
+      //   "Whole Green Peas",
+      //   "Urad Gota",
+      //   "Urad Dal",
+      //   "Urad Whole (Australian) ",
+      //   "Urad Whole",
+      //   "Urad Chilka",
+      //   "Black Eyed Beans - Premium Quality",
+      //   "Light Red Kidney Beans",
+      //   "Dark Red Kidney Beans",
+      //   "Toor Dal Dry",
+      //   "Toor Whole",
+      //   "Moong Whole Jumb",
+      // ],
     },
     {
       title: "Flours",
-      items: [
-        "Sher Besan 40lb",
-        "Sher Durum Atta 20lb ",
-        "Sher Whole Wheat Atta 20lb ",
-        "Sher Besan 4lb ",
-        "Sher Corn Flour 4lb ",
-        "Sher Corn Flour 8lb ",
-        "Sher Corn Flour 20lb ",
-        "Golden Temple Durum Atta",
-        "Golden Temple Wheat Atta Purple",
-      ],
+      // items: [
+      //   "Sher Besan 40lb",
+      //   "Sher Durum Atta 20lb ",
+      //   "Sher Whole Wheat Atta 20lb ",
+      //   "Sher Besan 4lb ",
+      //   "Sher Corn Flour 4lb ",
+      //   "Sher Corn Flour 8lb ",
+      //   "Sher Corn Flour 20lb ",
+      //   "Golden Temple Durum Atta",
+      //   "Golden Temple Wheat Atta Purple",
+      // ],
     },
     {
       title: "Rice",
-      items: [
-        "IC 1121 Basmati Long Grain Steam Rice 40lbs(Blue) ",
-        "IC 1121 Basmati Long Grain Steam Rice 10lbs(Blue)",
-        "IC 1121 Basmati Long Grain Creamy Sella Rice 40lbs(Pink) ",
-        "IC 1121 Basmati Long Grain Creamy Sella Rice 10lbs(Pink) ",
-        "IC Rozana Basmati 40lbs ",
-        "IC Rozana Basmati 10lbs ",
-        "Marhaba Basmati Steam Rice(40lbs) ",
-        "Handi Golden Sella Basmati Ric"
-      ],
+      // items: [
+      //   "IC 1121 Basmati Long Grain Steam Rice 40lbs(Blue) ",
+      //   "IC 1121 Basmati Long Grain Steam Rice 10lbs(Blue)",
+      //   "IC 1121 Basmati Long Grain Creamy Sella Rice 40lbs(Pink) ",
+      //   "IC 1121 Basmati Long Grain Creamy Sella Rice 10lbs(Pink) ",
+      //   "IC Rozana Basmati 40lbs ",
+      //   "IC Rozana Basmati 10lbs ",
+      //   "Marhaba Basmati Steam Rice(40lbs) ",
+      //   "Handi Golden Sella Basmati Ric"
+      // ],
     },
     {
       title: "Spices",
-      items: [
-        "Bay Leaves",
-        "Black Cardamom",
-        "Black Pepper Ground",
-        "Black Pepper Whole",
-        "Chilli Powder Extra Hot",
-        "Chilli Powder Kashmiri",
-        "Chilli Powder Regular",
-        "Chilli Whole",
-        "Cinnamon Ground",
-        "Cinnamon Whole Roll",
-        "Cinnamon Whole Flat",
-        "Clove Powder",
-        "Clove Whole",
-        "Coriander Ground",
-        "Coriander Whole",
-        "Crushed Chilli (Chilli Flakes)",
-        "Cumin Ground",
-      ],
+      // items: [
+      //   "Bay Leaves",
+      //   "Black Cardamom",
+      //   "Black Pepper Ground",
+      //   "Black Pepper Whole",
+      //   "Chilli Powder Extra Hot",
+      //   "Chilli Powder Kashmiri",
+      //   "Chilli Powder Regular",
+      //   "Chilli Whole",
+      //   "Cinnamon Ground",
+      //   "Cinnamon Whole Roll",
+      //   "Cinnamon Whole Flat",
+      //   "Clove Powder",
+      //   "Clove Whole",
+      //   "Coriander Ground",
+      //   "Coriander Whole",
+      //   "Crushed Chilli (Chilli Flakes)",
+      //   "Cumin Ground",
+      // ],
     },
   ];
 
@@ -993,7 +993,7 @@ const Product = () => {
     //   "price_per_bag": 32.50,
     //   "rating": 5
     // }
-    ]
+  ]
 
   const toggleCategory = (index) => {
     setActiveCategory(activeCategory === index ? null : index);
@@ -1006,70 +1006,91 @@ const Product = () => {
       case 3:
         return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
       case 4:
-        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4";
       default:
-        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
+        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4";
     }
   };
 
-  const renderPagination = () => {
-    const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
-      pageNumbers.push(i);
-    }
-    return (
-      <div
-        className={`flex justify-center mt-4 items-center ${
-          pageNumbers.length === 1 ? "hidden" : "block"
-        }`}
-      >
-        <button
-          className={`p-3 mx-1 text-sm text-gray-600 rounded-full hover:bg-gray-200 focus:outline-none ${
-            currentPage === 1 ? "hidden" : "flex"
-          }`}
-          onClick={() => handlePageChange(currentPage - 1)}
-        >
-          <FiChevronLeft className="text-xl" />
-        </button>
-        {pageNumbers.map((number) => (
-          <button
-            key={number}
-            className={`px-5 py-3 mx-1 text-sm rounded-full ${
-              number === currentPage
-                ? "bg-[#f7f7f7] text-black"
-                : "bg-transparent text-gray-600"
-            } hover:bg-[#f7f7f7] focus:outline-none`}
-            onClick={() => handlePageChange(number)}
-          >
-            {number}
-          </button>
-        ))}
-        <button
-          className={`p-3 mx-1 text-sm text-gray-600 rounded-full hover:bg-gray-200 focus:outline-none ${
-            currentPage === pageNumbers.length ? "hidden" : "flex"
-          }`}
-          onClick={() => handlePageChange(currentPage + 1)}
-        >
-          <FiChevronRight className="text-xl" />
-        </button>
-      </div>
-    );
+  // Handle category selection
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    setCurrentPage(1); // Reset to the first page when a new category is selected
   };
-  
+
+  // Filter products by the selected category
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category === selectedCategory)
+    : products;
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", 
-    });
+  const handleChange = (event, value) => {
+    setCurrentPage(value);
   };
+
+  // const renderPagination = () => {
+  //   const pageNumbers = [];
+  //   for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
+  //     pageNumbers.push(i);
+  //   }
+  //   return (
+  //     <div
+  //       className={`flex justify-center mt-4 items-center ${
+  //         pageNumbers.length === 1 ? "hidden" : "block"
+  //       }`}
+  //     >
+  //       <button
+  //         className={`p-3 mx-1 text-sm text-gray-600 rounded-full hover:bg-gray-200 focus:outline-none ${
+  //           currentPage === 1 ? "hidden" : "flex"
+  //         }`}
+  //         onClick={() => handlePageChange(currentPage - 1)}
+  //       >
+  //         <FiChevronLeft className="text-xl" />
+  //       </button>
+  //       {pageNumbers.map((number) => (
+  //         <button
+  //           key={number}
+  //           className={`px-5 py-3 mx-1 text-sm rounded-full ${
+  //             number === currentPage
+  //               ? "bg-[#f7f7f7] text-black"
+  //               : "bg-transparent text-gray-600"
+  //           } hover:bg-[#f7f7f7] focus:outline-none`}
+  //           onClick={() => handlePageChange(number)}
+  //         >
+  //           {number}
+  //         </button>
+  //       ))}
+  //       <button
+  //         className={`p-3 mx-1 text-sm text-gray-600 rounded-full hover:bg-gray-200 focus:outline-none ${
+  //           currentPage === pageNumbers.length ? "hidden" : "flex"
+  //         }`}
+  //         onClick={() => handlePageChange(currentPage + 1)}
+  //       >
+  //         <FiChevronRight className="text-xl" />
+  //       </button>
+  //     </div>
+  //   );
+  // };
+
+  // const indexOfLastProduct = currentPage * productsPerPage;
+  // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  // const currentProducts = products.slice(
+  //   indexOfFirstProduct,
+  //   indexOfLastProduct
+  // );
+
+  // const handlePageChange = (pageNumber) => {
+  //   setCurrentPage(pageNumber);
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth", 
+  //   });
+  // };
   return (
     <div className='flex justify-center items-center bg-BgColor'>
       <div className='container h-full'>
@@ -1088,7 +1109,7 @@ const Product = () => {
           </div>
           <div className='grid md:grid-cols-4 grid-cols-1 w-full md:py-20 pt-20  overflow-hidden md:gap-0 gap-5'>
             <div className='md:hidden flex justify-center items-center w-full'>
-              <div className='bg-BgGolden border-2 border-BgGolden hover:bg-BgColor hover:text-BgGolden cursor-pointer py-1 w-36 font-bold rounded-lg text-lg text-white' onClick={()=>setViewFilters(true)}>
+              <div className='bg-BgGolden border-2 border-BgGolden hover:bg-BgColor hover:text-BgGolden cursor-pointer py-1 w-36 font-bold rounded-lg text-lg text-white' onClick={() => setViewFilters(true)}>
                 <span className='flex justify-center items-center gap-2'><FaFilter />Filter</span>
               </div>
             </div>
@@ -1107,7 +1128,7 @@ const Product = () => {
                     &times;
                   </span>
                 </div>
-                <div>
+                {/* <div>
                   {menuData.map((menu, index) => (
                     <div key={index} className="bg-BgColor border-b">
                       <div
@@ -1130,35 +1151,36 @@ const Product = () => {
                       </ul>
                     </div>
                   ))}
+                </div> */}
+                <div className="md:flex flex-col gap-1 w-full border-r-2">
+                  {menuData.map((menu, index) => (
+                    <div key={index} className="bg-BgColor border-b">
+                      <div
+                        className={`flex flex-row justify-between items-center cursor-pointer p-3 ${activeCategory === index ? "text-BgGolden" : "text-black"}`}
+                        // onClick={() => toggleCategory(index)}
+                        onClick={() => handleCategorySelect(menu.title)}
+                      >
+                        <p className="font-bold text-base">{menu.title}</p>
+                        {/* <span>{activeCategory === index ? <FaCaretUp /> : <FaCaretDown />}</span> */}
+                      </div>
+                      {/* <ul className={`${activeCategory === index ? "block p-3" : "hidden"}`}>
+                        {menu?.items?.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex py-2 gap-2 cursor-pointer"
+                            onClick={() => handleCategorySelect(menu.title)} // Select the category
+                          >
+                            <span className="text-sm">{item}</span>
+                          </li>
+                        ))}
+                      </ul> */}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
             <div className="md:col-span-3">
               <main className="flex-1 md:px-5">
-                {/* <div className="flex justify-between items-center mb-6">
-                  <div className="flex items-center space-x-2">
-                    <span>Showing of {products.length} products</span>
-                    <button
-                      className={`px-2 py-1 border ${gridColumns === 2 ? 'bg-gray-200' : ''}`}
-                      onClick={() => setGridColumns(2)}
-                    >
-                      II
-                    </button>
-                    <button
-                      className={`px-2 py-1 border ${gridColumns === 3 ? 'bg-gray-200' : ''}`}
-                      onClick={() => setGridColumns(3)}
-                    >
-                      III
-                    </button>
-                    <button
-                      className={`px-2 py-1 border ${gridColumns === 4 ? 'bg-gray-200' : ''}`}
-                      onClick={() => setGridColumns(4)}
-                    >
-                      IIII
-                    </button>
-                  </div>
-                </div> */}
-                <div className={`grid ${getGridClass()} gap-6`}>
+                {/* <div className={`grid ${getGridClass()} gap-6`}> */}
+                <div className={`grid grid-cols-4 gap-6`}>
                   {currentProducts.map((product, index) => (
                     <div
                       key={index}
@@ -1188,7 +1210,7 @@ const Product = () => {
                       </div>
                       <div className="p-4 h-full">
                         <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-                        <p className="text-sm text-gray-600 mb-2">{product.description}</p>
+                        {/* <p className="text-sm text-gray-600 mb-2">{product.description}</p>
                         <div className="flex items-center mb-2">
                           {[...Array(5)].map((_, i) => (
                             <FaStar
@@ -1197,10 +1219,10 @@ const Product = () => {
                             />
                           ))}
                           <span className="ml-2 text-sm text-gray-600">{product.rating.toFixed(1)}</span>
-                        </div>
+                        </div> */}
                       </div>
                       <div className="p-4 bg-gray-50 flex items-center justify-between">
-                        <span className="text-xl font-bold">{product.price_per_bag}</span>
+                        <span className="text-xl font-bold">${product.price_per_bag}</span>
                         <span>10KG</span>
                         {/* <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
                           Add to Cart
@@ -1209,7 +1231,23 @@ const Product = () => {
                     </div>
                   ))}
                 </div>
-                {renderPagination()}
+                <div className="flex justify-center mt-10">
+                  <Pagination
+                    count={totalPages}
+                    page={currentPage}
+                    onChange={handleChange}
+                    renderItem={(item) => (
+                      <PaginationItem
+                        components={{ previous: FiChevronLeft, next: FiChevronRight }}
+                        {...item}
+                      />
+                    )}
+                    siblingCount={0}
+                    boundaryCount={2}
+                    hideNextButton={false}
+                    hidePrevButton={false}
+                  />
+                </div>
               </main>
             </div>
           </div>

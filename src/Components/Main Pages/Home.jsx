@@ -70,17 +70,17 @@ const Home = () => {
     );
   };
   return (
-    <div className='flex justify-center items-center bg-BgColor'>
+    <div className='flex justify-center items-center bg-white'>
       <div className='flex flex-col justify-center items-center'>
         <div className='relative flex flex-col justify-center items-center w-full'>
           <img src={HomeImg} alt="" className='w-full' />
           <div className='absolute text-white md:flex hidden items-center justify-center flex-col gap-4 w-full text-center 2xl:top-32 lg:top-20 top-0 p-5'>
             <h1 className='font-bold 2xl:text-5xl lg:text-4xl text-3xl text-BgColor'>Healthy vegetable that you deserve to eat fresh</h1>
             <p className='2xl:text-2xl lg:text-xl text-base lg:w-1/2 w-2/3 text-BgColor'>We source and sell the very best beef, lamb and pork, sourced with the greatest care from farmer.</p>
-            <div className='border rounded-lg bg-white flex items-center gap-3 2xl:p-4 p-2 w-1/3 '>
+            {/* <div className='border rounded-lg bg-white flex items-center gap-3 2xl:p-4 p-2 w-1/3 '>
               <input type="text" name="" id="" className='text-black outline-none bg-transparent w-full' placeholder='What are you looking...' />
               <CiSearch className='text-black text-2xl' />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className='flex flex-col gap-10 relative py-10'>
@@ -253,7 +253,7 @@ const Home = () => {
         </div> */}
 
 
-        <div className=' w-full flex flex-col justify-center items-center pb-10 overflow-hidden'>
+        <div className=' w-full flex flex-col justify-center items-center pb-20 overflow-hidden'>
           <div className='flex justify-center items-center flex-col gap-10 px-5'>
             <div className='text-center'>
               <h1 className='font-bold md:text-4xl text-3xl text-center'>Our Partner Brands</h1>

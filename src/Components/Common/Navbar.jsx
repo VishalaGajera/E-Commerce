@@ -23,6 +23,17 @@ const Navbar = () => {
                             {/* Logo */}
                         </Link>
                         {/* </div> */}
+                        <div className='gap-3 items-center lg:flex hidden'>
+                                <div className='flex items-center gap-3 px-3 '>
+                                    <span><CiSearch className='text-xl' /></span>
+                                    <span className=''>Search</span>
+                                </div>
+                                {/* <div className='flex items-center gap-3'>
+                                <span><FaRegCircleUser className='text-lg' /></span>
+                                <span className=''>Sign In</span>
+                            </div> */}
+
+                            </div>
                         <div className='md:flex hidden'>
                             <ul className='flex justify-center items-center gap-10'>
                                 <li className='relative'><Link to={'/'} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/")
@@ -54,17 +65,6 @@ const Navbar = () => {
                                     : ""
                                     }`}>Contact</Link></li>
                             </ul>
-                            <div className='gap-3 items-center lg:flex hidden'>
-                                <div className='flex items-center gap-3 px-3 '>
-                                    <span><CiSearch className='text-xl' /></span>
-                                    <span className=''>Search</span>
-                                </div>
-                                {/* <div className='flex items-center gap-3'>
-                                <span><FaRegCircleUser className='text-lg' /></span>
-                                <span className=''>Sign In</span>
-                            </div> */}
-
-                            </div>
                         </div>
                         <div className='md:hidden flex'>
                             <span className='text-2xl cursor-pointer' onClick={() => setShowMenu(true)}>

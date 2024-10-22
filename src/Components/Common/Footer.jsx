@@ -88,20 +88,20 @@ import { MdOutlineMailOutline } from "react-icons/md"
 
 export default function Footer() {
   return (
-    // <footer className="bg-BgColor border-t-2 border-BgGolden text-gray-800 pt-10 px-4 w-full">
-    <footer className="bg-black border-t-2 border-black text-white pt-16 px-4 w-full">
+    <footer className="bg-BgColor shadow-custom border-BgGolden text-gray-800 pt-10 px-4 w-full">
+    {/* <footer className="bg-black border-t-2 border-black text-white pt-16 px-4 w-full"> */}
       <div className="mx-auto">
         <h2 className="2xl:text-6xl lg:text-5xl md:text-4xl text-2xl font-serif mb-6 md:text-center text-start">LET'S CONNECT WITH US</h2>
         <form className="flex  md:flex-row flex-col gap-3 justify-center md:items-center items-start mb-12">
           <input
             type="email"
             placeholder="Enter your e-mail"
-            className="border-2 bg-transparent outline-none border-white md:rounded-full rounded-lg px-5 py-3 md:w-72 w-full"
+            className="border-2 bg-transparent outline-none border-BgGolden md:rounded-full rounded-lg px-5 py-3 md:w-72 w-full"
           />
           <div className="md:w-fit w-full flex justify-start">
           <button
             type="submit"
-            className="bg-white text-black md:rounded-full rounded-lg md:px-5 px-2 md:py-3 py-2 md:ml-2 w-fit"
+            className="bg-BgGolden text-white md:rounded-full rounded-lg md:px-5 px-2 md:py-3 py-2 md:ml-2 w-fit"
             >
             SUBSCRIBE NOW
           </button>
