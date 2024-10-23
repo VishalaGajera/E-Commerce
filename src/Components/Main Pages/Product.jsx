@@ -118,6 +118,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 0.81,
       "price_per_bag": 44.55,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -127,6 +128,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 0.89,
       "price_per_bag": 48.95,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -136,6 +138,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 0.94,
       "price_per_bag": 51.70,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -145,6 +148,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.17,
       "price_per_bag": 64.35,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -154,6 +158,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.10,
       "price_per_bag": 60.50,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -163,6 +168,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 0.99,
       "price_per_bag": 54.45,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -172,6 +178,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.12,
       "price_per_bag": 61.60,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -181,6 +188,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 0.74,
       "price_per_bag": 40.70,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -190,6 +198,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 0.69,
       "price_per_bag": 37.95,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -199,6 +208,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 0.81,
       "price_per_bag": 44.55,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -208,6 +218,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.79,
       "price_per_bag": 98.45,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -217,6 +228,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.59,
       "price_per_bag": 87.70,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -226,6 +238,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.85,
       "price_per_bag": 101.75,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -235,6 +248,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.55,
       "price_per_bag": 85.25,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -244,6 +258,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.62,
       "price_per_bag": 89.10,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -253,6 +268,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.29,
       "price_per_bag": 70.99,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -262,6 +278,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.36,
       "price_per_bag": 68.00,
+      "Size_LB":"50LB",
       "rating": 5
     },
     {
@@ -271,6 +288,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.38,
       "price_per_bag": 75.90,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -280,6 +298,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.69,
       "price_per_bag": 92.99,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -289,6 +308,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.83,
       "price_per_bag": 100.65,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -298,6 +318,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.43,
       "price_per_bag": 78.65,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -307,6 +328,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.38,
       "price_per_bag": 75.99,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -316,6 +338,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.31,
       "price_per_bag": 71.99,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -325,6 +348,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.46,
       "price_per_bag": 80.30,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -334,6 +358,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.48,
       "price_per_bag": 81.40,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -343,6 +368,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.20,
       "price_per_bag": 66.00,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -352,6 +378,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.14,
       "price_per_bag": 62.70,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -361,6 +388,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 0.99,
       "price_per_bag": 54.45,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -370,6 +398,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.59,
       "price_per_bag": 87.45,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -379,6 +408,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.66,
       "price_per_bag": 83.00,
+      "Size_LB":"50LB",
       "rating": 5
     },
     {
@@ -388,6 +418,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.58,
       "price_per_bag": 79.00,
+      "Size_LB":"50LB",
       "rating": 5
     },
     {
@@ -397,6 +428,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.76,
       "price_per_bag": 96.80,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -406,6 +438,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 0.76,
       "price_per_bag": 38.00,
+      "Size_LB":"50LB",
       "rating": 5
     },
     {
@@ -415,6 +448,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.00,
       "price_per_bag": 49.99,
+      "Size_LB":"50LB",
       "rating": 5
     },
     {
@@ -424,6 +458,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.86,
       "price_per_bag": 102.30,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -433,6 +468,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 2.02,
       "price_per_bag": 111.10,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -442,6 +478,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 2.04,
       "price_per_bag": 112.20,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -451,6 +488,7 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 2.63,
       "price_per_bag": 144.65,
+      "Size_LB":"55LB",
       "rating": 5
     },
     {
@@ -460,501 +498,557 @@ const Product = () => {
       "category": "Beans & Lentils",
       "price_per_lb": 1.13,
       "price_per_bag": 56.50,
+      "Size_LB":"50LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Flours/Sher_Besan_40lb.png",
-      "name": "Sher Besan (40lb)",
+      "name": "Sher Besan",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 1.35,
       "price_per_bag": 53.99,
+      "Size_LB":"40LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Flours/Sher_Durum_Atta_20lb.png",
-      "name": "Sher Durum Atta (20lb)",
+      "name": "Sher Durum Atta",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 0.76,
       "price_per_bag": 15.29,
+      "Size_LB":"20LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Flours/Sher_Whole_Wheat_Atta_20lb.png",
-      "name": "Sher Whole Wheat Atta (20lb)",
+      "name": "Sher Whole Wheat Atta",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 0.82,
       "price_per_bag": 16.30,
+      "Size_LB":"20LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Flours/Sher_Besan_4lb.png",
-      "name": "Sher Besan (4lb)",
+      "name": "Sher Besan",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 1.37,
       "price_per_bag": 5.49,
+      "Size_LB":"4LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Flours/Sher_Corn_Flour_4lb.png",
-      "name": "Sher Corn Flour (4lb)",
+      "name": "Sher Corn Flour",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 1.37,
       "price_per_bag": 5.49,
+      "Size_LB":"4LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Flours/Sher_Corn_Flour_8lb.png",
-      "name": "Sher Corn Flour (8lb)",
+      "name": "Sher Corn Flour",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 1.25,
       "price_per_bag": 9.99,
+      "Size_LB":"8LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Flours/Sher_Corn_Flour_20lb.png",
-      "name": "Sher Corn Flour (20lb)",
+      "name": "Sher Corn Flour",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 0.89,
       "price_per_bag": 17.70,
+      "Size_LB":"20LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Flours/Golden_Temple_Durum_Atta.png",
-      "name": "Golden Temple Durum Atta (20lb)",
+      "name": "Golden Temple Durum Atta",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 0.85,
       "price_per_bag": 17.00,
+      "Size_LB":"20LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Flours/Golden_Temple_Wheat_Atta_Purple.png",
-      "name": "Golden Temple Wheat Atta Purple (20lb)",
+      "name": "Golden Temple Wheat Atta Purple ",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 0.85,
       "price_per_bag": 17.00,
+      "Size_LB":"20LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
-      "name": "IC 1121 Basmati Long Grain Steam Rice (40lbs)",
+      "name": "IC 1121 Basmati Long Grain Steam Rice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.38,
       "price_per_bag": 55.00,
+      "Size_LB":"40LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
-      "name": "IC 1121 Basmati Long Grain Steam Rice (10lbs)",
+      "name": "IC 1121 Basmati Long Grain Steam Rice ",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.50,
       "price_per_bag": 15.00,
+      "Size_LB":"10LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
-      "name": "IC 1121 Basmati Long Grain Creamy Sella Rice (40lbs)",
+      "name": "IC 1121 Basmati Long Grain Creamy Sella Rice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.25,
       "price_per_bag": 50.00,
+      "Size_LB":"40LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
-      "name": "IC 1121 Basmati Long Grain Creamy Sella Rice (10lbs)",
+      "name": "IC 1121 Basmati Long Grain Creamy Sella Rice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.30,
       "price_per_bag": 13.00,
+      "Size_LB":"10LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Rice/IC_Rozana_Basmati_10lbs.png",
-      "name": "IC Rozana Basmati (40lbs)",
+      "name": "IC Rozana Basmati",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.10,
       "price_per_bag": 44.00,
+      "Size_LB":"40LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Rice/IC_Rozana_Basmati_10lbs.png",
-      "name": "IC Rozana Basmati (10lbs)",
+      "name": "IC Rozana Basmati",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.10,
       "price_per_bag": 11.00,
+      "Size_LB":"10LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Rice/Handi_Golden_Sella_Basmati_Rice.png",
-      "name": "Marhaba Basmati Steam Rice (40lbs)",
+      "name": "Marhaba Basmati Steam Rice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.10,
       "price_per_bag": 44.00,
+      "Size_LB":"40LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Rice/Handi_Golden_Sella_Basmati_Rice.png",
-      "name": "Handi Golden Sella Basmati Rice (40lbs)",
+      "name": "Handi Golden Sella Basmati Rice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.12,
       "price_per_bag": 44.99,
+      "Size_LB":"40LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Bay_Leaves.png",
-      "name": "Bay Leaves (1lb)",
+      "name": "Bay Leaves",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 7.29,
       "price_per_bag": 7.29,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Black_Cardamom.png",
-      "name": "Black Cardamom (1lb)",
+      "name": "Black Cardamom",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 15.49,
       "price_per_bag": 15.49,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Black_Pepper_Ground.png",
-      "name": "Black Pepper Ground (1lb)",
+      "name": "Black Pepper Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 6.59,
       "price_per_bag": 6.59,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Black_Pepper_Groun.png",
-      "name": "Black Pepper Whole (1lb)",
+      "name": "Black Pepper Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 6.50,
       "price_per_bag": 6.50,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Chilli_Powder_Extra_Hot.png",
-      "name": "Chilli Powder Extra Hot (1lb)",
+      "name": "Chilli Powder Extra Hot",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.59,
       "price_per_bag": 4.59,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Chilli_Powder_Kashmiri.png",
-      "name": "Chilli Powder Kashmiri (1lb)",
+      "name": "Chilli Powder Kashmiri",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.69,
       "price_per_bag": 4.69,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Chilli_Powder_Regular.png",
-      "name": "Chilli Powder Regular (1lb)",
+      "name": "Chilli Powder Regular",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.99,
       "price_per_bag": 3.99,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Chilli_Whole.png",
-      "name": "Chilli Whole (1lb)",
+      "name": "Chilli Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 6.69,
       "price_per_bag": 6.69,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Cinnamon_Ground.png",
-      "name": "Cinnamon Ground (1lb)",
+      "name": "Cinnamon Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 5.29,
       "price_per_bag": 5.29,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Cinnamon_Whole_Roll.png",
-      "name": "Cinnamon Whole Roll (1lb)",
+      "name": "Cinnamon Whole Roll",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 7.59,
       "price_per_bag": 7.59,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Cinnamon_Whole_Flat.png",
-      "name": "Cinnamon Whole Flat (1lb)",
+      "name": "Cinnamon Whole Flat",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.99,
       "price_per_bag": 3.99,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Clove_Powder.png",
-      "name": "Clove Powder (1lb)",
+      "name": "Clove Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 13.79,
       "price_per_bag": 13.79,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Clove_Whole.png",
-      "name": "Clove Whole (1lb)",
+      "name": "Clove Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 12.69,
       "price_per_bag": 12.69,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Coriander_Ground.png",
-      "name": "Coriander Ground (1lb)",
+      "name": "Coriander Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 2.59,
       "price_per_bag": 2.59,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Coriander_Whole.png",
-      "name": "Coriander Whole (1lb)",
+      "name": "Coriander Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 2.59,
       "price_per_bag": 2.59,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Crushed_Chilli_(Chilli_Flakes).png",
-      "name": "Crushed Chilli (Chilli Flakes) (1lb)",
+      "name": "Crushed Chilli (Chilli Flakes)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.99,
       "price_per_bag": 4.99,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Cumin_Ground.png",
-      "name": "Cumin Ground (1lb)",
+      "name": "Cumin Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 5.69,
       "price_per_bag": 5.69,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Cumin_Whole.png",
-      "name": "Cumin Whole (1lb)",
+      "name": "Cumin Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 5.69,
       "price_per_bag": 5.69,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Fennel_Powder.png",
-      "name": "Fennel Powder (1lb)",
+      "name": "Fennel Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.19,
       "price_per_bag": 3.19,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Fennel_Seed.png",
-      "name": "Fennel Seed (1lb)",
+      "name": "Fennel Seed",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.19,
       "price_per_bag": 3.19,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Garam_Masala.png",
-      "name": "Garam Masala (1lb)",
+      "name": "Garam Masala",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.50,
       "price_per_bag": 4.50,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Garlic_Powder.png",
-      "name": "Garlic Powder (1lb)",
+      "name": "Garlic Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.49,
       "price_per_bag": 3.49,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Green_Cardamom.png",
-      "name": "Green Cardamom (1lb)",
+      "name": "Green Cardamom",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 24.99,
       "price_per_bag": 24.99,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Mace_Spice_300gm.png",
-      "name": "Mace Spice (300gm)",
+      "name": "Mace Spice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 34.00,
       "price_per_bag": 22.50,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Black_Mustard_Seed_Medium.png",
-      "name": "Black Mustard Seed Medium (1lb)",
+      "name": "Black Mustard Seed Medium",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 1.39,
       "price_per_bag": 1.39,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Black_Mustard_Seed_Big.png",
-      "name": "Black Mustard Seed Big (1lb)",
+      "name": "Black Mustard Seed Big",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 1.39,
       "price_per_bag": 1.39,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Nutmeg_Powder.png",
-      "name": "Nutmeg Powder (1lb)",
+      "name": "Nutmeg Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 11.29,
       "price_per_bag": 11.29,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Nutmeg_Whole.png",
-      "name": "Nutmeg Whole (1lb)",
+      "name": "Nutmeg Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 10.49,
       "price_per_bag": 10.49,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Onion_Powder.png",
-      "name": "Onion Powder (1lb)",
+      "name": "Onion Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.99,
       "price_per_bag": 3.99,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Spanish_Paprika.png",
-      "name": "Spanish Paprika (1lb)",
+      "name": "Spanish Paprika",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.79,
       "price_per_bag": 3.79,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Star_Anise.png",
-      "name": "Star Anise (1lb)",
+      "name": "Star Anise",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 8.99,
       "price_per_bag": 8.99,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Turmeric_Ground.png",
-      "name": "Turmeric Ground (1lb)",
+      "name": "Turmeric Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 2.59,
       "price_per_bag": 2.59,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Sesame_seed.png",
-      "name": "Sesame Seed (1lb)",
+      "name": "Sesame Seed",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.19,
       "price_per_bag": 3.19,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Sesame_Seed_Black.png",
-      "name": "Sesame Seed Black (1lb)",
+      "name": "Sesame Seed Black",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.49,
       "price_per_bag": 3.49,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Poppy_Seed_White.png",
-      "name": "Poppy Seed White (1lb)",
+      "name": "Poppy Seed White",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 5.19,
       "price_per_bag": 5.19,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Pathar_Phool.png",
-      "name": "Pathar Phool (1lb)",
+      "name": "Pathar Phool",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 14.99,
       "price_per_bag": 14.99,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Dry_Mint.png",
-      "name": "Dry Mint (1lb)",
+      "name": "Dry Mint",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.49,
       "price_per_bag": 4.49,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Deggi_Mirch.png",
-      "name": "Deggi Mirch (1lb)",
+      "name": "Deggi Mirch",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 6.00,
       "price_per_bag": 6.00,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
@@ -964,24 +1058,27 @@ const Product = () => {
       "category": "Spices",
       "price_per_lb": 7.27,
       "price_per_bag": 16.00,
+      "Size_LB":"2.2LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Peanut_Red_skin_small.png",
-      "name": "Peanut Red Skin Small (1lb)",
+      "name": "Peanut Red Skin Small",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 1.99,
       "price_per_bag": 1.99,
+      "Size_LB":"1LB",
       "rating": 5
     },
     {
       "image": "/src/assets/Images/Spices/Peanut_Red_Skin_Big.png",
-      "name": "Peanut Red Skin Big (1lb)",
+      "name": "Peanut Red Skin Big",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 2.49,
       "price_per_bag": 2.49,
+      "Size_LB":"1LB",
       "rating": 5
     },
     // {
@@ -1152,11 +1249,18 @@ const Product = () => {
                     </div>
                   ))}
                 </div> */}
-                <div className="md:flex flex-col gap-1 w-full border-r-2">
-                  {menuData.map((menu, index) => (
-                    <div key={index} className="bg-BgColor border-b">
+                <div className="md:flex flex-col gap-1 w-full">
+                  {menuData.map((menu, index) =>{
+                    console.log("======================================");
+                  console.log(activeCategory);
+                  console.log(menu.title);
+                  console.log(activeCategory === menu.title);
+                  console.log("==========================================");
+                  
+                  return (
+                    <div key={index} className={`bg-BgColor border-b ${selectedCategory === menu.title ? "border-BgGolden" : ""}`}>
                       <div
-                        className={`flex flex-row justify-between items-center cursor-pointer p-3 ${activeCategory === index ? "text-BgGolden" : "text-black"}`}
+                        className={`flex flex-row justify-between items-center cursor-pointer p-3 ${selectedCategory === menu.title ? "text-BgGolden" : "text-black"}`}
                         // onClick={() => toggleCategory(index)}
                         onClick={() => handleCategorySelect(menu.title)}
                       >
@@ -1173,14 +1277,14 @@ const Product = () => {
                         ))}
                       </ul> */}
                     </div>
-                  ))}
+                  )})}
                 </div>
               </div>
             </div>
             <div className="md:col-span-3">
-              <main className="flex-1 md:px-5">
+              <main className="flex-1 pl-5">
                 {/* <div className={`grid ${getGridClass()} gap-6`}> */}
-                <div className={`grid grid-cols-4 gap-6`}>
+                <div className={`grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full`}>
                   {currentProducts.map((product, index) => (
                     <div
                       key={index}
@@ -1192,7 +1296,7 @@ const Product = () => {
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="w-full h-64 object-contain transition-transform duration-300 hover:scale-110"
+                          className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
                         />
                         {/* {hoveredProduct === index && (
                           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center space-x-4 transition-opacity duration-300">
@@ -1215,15 +1319,17 @@ const Product = () => {
                           {[...Array(5)].map((_, i) => (
                             <FaStar
                               key={i}
-                              className={`h-5 w-5 ${i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'}`}
+                              "Size_LB":"1LB",className={`h-5 w-5 ${i < Math.floor(product
+                              .rating) ? 'text-yellow-400' : 'text-gray-300'}`}
                             />
                           ))}
-                          <span className="ml-2 text-sm text-gray-600">{product.rating.toFixed(1)}</span>
+                          "Size_LB":"1LB",<span className="ml-2 text-sm text-gray-600">{product
+                          .rating.toFixed(1)}</span>
                         </div> */}
                       </div>
                       <div className="p-4 bg-gray-50 flex items-center justify-between">
                         <span className="text-xl font-bold">${product.price_per_bag}</span>
-                        <span>10KG</span>
+                        <span>{product.Size_LB}</span>
                         {/* <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
                           Add to Cart
                         </button> */}
