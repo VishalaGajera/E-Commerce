@@ -112,7 +112,7 @@ const Product = () => {
 
   const products = [
     {
-      "image": "/Beans_Lentils/Whole_Red_Lentils_(Masoor_Whole).png",
+      "image": "/Images/Beans_Lentils/Whole_Red_Lentils_(Masoor_Whole).png",
       "name": "Whole Red Lentils (Masoor Whole)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -126,7 +126,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Red_Split_Lentils_(Masoor_Dal).png",
+      "image": "/Images/Beans_Lentils/Red_Split_Lentils_(Masoor_Dal).png",
       "name": "Red Split Lentils (Masoor Dal)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -139,7 +139,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Red_Football_Lentils_(Masoor_Gota).png",
+      "image": "/Images/Beans_Lentils/Red_Football_Lentils_(Masoor_Gota).png",
       "name": "Red Football Lentils (Masoor Gota)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -152,7 +152,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Lairds_Lentils_(Large_Green_Lentils).png",
+      "image": "/Images/Beans_Lentils/Lairds_Lentils_(Large_Green_Lentils).png",
       "name": "Lairds Lentils (Large Green Lentils)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -165,7 +165,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Eston_Lentils.png",
+      "image": "/Images/Beans_Lentils/Eston_Lentils.png",
       "name": "Eston Lentils",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -178,7 +178,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/8mm_Chickpeas.png",
+      "image": "/Images/Beans_Lentils/8mm_Chickpeas.png",
       "name": "8mm Chickpeas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -191,7 +191,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/9mm_Chickpeas.png",
+      "image": "/Images/Beans_Lentils/9mm_Chickpeas.png",
       "name": "9mm Chickpeas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -204,7 +204,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Yellow_Split_Peas.png",
+      "image": "/Images/Beans_Lentils/Yellow_Split_Peas.png",
       "name": "Yellow Split Peas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -217,7 +217,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Whole_Yellow_Peas.png",
+      "image": "/Images/Beans_Lentils/Whole_Yellow_Peas.png",
       "name": "Whole Yellow Peas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -230,7 +230,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Whole_Green_Peas.png",
+      "image": "/Images/Beans_Lentils/Whole_Green_Peas.png",
       "name": "Whole Green Peas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -243,7 +243,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Urad_Gota.png",
+      "image": "/Images/Beans_Lentils/Urad_Gota.png",
       "name": "Urad Gota",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -256,7 +256,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Urad_Dal.png",
+      "image": "/Images/Beans_Lentils/Urad_Dal.png",
       "name": "Urad Dal",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -269,7 +269,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Urad_Whole_(Australian).png",
+      "image": "/Images/Beans_Lentils/Urad_Whole_(Australian).png",
       "name": "Urad Whole (Australian)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -282,7 +282,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Urad_Whole.png",
+      "image": "/Images/Beans_Lentils/Urad_Whole.png",
       "name": "Urad Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -295,7 +295,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Urad_Chilka.png",
+      "image": "/Images/Beans_Lentils/Urad_Chilka.png",
       "name": "Urad Chilka",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -308,7 +308,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Black_Eyed_Beans_Premium_Quality.png",
+      "image": "/Images/Beans_Lentils/Black_Eyed_Beans_Premium_Quality.png",
       "name": "Black Eyed Beans - Premium Quality",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -321,7 +321,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Light_Red_Kidney_Beans.png",
+      "image": "/Images/Beans_Lentils/Light_Red_Kidney_Beans.png",
       "name": "Light Red Kidney Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -334,7 +334,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Dark_Red_Kidney_Beans.png",
+      "image": "/Images/Beans_Lentils/Dark_Red_Kidney_Beans.png",
       "name": "Dark Red Kidney Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -347,7 +347,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Toor_Dal_Dry.png",
+      "image": "/Images/Beans_Lentils/Toor_Dal_Dry.png",
       "name": "Toor Dal Dry",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -360,7 +360,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Toor_Whole.png",
+      "image": "/Images/Beans_Lentils/Toor_Whole.png",
       "name": "Toor Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -373,7 +373,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Moong_Dal.png",
+      "image": "/Images/Beans_Lentils/Moong_Dal.png",
       "name": "Moong Dal",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -386,7 +386,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Moong_Whole_Jumbo_(Australian).png",
+      "image": "/Images/Beans_Lentils/Moong_Whole_Jumbo_(Australian).png",
       "name": "Moong Whole Jumbo (Australian)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -399,7 +399,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Moong_Whole_(Medium).png",
+      "image": "/Images/Beans_Lentils/Moong_Whole_(Medium).png",
       "name": "Moong Whole (Medium)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -412,7 +412,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Moong_Chilka.png",
+      "image": "/Images/Beans_Lentils/Moong_Chilka.png",
       "name": "Moong Chilka",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -425,7 +425,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Moth_Beans.png",
+      "image": "/Images/Beans_Lentils/Moth_Beans.png",
       "name": "Moth Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -438,7 +438,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Chana_Dal.png",
+      "image": "/Images/Beans_Lentils/Chana_Dal.png",
       "name": "Chana Dal",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -451,7 +451,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Kala_Chana.png",
+      "image": "/Images/Beans_Lentils/Kala_Chana.png",
       "name": "Kala Chana",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -464,7 +464,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Val_Whole.png",
+      "image": "/Images/Beans_Lentils/Val_Whole.png",
       "name": "Val Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -477,7 +477,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Black_Beans.png",
+      "image": "/Images/Beans_Lentils/Black_Beans.png",
       "name": "Black Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -490,7 +490,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Pinto_Beans.png",
+      "image": "/Images/Beans_Lentils/Pinto_Beans.png",
       "name": "Pinto Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -503,7 +503,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Cranberry_Beans_(50lbs).png",
+      "image": "/Images/Beans_Lentils/Cranberry_Beans_(50lbs).png",
       "name": "Cranberry Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -516,7 +516,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Jumbo_Fava_Beans.png",
+      "image": "/Images/Beans_Lentils/Jumbo_Fava_Beans.png",
       "name": "Jumbo Fava Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -529,7 +529,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Whole_Fava_Beans.png",
+      "image": "/Images/Beans_Lentils/Whole_Fava_Beans.png",
       "name": "Whole Fava Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -542,7 +542,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Split_Fava_Beans.png",
+      "image": "/Images/Beans_Lentils/Split_Fava_Beans.png",
       "name": "Split Fava Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -555,7 +555,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Baby_Lima_Beans.png",
+      "image": "/Images/Beans_Lentils/Baby_Lima_Beans.png",
       "name": "Baby Lima Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -568,7 +568,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Conventional_White_Quinoa.png",
+      "image": "/Images/Beans_Lentils/Conventional_White_Quinoa.png",
       "name": "Conventional White Quinoa",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -581,7 +581,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Conventional_Red_Quinoa.png",
+      "image": "/Images/Beans_Lentils/Conventional_Red_Quinoa.png",
       "name": "Conventional Red Quinoa",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -594,7 +594,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Conventional_Black_Quinoa.png",
+      "image": "/Images/Beans_Lentils/Conventional_Black_Quinoa.png",
       "name": "Conventional Black Quinoa",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -607,7 +607,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/Beans_Lentils/Brown_Flax.png",
+      "image": "/Images/Beans_Lentils/Brown_Flax.png",
       "name": "Brown Flax",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -620,7 +620,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Flours/Sher_Besan_40lb.png",
+      "image": "/Images/Flours/Sher_Besan_40lb.png",
       "name": "Sher Besan",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
@@ -636,7 +636,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Flours/Sher_Durum_Atta_20lb.png",
+      "image": "/Images/Flours/Sher_Durum_Atta_20lb.png",
       "name": "Sher Durum Atta",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
@@ -649,7 +649,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Flours/Sher_Whole_Wheat_Atta_20lb.png",
+      "image": "/Images/Flours/Sher_Whole_Wheat_Atta_20lb.png",
       "name": "Sher Whole Wheat Atta",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
@@ -662,7 +662,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Flours/Sher_Corn_Flour_4lb.png",
+      "image": "/Images/Flours/Sher_Corn_Flour_4lb.png",
       "name": "Sher Corn Flour",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
@@ -684,7 +684,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Flours/Golden_Temple_Durum_Atta.png",
+      "image": "/Images/Flours/Golden_Temple_Durum_Atta.png",
       "name": "Golden Temple Durum Atta",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
@@ -697,7 +697,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Flours/Golden_Temple_Wheat_Atta_Purple.png",
+      "image": "/Images/Flours/Golden_Temple_Wheat_Atta_Purple.png",
       "name": "Golden Temple Wheat Atta Purple ",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
@@ -710,7 +710,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
+      "image": "/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
       "name": "IC 1121 Basmati Long Grain Steam Rice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
@@ -726,7 +726,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
+      "image": "/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
       "name": "IC 1121 Basmati Long Grain Creamy Sella Rice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
@@ -742,7 +742,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Rice/IC_Rozana_Basmati_10lbs.png",
+      "image": "/Images/Rice/IC_Rozana_Basmati_10lbs.png",
       "name": "IC Rozana Basmati",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
@@ -758,7 +758,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Rice/Handi_Golden_Sella_Basmati_Rice.png",
+      "image": "/Images/Rice/Handi_Golden_Sella_Basmati_Rice.png",
       "name": "Marhaba Basmati Steam Rice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
@@ -771,7 +771,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Rice/Handi_Golden_Sella_Basmati_Rice.png",
+      "image": "/Images/Rice/Handi_Golden_Sella_Basmati_Rice.png",
       "name": "Handi Golden Sella Basmati Rice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
@@ -784,7 +784,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Bay_Leaves.png",
+      "image": "/Images/Spices/Bay_Leaves.png",
       "name": "Bay Leaves",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -797,7 +797,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Black_Cardamom.png",
+      "image": "/Images/Spices/Black_Cardamom.png",
       "name": "Black Cardamom",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -810,7 +810,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Black_Pepper_Ground.png",
+      "image": "/Images/Spices/Black_Pepper_Ground.png",
       "name": "Black Pepper Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -823,7 +823,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Black_Pepper_Groun.png",
+      "image": "/Images/Spices/Black_Pepper_Groun.png",
       "name": "Black Pepper Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -836,7 +836,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Chilli_Powder_Extra_Hot.png",
+      "image": "/Images/Spices/Chilli_Powder_Extra_Hot.png",
       "name": "Chilli Powder Extra Hot",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -849,7 +849,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Chilli_Powder_Kashmiri.png",
+      "image": "/Images/Spices/Chilli_Powder_Kashmiri.png",
       "name": "Chilli Powder Kashmiri",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -862,7 +862,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Chilli_Powder_Regular.png",
+      "image": "/Images/Spices/Chilli_Powder_Regular.png",
       "name": "Chilli Powder Regular",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -875,7 +875,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Chilli_Whole.png",
+      "image": "/Images/Spices/Chilli_Whole.png",
       "name": "Chilli Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -888,7 +888,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Cinnamon_Ground.png",
+      "image": "/Images/Spices/Cinnamon_Ground.png",
       "name": "Cinnamon Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -901,7 +901,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Cinnamon_Whole_Roll.png",
+      "image": "/Images/Spices/Cinnamon_Whole_Roll.png",
       "name": "Cinnamon Whole Roll",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -914,7 +914,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Cinnamon_Whole_Flat.png",
+      "image": "/Images/Spices/Cinnamon_Whole_Flat.png",
       "name": "Cinnamon Whole Flat",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -927,7 +927,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Clove_Powder.png",
+      "image": "/Images/Spices/Clove_Powder.png",
       "name": "Clove Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -940,7 +940,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Clove_Whole.png",
+      "image": "/Images/Spices/Clove_Whole.png",
       "name": "Clove Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -953,7 +953,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Coriander_Ground.png",
+      "image": "/Images/Spices/Coriander_Ground.png",
       "name": "Coriander Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -966,7 +966,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Coriander_Whole.png",
+      "image": "/Images/Spices/Coriander_Whole.png",
       "name": "Coriander Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -979,7 +979,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Crushed_Chilli_(Chilli_Flakes).png",
+      "image": "/Images/Spices/Crushed_Chilli_(Chilli_Flakes).png",
       "name": "Crushed Chilli (Chilli Flakes)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -992,7 +992,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Cumin_Ground.png",
+      "image": "/Images/Spices/Cumin_Ground.png",
       "name": "Cumin Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1005,7 +1005,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Cumin_Whole.png",
+      "image": "/Images/Spices/Cumin_Whole.png",
       "name": "Cumin Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1018,7 +1018,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Fennel_Powder.png",
+      "image": "/Images/Spices/Fennel_Powder.png",
       "name": "Fennel Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1031,7 +1031,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Fennel_Seed.png",
+      "image": "/Images/Spices/Fennel_Seed.png",
       "name": "Fennel Seed",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1044,7 +1044,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Garam_Masala.png",
+      "image": "/Images/Spices/Garam_Masala.png",
       "name": "Garam Masala",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1057,7 +1057,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Garlic_Powder.png",
+      "image": "/Images/Spices/Garlic_Powder.png",
       "name": "Garlic Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1070,7 +1070,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Green_Cardamom.png",
+      "image": "/Images/Spices/Green_Cardamom.png",
       "name": "Green Cardamom",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1083,7 +1083,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Mace_Spice_300gm.png",
+      "image": "/Images/Spices/Mace_Spice_300gm.png",
       "name": "Mace Spice",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1096,7 +1096,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Black_Mustard_Seed_Medium.png",
+      "image": "/Images/Spices/Black_Mustard_Seed_Medium.png",
       "name": "Black Mustard Seed Medium",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1109,7 +1109,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Black_Mustard_Seed_Big.png",
+      "image": "/Images/Spices/Black_Mustard_Seed_Big.png",
       "name": "Black Mustard Seed Big",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1122,7 +1122,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Nutmeg_Powder.png",
+      "image": "/Images/Spices/Nutmeg_Powder.png",
       "name": "Nutmeg Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1135,7 +1135,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Nutmeg_Whole.png",
+      "image": "/Images/Spices/Nutmeg_Whole.png",
       "name": "Nutmeg Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1148,7 +1148,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Onion_Powder.png",
+      "image": "/Images/Spices/Onion_Powder.png",
       "name": "Onion Powder",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1161,7 +1161,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Spanish_Paprika.png",
+      "image": "/Images/Spices/Spanish_Paprika.png",
       "name": "Spanish Paprika",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1174,7 +1174,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Star_Anise.png",
+      "image": "/Images/Spices/Star_Anise.png",
       "name": "Star Anise",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1187,7 +1187,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Turmeric_Ground.png",
+      "image": "/Images/Spices/Turmeric_Ground.png",
       "name": "Turmeric Ground",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1200,7 +1200,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Sesame_seed.png",
+      "image": "/Images/Spices/Sesame_seed.png",
       "name": "Sesame Seed",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1213,7 +1213,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Sesame_Seed_Black.png",
+      "image": "/Images/Spices/Sesame_Seed_Black.png",
       "name": "Sesame Seed Black",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1226,7 +1226,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Poppy_Seed_White.png",
+      "image": "/Images/Spices/Poppy_Seed_White.png",
       "name": "Poppy Seed White",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1239,7 +1239,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Pathar_Phool.png",
+      "image": "/Images/Spices/Pathar_Phool.png",
       "name": "Pathar Phool",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1252,7 +1252,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Dry_Mint.png",
+      "image": "/Images/Spices/Dry_Mint.png",
       "name": "Dry Mint",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1265,7 +1265,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Deggi_Mirch.png",
+      "image": "/Images/Spices/Deggi_Mirch.png",
       "name": "Deggi Mirch",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1278,7 +1278,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Kasoori_Methi.png",
+      "image": "/Images/Spices/Kasoori_Methi.png",
       "name": "Kasoori Methi (2.2kg)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1291,7 +1291,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Peanut_Red_skin_small.png",
+      "image": "/Images/Spices/Peanut_Red_skin_small.png",
       "name": "Peanut Red Skin Small",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1304,7 +1304,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Spices/Peanut_Red_Skin_Big.png",
+      "image": "/Images/Spices/Peanut_Red_Skin_Big.png",
       "name": "Peanut Red Skin Big",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
@@ -1314,7 +1314,7 @@ const Product = () => {
       "rating": 5
     },
     // {
-    //   "image": "/src/assets/Images/Spices/.png",
+    //   "image": "/Images/Spices/.png",
     //   "name": "Handi Fried Onion (12 * 400)",
     //   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     //   "category": "Spices",

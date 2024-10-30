@@ -1,5 +1,5 @@
 import React from 'react'
-import ContactImg from '../../assets/Images/ContactImg.jpg'
+import ContactImg from '/Images/ContactImg.jpg'
 import { BsPhone } from 'react-icons/bs'
 import { FaPhone } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";

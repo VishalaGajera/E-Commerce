@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import HomeImg from '../../assets/Images/Home.jpg'
+import HomeImg from '/Images/Home.jpg'
 import { CiSearch } from "react-icons/ci";
 // import { FaAngleDown } from "react-icons/fa";
 // import FAQs from './FAQs';
@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
-import Aparna_Foods_1 from '../../assets/Images/Aparna_Foods_1.png'
+import Aparna_Foods_1 from '/Images/Aparna_Foods_1.png'
 // import { FaQuoteLeft } from "react-icons/fa";
 // import { FaStar } from "react-icons/fa";
 

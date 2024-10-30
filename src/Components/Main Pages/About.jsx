@@ -85,7 +85,7 @@
 
 
 import React from 'react'
-import aboutImg from '../../assets/Images/ContactImg.jpg'
+import aboutImg from '/Images/ContactImg.jpg'
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";

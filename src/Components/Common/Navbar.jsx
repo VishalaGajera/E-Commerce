@@ -5,7 +5,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 // import { FaRegCircleUser } from "react-icons/fa6";
 import Footer from './Footer';
-import CC_TRADERS_removebg_preview from '../../assets/Images/CC_TRADERS_removebg_preview.png';
+import CC_TRADERS_removebg_preview from '/Images/CC_TRADERS_removebg_preview.png';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
