@@ -112,7 +112,7 @@ const Product = () => {
 
   const products = [
     {
-      "image": "/assets/Images/Beans_Lentils/Whole_Red_Lentils_(Masoor_Whole).png",
+      "image": "/Beans_Lentils/Whole_Red_Lentils_(Masoor_Whole).png",
       "name": "Whole Red Lentils (Masoor Whole)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -126,7 +126,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/assets/Images/Beans_Lentils/Red_Split_Lentils_(Masoor_Dal).png",
+      "image": "/Beans_Lentils/Red_Split_Lentils_(Masoor_Dal).png",
       "name": "Red Split Lentils (Masoor Dal)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -139,7 +139,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Red_Football_Lentils_(Masoor_Gota).png",
+      "image": "/Beans_Lentils/Red_Football_Lentils_(Masoor_Gota).png",
       "name": "Red Football Lentils (Masoor Gota)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -152,7 +152,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Lairds_Lentils_(Large_Green_Lentils).png",
+      "image": "/Beans_Lentils/Lairds_Lentils_(Large_Green_Lentils).png",
       "name": "Lairds Lentils (Large Green Lentils)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -165,7 +165,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Eston_Lentils.png",
+      "image": "/Beans_Lentils/Eston_Lentils.png",
       "name": "Eston Lentils",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -178,7 +178,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/8mm_Chickpeas.png",
+      "image": "/Beans_Lentils/8mm_Chickpeas.png",
       "name": "8mm Chickpeas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -191,7 +191,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/9mm_Chickpeas.png",
+      "image": "/Beans_Lentils/9mm_Chickpeas.png",
       "name": "9mm Chickpeas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -204,7 +204,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Yellow_Split_Peas.png",
+      "image": "/Beans_Lentils/Yellow_Split_Peas.png",
       "name": "Yellow Split Peas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -217,7 +217,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Whole_Yellow_Peas.png",
+      "image": "/Beans_Lentils/Whole_Yellow_Peas.png",
       "name": "Whole Yellow Peas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -230,7 +230,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Whole_Green_Peas.png",
+      "image": "/Beans_Lentils/Whole_Green_Peas.png",
       "name": "Whole Green Peas",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -243,7 +243,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Urad_Gota.png",
+      "image": "/Beans_Lentils/Urad_Gota.png",
       "name": "Urad Gota",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -256,7 +256,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Urad_Dal.png",
+      "image": "/Beans_Lentils/Urad_Dal.png",
       "name": "Urad Dal",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -269,7 +269,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Urad_Whole_(Australian).png",
+      "image": "/Beans_Lentils/Urad_Whole_(Australian).png",
       "name": "Urad Whole (Australian)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -282,7 +282,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Urad_Whole.png",
+      "image": "/Beans_Lentils/Urad_Whole.png",
       "name": "Urad Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -295,7 +295,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Urad_Chilka.png",
+      "image": "/Beans_Lentils/Urad_Chilka.png",
       "name": "Urad Chilka",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -308,7 +308,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Black_Eyed_Beans_Premium_Quality.png",
+      "image": "/Beans_Lentils/Black_Eyed_Beans_Premium_Quality.png",
       "name": "Black Eyed Beans - Premium Quality",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -321,7 +321,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Light_Red_Kidney_Beans.png",
+      "image": "/Beans_Lentils/Light_Red_Kidney_Beans.png",
       "name": "Light Red Kidney Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -334,7 +334,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Dark_Red_Kidney_Beans.png",
+      "image": "/Beans_Lentils/Dark_Red_Kidney_Beans.png",
       "name": "Dark Red Kidney Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -347,7 +347,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Toor_Dal_Dry.png",
+      "image": "/Beans_Lentils/Toor_Dal_Dry.png",
       "name": "Toor Dal Dry",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -360,7 +360,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Toor_Whole.png",
+      "image": "/Beans_Lentils/Toor_Whole.png",
       "name": "Toor Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -373,7 +373,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Moong_Dal.png",
+      "image": "/Beans_Lentils/Moong_Dal.png",
       "name": "Moong Dal",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -386,7 +386,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Moong_Whole_Jumbo_(Australian).png",
+      "image": "/Beans_Lentils/Moong_Whole_Jumbo_(Australian).png",
       "name": "Moong Whole Jumbo (Australian)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -399,7 +399,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Moong_Whole_(Medium).png",
+      "image": "/Beans_Lentils/Moong_Whole_(Medium).png",
       "name": "Moong Whole (Medium)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -412,7 +412,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Moong_Chilka.png",
+      "image": "/Beans_Lentils/Moong_Chilka.png",
       "name": "Moong Chilka",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -425,7 +425,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Moth_Beans.png",
+      "image": "/Beans_Lentils/Moth_Beans.png",
       "name": "Moth Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -438,7 +438,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Chana_Dal.png",
+      "image": "/Beans_Lentils/Chana_Dal.png",
       "name": "Chana Dal",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -451,7 +451,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Kala_Chana.png",
+      "image": "/Beans_Lentils/Kala_Chana.png",
       "name": "Kala Chana",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -464,7 +464,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Val_Whole.png",
+      "image": "/Beans_Lentils/Val_Whole.png",
       "name": "Val Whole",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -477,7 +477,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Black_Beans.png",
+      "image": "/Beans_Lentils/Black_Beans.png",
       "name": "Black Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -490,7 +490,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Pinto_Beans.png",
+      "image": "/Beans_Lentils/Pinto_Beans.png",
       "name": "Pinto Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -503,7 +503,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Cranberry_Beans_(50lbs).png",
+      "image": "/Beans_Lentils/Cranberry_Beans_(50lbs).png",
       "name": "Cranberry Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -516,7 +516,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Jumbo_Fava_Beans.png",
+      "image": "/Beans_Lentils/Jumbo_Fava_Beans.png",
       "name": "Jumbo Fava Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -529,7 +529,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Whole_Fava_Beans.png",
+      "image": "/Beans_Lentils/Whole_Fava_Beans.png",
       "name": "Whole Fava Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -542,7 +542,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Split_Fava_Beans.png",
+      "image": "/Beans_Lentils/Split_Fava_Beans.png",
       "name": "Split Fava Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -555,7 +555,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Baby_Lima_Beans.png",
+      "image": "/Beans_Lentils/Baby_Lima_Beans.png",
       "name": "Baby Lima Beans",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -568,7 +568,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Conventional_White_Quinoa.png",
+      "image": "/Beans_Lentils/Conventional_White_Quinoa.png",
       "name": "Conventional White Quinoa",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -581,7 +581,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Conventional_Red_Quinoa.png",
+      "image": "/Beans_Lentils/Conventional_Red_Quinoa.png",
       "name": "Conventional Red Quinoa",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -594,7 +594,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Conventional_Black_Quinoa.png",
+      "image": "/Beans_Lentils/Conventional_Black_Quinoa.png",
       "name": "Conventional Black Quinoa",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
@@ -607,7 +607,7 @@ const Product = () => {
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Brown_Flax.png",
+      "image": "/Beans_Lentils/Brown_Flax.png",
       "name": "Brown Flax",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
