@@ -5,12 +5,17 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 // import { FaRegCircleUser } from "react-icons/fa6";
 import Footer from './Footer';
-import Aparna_Foods from '../../assets/Images/Aparna_Foods_1.png';
+import CC_TRADERS_removebg_preview from '../../assets/Images/CC_TRADERS_removebg_preview.png';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const location = useLocation();
     const isActive = (path) => location.pathname === path;
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
 
     return (
         <div className='flex flex-col justify-center items-center w-full'>
@@ -18,22 +23,28 @@ const Navbar = () => {
                 <div className='container'>
                     <header className='flex justify-between items-center w-full'>
                         {/* <div> */}
-                        <Link to={'/'} className='flex justify-center items-center'>
-                            <img src={Aparna_Foods} alt="" className='w-40 h-24' />
+                        <Link to={'/'} className='flex justify-center items-center h-24'>
+                            <img src={CC_TRADERS_removebg_preview} alt="" className='w-fit h-32' />
                             {/* Logo */}
                         </Link>
                         {/* </div> */}
                         <div className='gap-3 items-center lg:flex hidden'>
-                                <div className='flex items-center gap-3 px-3 '>
-                                    <span><CiSearch className='text-xl' /></span>
-                                    <span className=''>Search</span>
-                                </div>
-                                {/* <div className='flex items-center gap-3'>
+                            <div className='flex items-center gap-3 px-4 border rounded-md py-2 w-96'>
+                                <input
+                                    type="text"
+                                    value={searchTerm}
+                                    onChange={handleInputChange}
+                                    placeholder='Search'
+                                    aria-label='Search'
+                                    className='outline-none w-full'
+                                />
+                                <span><CiSearch className='text-xl' /></span>
+                            </div>
+                        </div>
+                        {/* <div className='flex items-center gap-3'>
                                 <span><FaRegCircleUser className='text-lg' /></span>
                                 <span className=''>Sign In</span>
                             </div> */}
-
-                            </div>
                         <div className='md:flex hidden'>
                             <ul className='flex justify-center items-center gap-10'>
                                 <li className='relative'><Link to={'/'} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/")

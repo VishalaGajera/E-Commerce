@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
-import { FaCaretUp, FaCaretDown, FaStar, FaShoppingCart, FaEye } from "react-icons/fa";
+import React, { useEffect, useState } from 'react'
+// import { FaCaretUp, FaCaretDown, FaStar, FaShoppingCart, FaEye } from "react-icons/fa";
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { RxCross2 } from "react-icons/rx";
-import { Link } from 'react-router-dom';
+// import { RxCross2 } from "react-icons/rx";
+// import { Link } from 'react-router-dom';
 import { FaFilter } from "react-icons/fa";
-import Conventional_Red_Quinoa from "/src/assets/Images/Beans_Lentils/Conventional_Red_Quinoa.png"
 
 const Product = () => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
@@ -18,6 +17,7 @@ const Product = () => {
   const productsPerPage = 16;
   // const [viewFilters, setShowFilters]=useState(false);
   const [gridColumns, setGridColumns] = useState(3);
+  const [price, setPrice] = useState("");
 
   const handleItemList = (item) => {
     setSelectedFilters((prev) => [...prev, item]);
@@ -112,23 +112,30 @@ const Product = () => {
 
   const products = [
     {
-      "image": "/src/assets/Images/Beans_Lentils/Whole_Red_Lentils_(Masoor_Whole).png",
+      "image": "/assets/Images/Beans_Lentils/Whole_Red_Lentils_(Masoor_Whole).png",
       "name": "Whole Red Lentils (Masoor Whole)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 0.81,
-      "price_per_bag": 44.55,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 44.55,
+          "size_LB": "55LB",
+        }
+      ],
       "rating": 5
     },
     {
-      "image": "/src/assets/Images/Beans_Lentils/Red_Split_Lentils_(Masoor_Dal).png",
+      "image": "/assets/Images/Beans_Lentils/Red_Split_Lentils_(Masoor_Dal).png",
       "name": "Red Split Lentils (Masoor Dal)",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 0.89,
-      "price_per_bag": 48.95,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 48.95,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -137,8 +144,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 0.94,
-      "price_per_bag": 51.70,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 51.70,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -147,8 +157,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.17,
-      "price_per_bag": 64.35,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 64.35,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -157,8 +170,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.10,
-      "price_per_bag": 60.50,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 60.50,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -167,8 +183,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 0.99,
-      "price_per_bag": 54.45,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 54.45,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -177,8 +196,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.12,
-      "price_per_bag": 61.60,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 61.60,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -187,8 +209,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 0.74,
-      "price_per_bag": 40.70,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 40.70,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -197,8 +222,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 0.69,
-      "price_per_bag": 37.95,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 37.95,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -207,8 +235,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 0.81,
-      "price_per_bag": 44.55,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 44.55,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -217,8 +248,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.79,
-      "price_per_bag": 98.45,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 98.45,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -227,8 +261,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.59,
-      "price_per_bag": 87.70,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 87.70,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -237,8 +274,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.85,
-      "price_per_bag": 101.75,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 101.75,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -247,8 +287,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.55,
-      "price_per_bag": 85.25,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 85.25,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -257,8 +300,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.62,
-      "price_per_bag": 89.10,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 89.10,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -267,8 +313,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.29,
-      "price_per_bag": 70.99,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 70.99,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -277,8 +326,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.36,
-      "price_per_bag": 68.00,
-      "Size_LB":"50LB",
+      "sizes": [
+        {
+          "price_per_bag": 68.00,
+          "size_LB": "50LB",
+        }],
       "rating": 5
     },
     {
@@ -287,8 +339,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.38,
-      "price_per_bag": 75.90,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 75.90,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -297,8 +352,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.69,
-      "price_per_bag": 92.99,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 92.99,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -307,8 +365,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.83,
-      "price_per_bag": 100.65,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 100.65,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -317,8 +378,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.43,
-      "price_per_bag": 78.65,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 78.65,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -327,8 +391,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.38,
-      "price_per_bag": 75.99,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 75.99,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -337,8 +404,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.31,
-      "price_per_bag": 71.99,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 71.99,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -347,8 +417,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.46,
-      "price_per_bag": 80.30,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 80.30,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -357,8 +430,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.48,
-      "price_per_bag": 81.40,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 81.40,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -367,8 +443,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.20,
-      "price_per_bag": 66.00,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 66.00,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -377,8 +456,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.14,
-      "price_per_bag": 62.70,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 62.70,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -387,8 +469,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 0.99,
-      "price_per_bag": 54.45,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 54.45,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -397,8 +482,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.59,
-      "price_per_bag": 87.45,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 87.45,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -407,8 +495,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.66,
-      "price_per_bag": 83.00,
-      "Size_LB":"50LB",
+      "sizes": [
+        {
+          "price_per_bag": 83.00,
+          "size_LB": "50LB",
+        }],
       "rating": 5
     },
     {
@@ -417,8 +508,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.58,
-      "price_per_bag": 79.00,
-      "Size_LB":"50LB",
+      "sizes": [
+        {
+          "price_per_bag": 79.00,
+          "size_LB": "50LB",
+        }],
       "rating": 5
     },
     {
@@ -427,8 +521,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.76,
-      "price_per_bag": 96.80,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 96.80,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -437,8 +534,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 0.76,
-      "price_per_bag": 38.00,
-      "Size_LB":"50LB",
+      "sizes": [
+        {
+          "price_per_bag": 38.00,
+          "size_LB": "50LB",
+        }],
       "rating": 5
     },
     {
@@ -447,8 +547,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.00,
-      "price_per_bag": 49.99,
-      "Size_LB":"50LB",
+      "sizes": [
+        {
+          "price_per_bag": 49.99,
+          "size_LB": "50LB",
+        }],
       "rating": 5
     },
     {
@@ -457,8 +560,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.86,
-      "price_per_bag": 102.30,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 102.30,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -467,8 +573,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 2.02,
-      "price_per_bag": 111.10,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 111.10,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -477,8 +586,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 2.04,
-      "price_per_bag": 112.20,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 112.20,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -487,8 +599,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 2.63,
-      "price_per_bag": 144.65,
-      "Size_LB":"55LB",
+      "sizes": [
+        {
+          "price_per_bag": 144.65,
+          "size_LB": "55LB",
+        }],
       "rating": 5
     },
     {
@@ -497,8 +612,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Beans & Lentils",
       "price_per_lb": 1.13,
-      "price_per_bag": 56.50,
-      "Size_LB":"50LB",
+      "sizes": [
+        {
+          "price_per_bag": 56.50,
+          "size_LB": "50LB",
+        }],
       "rating": 5
     },
     {
@@ -507,8 +625,14 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 1.35,
-      "price_per_bag": 53.99,
-      "Size_LB":"40LB",
+      "sizes": [
+        {
+          "price_per_bag": 53.99,
+          "size_LB": "40LB",
+        }, {
+          "price_per_bag": 5.49,
+          "size_LB": "4LB",
+        }],
       "rating": 5
     },
     {
@@ -517,8 +641,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 0.76,
-      "price_per_bag": 15.29,
-      "Size_LB":"20LB",
+      "sizes": [
+        {
+          "price_per_bag": 15.29,
+          "size_LB": "20LB",
+        }],
       "rating": 5
     },
     {
@@ -527,18 +654,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 0.82,
-      "price_per_bag": 16.30,
-      "Size_LB":"20LB",
-      "rating": 5
-    },
-    {
-      "image": "/src/assets/Images/Flours/Sher_Besan_4lb.png",
-      "name": "Sher Besan",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-      "category": "Flours",
-      "price_per_lb": 1.37,
-      "price_per_bag": 5.49,
-      "Size_LB":"4LB",
+      "sizes": [
+        {
+          "price_per_bag": 16.30,
+          "size_LB": "20LB",
+        }],
       "rating": 5
     },
     {
@@ -547,28 +667,20 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 1.37,
-      "price_per_bag": 5.49,
-      "Size_LB":"4LB",
-      "rating": 5
-    },
-    {
-      "image": "/src/assets/Images/Flours/Sher_Corn_Flour_8lb.png",
-      "name": "Sher Corn Flour",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-      "category": "Flours",
-      "price_per_lb": 1.25,
-      "price_per_bag": 9.99,
-      "Size_LB":"8LB",
-      "rating": 5
-    },
-    {
-      "image": "/src/assets/Images/Flours/Sher_Corn_Flour_20lb.png",
-      "name": "Sher Corn Flour",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-      "category": "Flours",
-      "price_per_lb": 0.89,
-      "price_per_bag": 17.70,
-      "Size_LB":"20LB",
+      "sizes": [
+        {
+          "price_per_bag": 5.49,
+          "size_LB": "4LB",
+        },
+        {
+          "price_per_bag": 9.99,
+          "size_LB": "8LB",
+        },
+        {
+          "price_per_bag": 17.70,
+          "size_LB": "20LB",
+        }
+      ],
       "rating": 5
     },
     {
@@ -577,8 +689,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 0.85,
-      "price_per_bag": 17.00,
-      "Size_LB":"20LB",
+      "sizes": [
+        {
+          "price_per_bag": 17.00,
+          "size_LB": "20LB",
+        }],
       "rating": 5
     },
     {
@@ -587,8 +702,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Flours",
       "price_per_lb": 0.85,
-      "price_per_bag": 17.00,
-      "Size_LB":"20LB",
+      "sizes": [
+        {
+          "price_per_bag": 17.00,
+          "size_LB": "20LB",
+        }],
       "rating": 5
     },
     {
@@ -597,18 +715,14 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.38,
-      "price_per_bag": 55.00,
-      "Size_LB":"40LB",
-      "rating": 5
-    },
-    {
-      "image": "/src/assets/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
-      "name": "IC 1121 Basmati Long Grain Steam Rice ",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-      "category": "Rice",
-      "price_per_lb": 1.50,
-      "price_per_bag": 15.00,
-      "Size_LB":"10LB",
+      "sizes": [
+        {
+          "price_per_bag": 55.00,
+          "size_LB": "40LB",
+        }, {
+          "price_per_bag": 15.00,
+          "size_LB": "10LB",
+        }],
       "rating": 5
     },
     {
@@ -617,18 +731,14 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.25,
-      "price_per_bag": 50.00,
-      "Size_LB":"40LB",
-      "rating": 5
-    },
-    {
-      "image": "/src/assets/Images/Rice/IC_1121_Basmati_Long_Grain_Steam_Rice_10lbs_(Pink).png",
-      "name": "IC 1121 Basmati Long Grain Creamy Sella Rice",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-      "category": "Rice",
-      "price_per_lb": 1.30,
-      "price_per_bag": 13.00,
-      "Size_LB":"10LB",
+      "sizes": [
+        {
+          "price_per_bag": 50.00,
+          "size_LB": "40LB",
+        }, {
+          "price_per_bag": 13.00,
+          "size_LB": "10LB",
+        }],
       "rating": 5
     },
     {
@@ -637,18 +747,14 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.10,
-      "price_per_bag": 44.00,
-      "Size_LB":"40LB",
-      "rating": 5
-    },
-    {
-      "image": "/src/assets/Images/Rice/IC_Rozana_Basmati_10lbs.png",
-      "name": "IC Rozana Basmati",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-      "category": "Rice",
-      "price_per_lb": 1.10,
-      "price_per_bag": 11.00,
-      "Size_LB":"10LB",
+      "sizes": [
+        {
+          "price_per_bag": 44.00,
+          "size_LB": "40LB",
+        }, {
+          "price_per_bag": 11.00,
+          "size_LB": "10LB",
+        }],
       "rating": 5
     },
     {
@@ -657,8 +763,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.10,
-      "price_per_bag": 44.00,
-      "Size_LB":"40LB",
+      "sizes": [
+        {
+          "price_per_bag": 44.00,
+          "size_LB": "40LB",
+        }],
       "rating": 5
     },
     {
@@ -667,8 +776,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Rice",
       "price_per_lb": 1.12,
-      "price_per_bag": 44.99,
-      "Size_LB":"40LB",
+      "sizes": [
+        {
+          "price_per_bag": 44.99,
+          "size_LB": "40LB",
+        }],
       "rating": 5
     },
     {
@@ -677,8 +789,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 7.29,
-      "price_per_bag": 7.29,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 7.29,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -687,8 +802,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 15.49,
-      "price_per_bag": 15.49,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 15.49,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -697,8 +815,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 6.59,
-      "price_per_bag": 6.59,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 6.59,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -707,8 +828,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 6.50,
-      "price_per_bag": 6.50,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 6.50,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -717,8 +841,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.59,
-      "price_per_bag": 4.59,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 4.59,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -727,8 +854,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.69,
-      "price_per_bag": 4.69,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 4.69,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -737,8 +867,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.99,
-      "price_per_bag": 3.99,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 3.99,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -747,8 +880,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 6.69,
-      "price_per_bag": 6.69,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 6.69,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -757,8 +893,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 5.29,
-      "price_per_bag": 5.29,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 5.29,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -767,8 +906,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 7.59,
-      "price_per_bag": 7.59,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 7.59,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -777,8 +919,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.99,
-      "price_per_bag": 3.99,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 3.99,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -787,8 +932,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 13.79,
-      "price_per_bag": 13.79,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 13.79,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -797,8 +945,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 12.69,
-      "price_per_bag": 12.69,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 12.69,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -807,8 +958,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 2.59,
-      "price_per_bag": 2.59,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 2.59,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -817,8 +971,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 2.59,
-      "price_per_bag": 2.59,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 2.59,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -827,8 +984,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.99,
-      "price_per_bag": 4.99,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 4.99,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -837,8 +997,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 5.69,
-      "price_per_bag": 5.69,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 5.69,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -847,8 +1010,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 5.69,
-      "price_per_bag": 5.69,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 5.69,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -857,8 +1023,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.19,
-      "price_per_bag": 3.19,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 3.19,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -867,8 +1036,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.19,
-      "price_per_bag": 3.19,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 3.19,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -877,8 +1049,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.50,
-      "price_per_bag": 4.50,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 4.50,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -887,8 +1062,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.49,
-      "price_per_bag": 3.49,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 3.49,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -897,8 +1075,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 24.99,
-      "price_per_bag": 24.99,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 24.99,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -907,8 +1088,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 34.00,
-      "price_per_bag": 22.50,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 22.50,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -917,8 +1101,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 1.39,
-      "price_per_bag": 1.39,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 1.39,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -927,8 +1114,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 1.39,
-      "price_per_bag": 1.39,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 1.39,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -937,8 +1127,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 11.29,
-      "price_per_bag": 11.29,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 11.29,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -947,8 +1140,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 10.49,
-      "price_per_bag": 10.49,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 10.49,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -957,8 +1153,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.99,
-      "price_per_bag": 3.99,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 3.99,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -967,8 +1166,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.79,
-      "price_per_bag": 3.79,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 3.79,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -977,8 +1179,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 8.99,
-      "price_per_bag": 8.99,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 8.99,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -987,8 +1192,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 2.59,
-      "price_per_bag": 2.59,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 2.59,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -997,8 +1205,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.19,
-      "price_per_bag": 3.19,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 3.19,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -1007,8 +1218,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 3.49,
-      "price_per_bag": 3.49,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 3.49,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -1017,8 +1231,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 5.19,
-      "price_per_bag": 5.19,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 5.19,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -1027,8 +1244,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 14.99,
-      "price_per_bag": 14.99,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 14.99,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -1037,8 +1257,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 4.49,
-      "price_per_bag": 4.49,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 4.49,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -1047,8 +1270,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 6.00,
-      "price_per_bag": 6.00,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 6.00,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -1057,8 +1283,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 7.27,
-      "price_per_bag": 16.00,
-      "Size_LB":"2.2LB",
+      "sizes": [
+        {
+          "price_per_bag": 16.00,
+          "size_LB": "2.2LB",
+        }],
       "rating": 5
     },
     {
@@ -1067,8 +1296,11 @@ const Product = () => {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       "category": "Spices",
       "price_per_lb": 1.99,
-      "price_per_bag": 1.99,
-      "Size_LB":"1LB",
+      "sizes": [
+        {
+          "price_per_bag": 1.99,
+          "size_LB": "1LB",
+        }],
       "rating": 5
     },
     {
@@ -1078,7 +1310,7 @@ const Product = () => {
       "category": "Spices",
       "price_per_lb": 2.49,
       "price_per_bag": 2.49,
-      "Size_LB":"1LB",
+      "size_LB": "1LB",
       "rating": 5
     },
     // {
@@ -1128,6 +1360,28 @@ const Product = () => {
 
   const handleChange = (event, value) => {
     setCurrentPage(value);
+  };
+
+  const [prices, setPrices] = useState({});
+
+  useEffect(() => {
+
+    // Initialize prices with the first available size price for each product on load
+    const initialPrices = currentProducts?.reduce((acc, product) => {
+      acc[product?.name] = product?.sizes[0]?.price_per_bag;
+      return acc;
+    }, {});
+    setPrices(initialPrices);
+  }, [currentProducts]);
+
+  const handleSizeChange = (productName, selectedSize) => {
+    // Update only the selected product's price based on selected size
+    setPrices((prevPrices) => ({
+      ...prevPrices,
+      [productName]: selectedSize.price_per_bag
+    }));
+    console.log(prices);
+    
   };
 
   // const renderPagination = () => {
@@ -1225,8 +1479,8 @@ const Product = () => {
                     &times;
                   </span>
                 </div>
-                {/* <div>
-                  {menuData.map((menu, index) => (
+                <div>
+                  {/*{menuData.map((menu, index) => (
                     <div key={index} className="bg-BgColor border-b">
                       <div
                         className={`flex flex-row justify-between items-center cursor-pointer p-3 ${activeCategory === index ? "text-BgGolden" : "text-black"
@@ -1247,27 +1501,21 @@ const Product = () => {
                           ))}
                       </ul>
                     </div>
-                  ))}
-                </div> */}
+                  ))}*/}
+                </div>
                 <div className="md:flex flex-col gap-1 w-full">
-                  {menuData.map((menu, index) =>{
-                    console.log("======================================");
-                  console.log(activeCategory);
-                  console.log(menu.title);
-                  console.log(activeCategory === menu.title);
-                  console.log("==========================================");
-                  
-                  return (
-                    <div key={index} className={`bg-BgColor border-b ${selectedCategory === menu.title ? "border-BgGolden" : ""}`}>
-                      <div
-                        className={`flex flex-row justify-between items-center cursor-pointer p-3 ${selectedCategory === menu.title ? "text-BgGolden" : "text-black"}`}
-                        // onClick={() => toggleCategory(index)}
-                        onClick={() => handleCategorySelect(menu.title)}
-                      >
-                        <p className="font-bold text-base">{menu.title}</p>
-                        {/* <span>{activeCategory === index ? <FaCaretUp /> : <FaCaretDown />}</span> */}
-                      </div>
-                      {/* <ul className={`${activeCategory === index ? "block p-3" : "hidden"}`}>
+                  {menuData.map((menu, index) => {
+                    return (
+                      <div key={index} className={`bg-BgColor border-b ${selectedCategory === menu.title ? "border-BgGolden" : ""}`}>
+                        <div
+                          className={`flex flex-row justify-between items-center cursor-pointer p-3 ${selectedCategory === menu.title ? "text-BgGolden" : "text-black"}`}
+                          // onClick={() => toggleCategory(index)}
+                          onClick={() => { handleCategorySelect(menu.title); setViewFilters(false) }}
+                        >
+                          <p className="font-bold text-base">{menu.title}</p>
+                          {/* <span>{activeCategory === index ? <FaCaretUp /> : <FaCaretDown />}</span> */}
+                        </div>
+                        {/* <ul className={`${activeCategor   y === index ? "block p-3" : "hidden"}`}>
                         {menu?.items?.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex py-2 gap-2 cursor-pointer"
                             onClick={() => handleCategorySelect(menu.title)} // Select the category
@@ -1276,16 +1524,79 @@ const Product = () => {
                           </li>
                         ))}
                       </ul> */}
-                    </div>
-                  )})}
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>
             <div className="md:col-span-3">
-              <main className="flex-1 pl-5">
+              <main className="flex-1 md:pl-5">
                 {/* <div className={`grid ${getGridClass()} gap-6`}> */}
                 <div className={`grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full`}>
-                  {currentProducts.map((product, index) => (
+                  {currentProducts.map((product, index) => {
+
+                    // const [price, setPrice] = useState(product.sizes[0]?.price_per_bag || 0); // Default to 0 if sizes are not available
+
+                    // useEffect(() => {
+                    //   if (product.sizes && product.sizes.length > 0) {
+                    //     setPrice(product.sizes[0].price_per_bag); // Set initial price on load
+                    //   }
+                    // }, [product.sizes]);
+                    return (
+                      <div
+                        key={index}
+                        className="bg-white rounded-xl border-2 overflow-hidden transition-all duration-300 hover:shadow-xl"
+                        onMouseEnter={() => setHoveredProduct(index)}
+                        onMouseLeave={() => setHoveredProduct(null)}
+                      >
+                        <div className="relative overflow-hidden before:block before:content-[''] before:pt-72">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-full h-full object-cover transition-transform duration-300 hover:scale-110 absolute top-0 left-0 bottom-0 right-0"
+                          />
+                          <span className="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            {product.category}
+                          </span>
+                        </div>
+                        <div className='h-44 flex flex-col justify-between'>
+                          <h2 className="text-xl font-semibold mb-2 p-4">{product.name}</h2>
+                          <div className="p-4 bg-gray-50 flex items-center justify-between">
+                            {/* {product.sizes && product.sizes.length > 1 ? (
+                            <> */}
+                            <span className="text-xl font-bold">${prices[product.name]}</span>
+                            <select
+                              className="border rounded p-2"
+                              onChange={(e) => {
+                                const selectedSize = product.sizes.find(size => size.size_LB === e.target.value);
+                                if (selectedSize) {
+                                  handleSizeChange(product.name, selectedSize);
+                                  console.log(product.name, "-", selectedSize.price_per_bag);
+                                  
+                                }
+                              }}
+                            >
+                              {product?.sizes?.map((size, i) => (
+                                <option key={i} value={size.size_LB}>
+                                  {size.size_LB}
+                                </option>
+                              ))}
+                            </select>
+                            {/* </>
+                          ) : (
+                            <>
+                              <span className="text-xl font-bold">${product.sizes[0].price_per_bag}</span>
+                              <span>{product.sizes[0].size_LB}</span>
+                            </>
+                          )} */}
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+
+                  {/* {currentProducts.map((product, index) => (
                     <div
                       key={index}
                       className="bg-white rounded-xl border-2  overflow-hidden transition-all duration-300 hover:shadow-xl h-fit"
@@ -1298,44 +1609,44 @@ const Product = () => {
                           alt={product.name}
                           className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
                         />
-                        {/* {hoveredProduct === index && (
-                          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center space-x-4 transition-opacity duration-300">
-                            <button className="p-2 bg-white rounded-full hover:bg-gray-200 transition-colors duration-200">
-                              <FaShoppingCart className="text-xl text-gray-800" />
-                            </button>
-                            <button className="p-2 bg-white rounded-full hover:bg-gray-200 transition-colors duration-200">
-                              <FaEye className="text-xl text-gray-800" />
-                            </button>
-                          </div>
-                        )} */}
                         <span className="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                           {product.category}
                         </span>
                       </div>
                       <div className="p-4 h-full">
                         <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-                        {/* <p className="text-sm text-gray-600 mb-2">{product.description}</p>
-                        <div className="flex items-center mb-2">
-                          {[...Array(5)].map((_, i) => (
-                            <FaStar
-                              key={i}
-                              "Size_LB":"1LB",className={`h-5 w-5 ${i < Math.floor(product
-                              .rating) ? 'text-yellow-400' : 'text-gray-300'}`}
-                            />
-                          ))}
-                          "Size_LB":"1LB",<span className="ml-2 text-sm text-gray-600">{product
-                          .rating.toFixed(1)}</span>
-                        </div> */}
                       </div>
                       <div className="p-4 bg-gray-50 flex items-center justify-between">
                         <span className="text-xl font-bold">${product.price_per_bag}</span>
-                        <span>{product.Size_LB}</span>
-                        {/* <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
-                          Add to Cart
-                        </button> */}
+                        <span>{product.size_LB}</span>
                       </div>
                     </div>
-                  ))}
+                  ))} */}
+                  {/* {hoveredProduct === index && (
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center space-x-4 transition-opacity duration-300">
+                      <button className="p-2 bg-white rounded-full hover:bg-gray-200 transition-colors duration-200">
+                        <FaShoppingCart className="text-xl text-gray-800" />
+                      </button>
+                      <button className="p-2 bg-white rounded-full hover:bg-gray-200 transition-colors duration-200">
+                        <FaEye className="text-xl text-gray-800" />
+                      </button>
+                    </div>
+                  )} */}
+                  {/* <p className="text-sm text-gray-600 mb-2">{product.description}</p>
+                  <div className="flex items-center mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar
+                        key={i}
+                        "size_LB":"1LB",className={`h-5 w-5 ${i < Math.floor(product
+                        .rating) ? 'text-yellow-400' : 'text-gray-300'}`}
+                      />
+                    ))}
+                    "size_LB":"1LB",<span className="ml-2 text-sm text-gray-600">{product
+                    .rating.toFixed(1)}</span>
+                  </div> */}
+                  {/* <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
+                    Add to Cart
+                  </button> */}
                 </div>
                 <div className="flex justify-center mt-10">
                   <Pagination
