@@ -99,7 +99,7 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col min-h-screen pb-5">
       <main className="flex-grow">
-        <section className="relative md:h-[80vh] h-52">
+        <section className="relative md:h-[80vh] h-72">
           <img
             src={aboutImg}
             alt="Fresh salad"
@@ -107,10 +107,10 @@ export default function AboutUs() {
             objectFit="cover"
             className='h-full w-full'
           />
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col gap-5 md:items-center items-start justify-center text-white p-5">
+          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col gap-5 md:items-center items-start justify-center text-white   p-5">
             <div>
-            <h1 className="md:text-6xl text-2xl font-bold">About Us</h1>
-            <div className="flex items-center justify-center mt-3">
+              <h1 className="md:text-6xl text-2xl font-bold">About Us</h1>
+              <div className="flex items-center justify-center mt-3">
                 <div className='relative flex justify-center items-center'>
                   <div className='md:w-36 w-24 h-0.5 bg-white z-20'></div>
                   <div className='absolute w-4 h-4 bg-white rotate-45 z-10'></div>
@@ -119,7 +119,8 @@ export default function AboutUs() {
                 </div>
               </div>
             </div>
-            <p className='md:w-1/2 pt-5 md:text-center text-pretty md:text-base text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum id quibusdam voluptatem expedita consequatur quod, quidem veritatis repudiandae deserunt dolores!</p>
+            <p className='md:w-3/4 pt-5 md:text-center text-pretty md:text-base text-sm'>At CC Traders, we are dedicated to connecting businesses with the highest quality food products at wholesale prices. With years of experience in the industry, we understand the unique needs of restaurants, retailers, and distributors. Our extensive network of trusted suppliers ensures that we deliver fresh, reliable, and sustainable products to meet the demands of your business. We are your one-stop solution for all your wholesale food needs.
+            </p>
           </div>
         </section>
 
@@ -131,12 +132,17 @@ export default function AboutUs() {
                 alt="Product image"
                 width={300}
                 height={300}
-                className="rounded-tr-3xl rounded-bl-3xl md:border-r-2 md:border-l-0 border-l-2 border-b-2 border-BgGolden bg-BgColor"
+                className="rounded-tr-3xl rounded-bl-3xl shadow-custom md:border-r-2 md:border-l-0 border-l-2 border-b-2 border-BgGolden bg-BgColor"
               />
             </div>
-            <div className="md:w-1/2  md:text-center text-start bg-BgColor px-5 py-10 border-r-2 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-r-3xl">
-              <h2 className="md:text-3xl text-2xl font-bold mb-4">Content of vision</h2>
-              <p className="text-gray-600 md:text-base text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div className="md:w-1/2  md:text-center text-start shadow-2xl bg-BgColor px-5 py-10 border-r-2 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-r-3xl">
+              <h2 className="md:text-3xl text-2xl font-bold mb-4">Who are We?</h2>
+              <p className="text-gray-600 md:text-base text-sm">At CC Traders, we are dedicated to connecting businesses with the highest quality food
+                products at wholesale prices. With years of experience in the industry, we understand
+                the unique needs of restaurants, retailers, and distributors. Our extensive network of
+                trusted suppliers ensures that we deliver fresh, reliable, and sustainable products to
+                meet the demands of your business. We are your one-stop solution for all your
+                wholesale food needs.</p>
             </div>
           </div>
           <div className="flex  md:flex-row flex-col items-center justify-center md:gap-0 gap-5">
@@ -146,12 +152,17 @@ export default function AboutUs() {
                 alt="Product image"
                 width={300}
                 height={300}
-                className="rounded-br-3xl rounded-tl-3xl border-l-2 border-b-2 border-BgGolden bg-BgColor"
+                className="rounded-br-3xl rounded-tl-3xl shadow-custom border-l-2 border-b-2 border-BgGolden bg-BgColor"
               />
             </div>
-            <div className="md:w-1/2 md:text-center text-start bg-BgColor px-5 py-10 md:border-l-2 border-r-2 md:border-r-0 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-l-3xl">
-              <h2 className="md:text-3xl text-2xl font-bold mb-4">Content of mission</h2>
-              <p className="text-gray-600 md:text-base text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div className="md:w-1/2 md:text-center text-start shadow-2xl bg-BgColor px-5 py-10 md:border-l-2 border-r-2 md:border-r-0 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-l-3xl">
+              <h2 className="md:text-3xl text-2xl font-bold mb-4">Our Mission</h2>
+              <p className="text-gray-600 md:text-base text-sm">Our mission at CC Traders is to make high-quality food accessible and affordable for
+                businesses of all sizes. We strive to simplify the food supply chain by offering a
+                seamless and reliable wholesale experience. Sustainability, integrity, and customer
+                satisfaction are at the heart of everything we do. We aim to foster long-term
+                partnerships with our clients by consistently delivering fresh, high-grade products and
+                helping them thrive in a competitive marketplace.</p>
             </div>
           </div>
         </section>

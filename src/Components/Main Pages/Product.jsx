@@ -1362,27 +1362,40 @@ const Product = () => {
     setCurrentPage(value);
   };
 
-  const [prices, setPrices] = useState({});
+  const [prices, setPrices] = useState();
+  const [selectedSizes, setSelectedSizes] = useState({});
 
   useEffect(() => {
+    const initialPrice = currentProducts?.map((product) => {
+      setPrice(product.sizes[0].price_per_bag);
+    })
+    // const initialSizes = products?.reduce((acc, product) => {
+    //   const defaultSize = product?.sizes[0];
+    //   console.log("defaultSize:", defaultSize);
 
-    // Initialize prices with the first available size price for each product on load
-    const initialPrices = currentProducts?.reduce((acc, product) => {
-      acc[product?.name] = product?.sizes[0]?.price_per_bag;
-      return acc;
-    }, {});
-    setPrices(initialPrices);
+    //   acc[product?.name] = {
+    //     selectedSize: defaultSize.size_LB,
+    //     price: defaultSize.price_per_bag
+    //   };
+    //   return acc;
+    // }, {});
+    // setSelectedSizes(initialSizes);
   }, [currentProducts]);
 
+  // Handle size change for each product
   const handleSizeChange = (productName, selectedSize) => {
-    // Update only the selected product's price based on selected size
-    setPrices((prevPrices) => ({
-      ...prevPrices,
-      [productName]: selectedSize.price_per_bag
+    const product = products.find(p => p.name === productName);
+    const selectedSizeDetails = product.sizes.find(size => size.size_LB === selectedSize);
+
+    setSelectedSizes(prevSizes => ({
+      ...prevSizes,
+      [productName]: {
+        selectedSize,
+        price: selectedSizeDetails.price_per_bag
+      }
     }));
-    console.log(prices);
-    
   };
+
 
   // const renderPagination = () => {
   //   const pageNumbers = [];
@@ -1565,31 +1578,18 @@ const Product = () => {
                           <div className="p-4 bg-gray-50 flex items-center justify-between">
                             {/* {product.sizes && product.sizes.length > 1 ? (
                             <> */}
-                            <span className="text-xl font-bold">${prices[product.name]}</span>
+                            <span className="text-xl font-bold">${price[product.name]}</span>
                             <select
                               className="border rounded p-2"
-                              onChange={(e) => {
-                                const selectedSize = product.sizes.find(size => size.size_LB === e.target.value);
-                                if (selectedSize) {
-                                  handleSizeChange(product.name, selectedSize);
-                                  console.log(product.name, "-", selectedSize.price_per_bag);
-                                  
-                                }
-                              }}
+                              value={selectedSizes[product.name]?.selectedSize}
+                              onChange={(e) => handleSizeChange(product.name, e.target.value)}
                             >
-                              {product?.sizes?.map((size, i) => (
+                              {product.sizes.map((size, i) => (
                                 <option key={i} value={size.size_LB}>
                                   {size.size_LB}
                                 </option>
                               ))}
                             </select>
-                            {/* </>
-                          ) : (
-                            <>
-                              <span className="text-xl font-bold">${product.sizes[0].price_per_bag}</span>
-                              <span>{product.sizes[0].size_LB}</span>
-                            </>
-                          )} */}
                           </div>
                         </div>
                       </div>
@@ -1621,8 +1621,8 @@ const Product = () => {
                         <span>{product.size_LB}</span>
                       </div>
                     </div>
-                  ))} */}
-                  {/* {hoveredProduct === index && (
+                  ))}
+                  {hoveredProduct === index && (
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center space-x-4 transition-opacity duration-300">
                       <button className="p-2 bg-white rounded-full hover:bg-gray-200 transition-colors duration-200">
                         <FaShoppingCart className="text-xl text-gray-800" />
@@ -1631,8 +1631,8 @@ const Product = () => {
                         <FaEye className="text-xl text-gray-800" />
                       </button>
                     </div>
-                  )} */}
-                  {/* <p className="text-sm text-gray-600 mb-2">{product.description}</p>
+                  )}
+                  <p className="text-sm text-gray-600 mb-2">{product.description}</p>
                   <div className="flex items-center mb-2">
                     {[...Array(5)].map((_, i) => (
                       <FaStar
@@ -1643,8 +1643,8 @@ const Product = () => {
                     ))}
                     "size_LB":"1LB",<span className="ml-2 text-sm text-gray-600">{product
                     .rating.toFixed(1)}</span>
-                  </div> */}
-                  {/* <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
+                  </div>
+                  <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
                     Add to Cart
                   </button> */}
                 </div>

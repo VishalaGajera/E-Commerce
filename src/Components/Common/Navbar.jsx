@@ -5,7 +5,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross1 } from "react-icons/rx";
 // import { FaRegCircleUser } from "react-icons/fa6";
 import Footer from './Footer';
-import CC_TRADERS_removebg_preview from '/Images/CC_TRADERS_removebg_preview.png';
+import CC_TRADERS_2 from '/Images/CC_TRADERS_2.png';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -19,12 +19,12 @@ const Navbar = () => {
 
     return (
         <div className='flex flex-col justify-center items-center w-full'>
-            <div className='sticky top-0 z-50 flex justify-center items-center w-full h-24 shadow-lg px-5 bg-white'>
+            <div className='sticky top-0 z-50 flex justify-center items-center w-full h-24 shadow-lg md:px-10 px-5 bg-white'>
                 <div className='container'>
                     <header className='flex justify-between items-center w-full'>
                         {/* <div> */}
                         <Link to={'/'} className='flex justify-center items-center h-24'>
-                            <img src={CC_TRADERS_removebg_preview} alt="" className='w-fit h-32' />
+                            <img src={CC_TRADERS_2} alt="" className='w-fit h-16' />
                             {/* Logo */}
                         </Link>
                         {/* </div> */}
