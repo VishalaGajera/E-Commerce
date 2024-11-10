@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
 
+
 export default function Footer() {
   return (
     <footer className="bg-BgColor shadow-custom border-BgGolden text-gray-800 pt-10 w-full h-full flex flex-col justify-center items-center">
@@ -23,50 +24,54 @@ export default function Footer() {
             className="bg-BgGolden text-white rounded-lg px-10 font-bold text-xl py-2 md:ml-2 w-fit"
           >
             {/* SUBSCRIBE NOW */}
-            Contact Us
+            Bulk Inquiry
           </button>
         </div>
       </form>
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 md:gap-8 gap-12 my-10 md:px-10 px-5 mb-10">
-          <div className="md:col-span-1">
-            <Link to={'/'} className='bg-slate-400'>
-              <img src={CC_TRADERS_2} alt="" className='w-40 h-20' />
-            </Link>
-            {/* <p className="text-sm mb-4 max-w-xs">
+      <div className='lg:px-10 px-5 w-full flex justify-center items-center '>
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 md:gap-0 gap-14 my-10 ">
+            <div className="md:col-span-1">
+              <Link to={'/'} className='bg-slate-400'>
+                <img src={CC_TRADERS_2} alt="" className='w-40 h-20' />
+              </Link>
+              {/* <p className="text-sm mb-4 max-w-xs">
               A restaurant is a business that prepares and serves food
             </p> */}
-          </div>
-          <div className="flex md:items-center flex-col">
-            <div>
-              <h3 className="font-bold mb-4 text-xl">Contact Us</h3>
-              <ul className="md:space-y-2">
-                <li><a href="#" className="hover:text-BgGolden text- flex gap-2 items-center"><span className='text-lg'><FiPhone/></span>+1 (437) 606-3251</a></li>
-                <li><a href="#" className="hover:text-BgGolden text- flex gap-2 items-center"><span className='text-xl'><MdOutlineMail/></span>info@cctraders.ca</a></li>
-              </ul>
             </div>
-          </div>
-          <div className="flex md:items-center flex-col">
-            <div>
-              <h3 className="font-bold mb-4 text-xl">Quick Links</h3>
-              <ul className="md:space-y-2">
-                <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Home</a></li>
-                <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">About Us</a></li>
-                <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Products</a></li>
-                <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Bulk Inquiries</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="flex md:items-center flex-col">
-            <div>
-              <h3 className="font-bold mb-4 text-xl">Categories</h3>
-              <ul className="md:space-y-2">
-                <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Rice</a></li>
-                <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Besan</a></li>
-                <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Flour</a></li>
-                <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Spices</a></li>
-                <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Spice Mixes</a></li>
-              </ul>
+            <div className='md:col-span-2 grid md:grid-cols-3 grid-cols-1 lg:gap-10 md:gap-0 gap-5'>
+              <div className="flex flex-col lg:items-center">
+                <div>
+                  <h3 className="font-bold mb-4 text-xl">Contact Us</h3>
+                  <ul className="md:space-y-2">
+                    <li><a href="#" className="hover:text-BgGolden text- flex gap-2 items-center"><span className='text-lg'><FiPhone /></span>+1 (437) 606-3251</a></li>
+                    <li><a href="#" className="hover:text-BgGolden text- flex gap-2 items-center"><span className='text-xl'><MdOutlineMail /></span>info@cctraders.ca</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex flex-col md:items-center">
+                <div>
+                  <h3 className="font-bold mb-4 text-xl">Quick Links</h3>
+                  <ul className="md:space-y-2">
+                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Home</a></li>
+                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">About Us</a></li>
+                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Products</a></li>
+                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Bulk Inquiries</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex flex-col md:items-center">
+                <div>
+                  <h3 className="font-bold mb-4 text-xl">Categories</h3>
+                  <ul className="md:space-y-2">
+                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Rice</a></li>
+                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Beans</a></li>
+                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Flour</a></li>
+                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Spices</a></li>
+                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Spice Mixes</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

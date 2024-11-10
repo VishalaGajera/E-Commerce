@@ -52,28 +52,28 @@ const Contact = () => {
         <div className='container flex justify-center items-center'>
           <div className='grid md:grid-cols-2 grid-cols-1 lg:p-10 p-5 gap-10 py-10 2xl:w-5/6'>
             <div className='h-full flex flex-col justify-start items-start rounded-xl gap-10'>
-            <div>
-              <h2 className="lg:text-5xl md:text-4xl text-3xl font-bold ">We would love to hear from you!</h2>
-              <p className=" text-gray-600 lg:w-3/4 md:text-base text-sm">
-                Thank you for considering CrossContinents Traders Ltd. We value your inquiries, feedback, and the opportunity to assist you.
-                Feel free to reach out to us through the following channels:
-              </p>
-            </div>
-              <div className='flex flex-col gap-5'>
-              <div className="flex items-center gap-3">
-                <span className='bg-BgGolden text-white shadow-lg border border-BgGolden p-3 rounded-full'><FiPhone className="text-2xl -rotate-90" /></span>
-                <div className='flex flex-col'>
-                  <span className="font-semibold">Call us</span>
-                  <p className="text-xl font-bold">+1 (437) 606-3251</p>
-                </div>
+              <div className='flex flex-col gap-6'>
+                <h2 className="lg:text-5xl md:text-4xl text-3xl font-bold ">We would love to hear from you!</h2>
+                <p className=" text-gray-600 lg:w-3/4 md:text-base text-sm">
+                  Thank you for considering CrossContinents Traders Ltd. We value your inquiries, feedback, and the opportunity to assist you.
+                  Feel free to reach out to us through the following channels:
+                </p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className='bg-BgGolden text-white shadow-lg border border-BgGolden p-3 rounded-full'><MdOutlineMail className="text-2xl" /></span>
-                <div className='flex flex-col'>
-                  <span className="font-semibold">Email</span>
-                  <p className="text-xl font-bold">info@cctraders.ca</p>
+              <div className='flex flex-col gap-6'>
+                <div className="flex items-center gap-3">
+                  <span className='bg-BgGolden text-white shadow-lg border border-BgGolden p-3 rounded-full'><FiPhone className="text-2xl -rotate-90" /></span>
+                  <div className='flex flex-col'>
+                    <span className="font-semibold">Call us</span>
+                    <p className="text-xl font-bold">+1 (437) 606-3251</p>
+                  </div>
                 </div>
-              </div>
+                <div className="flex items-center gap-3">
+                  <span className='bg-BgGolden text-white shadow-lg border border-BgGolden p-3 rounded-full'><MdOutlineMail className="text-2xl" /></span>
+                  <div className='flex flex-col'>
+                    <span className="font-semibold">Email</span>
+                    <p className="text-xl font-bold">info@cctraders.ca</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div className='flex flex-col gap-5 shadow-2xl bg-BgColor border-BgGolden border-2 rounded-xl lg:p-10 p-5'>

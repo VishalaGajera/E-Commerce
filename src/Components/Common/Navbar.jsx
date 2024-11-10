@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (
         <div className='flex flex-col justify-center items-center w-full'>
-            <div className='sticky top-0 z-50 flex justify-center items-center w-full h-24 shadow-lg md:px-10 px-5 bg-white'>
+            <div className='sticky top-0 z-50 flex justify-center items-center w-full h-24 shadow-lg lg:px-10 px-5 bg-white'>
                 <div className='container'>
                     <header className='flex justify-between items-center w-full'>
                         {/* <div> */}
