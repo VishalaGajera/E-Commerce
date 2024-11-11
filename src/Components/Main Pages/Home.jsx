@@ -11,6 +11,7 @@ import Slide1 from '/Images/Slide1.png';
 import Slide2 from '/Images/Slide2.png';
 import Slide3 from '/Images/Slide3.png';
 import Slide4 from '/Images/Slide4.png';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -72,58 +73,76 @@ const Home = () => {
   return (
     <div className='flex justify-center items-center bg-white'>
       <div className='flex flex-col justify-center items-center'>
-        <div className='relative flex flex-col justify-center items-center w-full'>
-        <div className='relative flex flex-col justify-center items-center w-full'>
-          {/* <img src={HomeImg} alt="" className='w-full' /> */}
-          {/* <div className='absolute text-white md:flex hidden items-center justify-center flex-col gap-4 w-full text-center 2xl:top-32 lg:top-20 top-0 p-5'>
+        <section className='relative md:h-[100vh] h-72 w-[98.7vw]  overflow-hidden'>
+          {/* <img src={HomeImg} alt="" className='w-full' />
+          <div className='absolute text-white md:flex hidden items-center justify-center flex-col gap-4 w-full text-center 2xl:top-32 lg:top-20 top-0 p-5'>
             <h1 className='font-bold 2xl:text-5xl lg:text-4xl text-3xl text-BgColor'>Healthy vegetable that you deserve to eat fresh</h1>
-            <p className='2xl:text-2xl lg:text-xl text-base lg:w-1/2 w-2/3 text-BgColor'>We source and sell the very best beef, lamb and pork, sourced with the greatest care from farmer.</p> */}
-            {/* <div className='border rounded-lg bg-white flex items-center gap-3 2xl:p-4 p-2 w-1/3 '>
+            <p className='2xl:text-2xl lg:text-xl text-base lg:w-1/2 w-2/3 text-BgColor'>We source and sell the very best beef, lamb and pork, sourced with the greatest care from farmer.</p>
+            <div className='border rounded-lg bg-white flex items-center gap-3 2xl:p-4 p-2 w-1/3 '>
               <input type="text" name="" id="" className='text-black outline-none bg-transparent w-full' placeholder='What are you looking...' />
               <CiSearch className='text-black text-2xl' />
-            </div> */}
-          {/* </div> */}
-        </div>
+            </div>
+          </div> */}
 
           {/* <div className='overflow-x-hidden'> */}
-            <Swiper
-              modules={[ Navigation, Pagination]}
-              spaceBetween={30}
-              slidesPerView={1}
-              // autoplay={{ delay: 3000, disableOnInteraction: false }}
-              navigation
-              pagination={{
-                dynamicBullets: true,
-              }}
-              // loop
-              className="w-[100vw] h-[500px] md:h-[600px] "
-            >
-              {sliderImages.map((image, index) => {
-                console.log(image);
-
-                return (
-                  <SwiperSlide key={index} className="flex justify-center items-center">
-                    <img src={image} alt={`slide ${index + 1}`} className="" /> 
-                  </SwiperSlide>
-                  // <SwiperSlide>
-                  //   <div
-                  //     className="flex flex-col items-center justify-center w-full h-full bg-cover bg-center"
-                  //     style={{
-                  //       backgroundImage: `url(${image})`,
-                  //       backgroundSize: "cover",
-                  //       backgroundRepeat: "no-repeat",
-                  //     }}
-                  //   ></div>
-                  // </SwiperSlide>
-                )
-              })}
-            </Swiper>
+          <Swiper
+            modules={[Autoplay, Navigation, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            navigation={{
+              prevEl: '.custom-prev',
+              nextEl: '.custom-next'
+            }}
+            pagination={{
+              dynamicBullets: true,
+            }}
+            loop
+            // className="w-[98.9vw] h-[500px] md:h-[600px] "
+            className="h-full w-full overflow-hidden"
+          >
+            <SwiperSlide>
+              <img src={Slide1} alt={`slide 1}`} className="h-full w-full object-cover" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={Slide2} alt={`slide 2}`} className="h-full w-full object-cover" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={Slide3} alt={`slide 3}`} className="h-full w-full object-cover" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={Slide4} alt={`slide 4}`} className="h-full w-full object-cover" />
+            </SwiperSlide>
+            {/* {sliderImages.map((image, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <img src={image} alt={`slide ${index + 1}`} className="h-full w-full" />
+                </SwiperSlide>
+              )
+            })} */}
+          </Swiper>
+          <div className="custom-prev absolute top-1/2 transform -translate-y-1/2 md:left-10 left-5 z-10 p-3 cursor-pointer border-2 border-BgGolden text-BgGolden rounded-full animate-bg-fade-out hover:animate-bg-fade-in hover:text-white">
+            <BsArrowLeft className='md:text-2xl text-xl' />
+          </div>
+          <div className="custom-next absolute top-1/2 transform -translate-y-1/2 md:right-10 right-5 z-10 p-3 cursor-pointer border-2 border-BgGolden text-BgGolden rounded-full animate-bg-fade-out hover:animate-bg-fade-in hover:text-white">
+            <BsArrowRight className='md:text-2xl text-xl' />
+          </div>
+          {/* <SwiperSlide>
+               <div
+                 className="flex flex-col items-center justify-center w-full h-full bg-cover bg-center"
+                 style={{
+                   backgroundImage: `url(${image})`,
+                   backgroundSize: "cover",
+                   backgroundRepeat: "no-repeat",
+                 }}
+               ></div>
+             </SwiperSlide> */}
           {/* </div> */}
           {/* <div className='absolute text-white md:flex hidden items-center justify-center flex-col gap-4 w-full text-center 2xl:top-32 lg:top-20 top-0 p-5'>
             <h1 className='font-bold 2xl:text-5xl lg:text-4xl text-3xl text-BgColor'>Healthy vegetable that you deserve to eat fresh</h1>
             <p className='2xl:text-2xl lg:text-xl text-base lg:w-1/2 w-2/3 text-BgColor'>We source and sell the very best beef, lamb and pork, sourced with the greatest care from farmer.</p>
           </div> */}
-        </div>
+        </section>
         <div className='flex flex-col gap-10 relative py-20'>
           <div className='flex flex-col gap-10 items-center justify-center mx-5'>
             <div>
