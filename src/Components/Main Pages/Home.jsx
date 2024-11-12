@@ -6,17 +6,30 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
-import Aparna_Foods_1 from '/Images/Aparna_Foods_1.png';
-import Slide1 from '/Images/Slide1.png';
-import Slide2 from '/Images/Slide2.png';
-import Slide3 from '/Images/Slide3.png';
-import Slide4 from '/Images/Slide4.png';
+import Aparna_Foods_1 from '/Images/Logo/Aparna_Foods_1.png';
+import Maggi from '/Images/Logo/Maggi.png';
+import Aashirvaad from '/Images/Logo/Aashirvaad.png';
+import gt_logo from '/Images/Logo/gt_logo.png';
+import handi from '/Images/Logo/handi.png';
+import india_gate from '/Images/Logo/india_gate.png';
+import mdh from '/Images/Logo/mdh.png';
+import NATIONAL_FOODS from '/Images/Logo/NATIONAL_FOODS.png';
+import shan from '/Images/Logo/shan.png';
+import sher from '/Images/Logo/sher.png';
+import slide1 from '/Images/slider/slide1.png';
+import slide2 from '/Images/slider/slide2.png';
+import slide3 from '/Images/slider/slide3.png';
+import slide4 from '/Images/slider/slide4.png';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import spices from '../../../public/Images/Product/Spices.png'
+import rice from '../../../public/Images/Product/rice-removebg-preview.png'
+import flour from '../../../public/Images/Product/flour-removebg-preview.png'
+import beans from '../../../public/Images/Product/beans.png'
 
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const sliderImages = [Slide1, Slide2, Slide3, Slide4]
+  const sliderImages = [slide1, slide2, slide3, slide4]
 
   const blog = [
     {
@@ -51,7 +64,7 @@ const Home = () => {
     },
   ]
 
-  const brand = ["https://hosindia.com/api/public/images/partnerbrands/PI_9Xd3vUQE9Y.png", "https://hosindia.com/api/public/images/partnerbrands/PI_G6wPMvpVxC.png", "https://hosindia.com/api/public/images/partnerbrands/PI_WTFiWhAI4X.png", "https://hosindia.com/api/public/images/partnerbrands/PI_5YqJ44Strd.png", "https://hosindia.com/api/public/images/partnerbrands/PI_GnuEFk07YE.png", "https://hosindia.com/api/public/images/partnerbrands/PI_s2Sp5Qwa8a.png", Aparna_Foods_1]
+  const brand = [Maggi, Aashirvaad, Aparna_Foods_1, shan, sher, NATIONAL_FOODS, mdh, handi, gt_logo, india_gate]
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.realIndex);
@@ -102,16 +115,16 @@ const Home = () => {
             className="h-full w-full overflow-hidden"
           >
             <SwiperSlide>
-              <img src={Slide1} alt={`slide 1}`} className="h-full w-full object-cover" />
+              <img src={slide1} alt={`slide 1}`} className="h-full w-full object-fill" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={Slide2} alt={`slide 2}`} className="h-full w-full object-cover" />
+              <img src={slide2} alt={`slide 2}`} className="h-full w-full object-fill" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={Slide3} alt={`slide 3}`} className="h-full w-full object-cover" />
+              <img src={slide3} alt={`slide 3}`} className="h-full w-full object-fill" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={Slide4} alt={`slide 4}`} className="h-full w-full object-cover" />
+              <img src={slide4} alt={`slide 4}`} className="h-full w-full object-fill" />
             </SwiperSlide>
             {/* {sliderImages.map((image, index) => {
               return (
@@ -167,30 +180,30 @@ const Home = () => {
           </div>
 
           <div className='grid 2xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mx-5'>
-            <div className='md:p-5 p-2 border flex items-center gap-5 bg-red-200 rounded-tr-3xl rounded-bl-3xl'>
-              <img src="https://www.mahmoodrice.com/Media/Uploads/10_kg.png" alt="" className='w-20' />
+            <div className='md:p-5 p-2 border flex items-center gap-5 bg-red-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'>
+              <img src={flour} alt="" className='w-20' />
               <div className='flex flex-col md:gap-2 gap-0'>
                 <h1 className='md:font-bold font-bold md:text-lg text-base'>Fresh Flours for All Your Baking and Cooking.</h1>
                 <p className='md:text-base text-sm'>explore sher, Ashirwad, Minar…</p>
               </div>
             </div>
-            <div className='md:p-5 p-2 border flex items-center gap-5 bg-green-200 rounded-tr-3xl rounded-bl-3xl'>
-              <img src="https://www.mahmoodrice.com/Content/images/products/10kg-r.png" alt="" className='w-20' />
+            <div className='md:p-5 p-2 border flex items-center gap-5 bg-green-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'>
+              <img src={rice} alt="" className='w-20' />
               <div className='flex flex-col md:gap-2 gap-0'>
                 <h1 className='md:font-bold font-bold md:text-lg text-base'>Aromatic Rice for Tasty, Fluffy Meals</h1>
                 <p className='md:text-base text-sm'>explore Maharani, Handi, Marhaba</p>
               </div>
             </div>
-            <div className='md:p-5 p-2 border flex items-center gap-5 bg-blue-200 rounded-tr-3xl rounded-bl-3xl'>
-              <img src="https://www.mahmoodrice.com/Media/Uploads/4kg_web.png" alt="" className='w-20' />
+            <div className='md:p-5 p-2 border flex items-center gap-5 bg-blue-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'>
+              <img src={beans} alt="" className='w-20' />
               <div className='flex flex-col md:gap-2 gap-0'>
                 <h1 className='md:font-bold font-bold md:text-lg text-base'>Explore Our Fresh, Quality Beans & Lentils – Perfect for Nutritious,
                   Flavorful Meals!</h1>
                 <p className='md:text-base text-sm'></p>
               </div>
             </div>
-            <div className='md:p-5 p-2 border flex items-center gap-5 bg-yellow-200 rounded-tr-3xl rounded-bl-3xl'>
-              <img src="https://www.mahmoodrice.com/Media/Uploads/4_5_basmati_pirinc_1.png" alt="" className='w-20' />
+            <div className='md:p-5 p-2 border flex items-center gap-5 bg-yellow-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'>
+              <img src={spices} alt="" className='w-20' />
               <div className='flex flex-col md:gap-2 gap-0'>
                 <h1 className='md:font-bold font-bold md:text-lg text-base'>Traditional Spice Blends for Great Flavor</h1>
                 <p className='md:text-base text-sm'>explore our raw spices, MDH, Shan</p>

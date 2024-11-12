@@ -102,7 +102,7 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col min-h-screen pb-5">
       <main className="flex-grow">
-        <section className="relative md:h-[100vh] h-72">
+        <section className="relative md:h-[130vh] h-72">
           {/* <img
             src={aboutImg}
             alt="Fresh salad"

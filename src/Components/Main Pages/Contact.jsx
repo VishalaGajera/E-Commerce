@@ -26,7 +26,7 @@ const Contact = () => {
             </span>
           </div> */}
 
-        <section className="relative md:h-[80vh] h-52 w-full">
+        {/* <section className="relative md:h-[80vh] h-52 w-full">
           <img
             src={ContactImg}
             alt="Fresh salad"
@@ -48,9 +48,20 @@ const Contact = () => {
             </div>
             <p className='md:w-1/2 pt-5 md:text-center text-pretty md:text-base text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum id quibusdam voluptatem expedita consequatur quod, quidem veritatis repudiandae deserunt dolores!</p>
           </div>
-        </section>
+        </section> */}
+        <div className='py-16'>
+          <h1 className="md:text-6xl text-2xl font-bold">Contact Us</h1>
+          <div className="flex items-center justify-center mt-3">
+            <div className='relative flex justify-center items-center'>
+              <div className='md:w-36 w-24 h-0.5 bg-BgGolden z-20'></div>
+              <div className='absolute w-4 h-4 bg-BgGolden rotate-45 z-10'></div>
+              <div className='absolute w-4 h-4 md:left-[75px] left-[53px] bg-BgGolden rotate-45 opacity-50'></div>
+              <div className='absolute w-4 h-4 md:right-[75px] right-[53px] bg-BgGolden rotate-45 opacity-50'></div>
+            </div>
+          </div>
+        </div>
         <div className='container flex justify-center items-center'>
-          <div className='grid md:grid-cols-2 grid-cols-1 lg:p-10 p-5 gap-10 py-10 2xl:w-5/6'>
+          <div className='grid md:grid-cols-2 grid-cols-1 lg:p-10 p-5 gap-10 py-20 2xl:w-5/6'>
             <div className='h-full flex flex-col justify-start items-start rounded-xl gap-10'>
               <div className='flex flex-col gap-6'>
                 <h2 className="lg:text-5xl md:text-4xl text-3xl font-bold ">We would love to hear from you!</h2>

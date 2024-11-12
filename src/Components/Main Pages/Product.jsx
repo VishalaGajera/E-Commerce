@@ -1362,40 +1362,26 @@ const Product = () => {
     setCurrentPage(value);
   };
 
-  const [prices, setPrices] = useState();
-  const [selectedSizes, setSelectedSizes] = useState({});
+  const [prices, setPrices] = useState({});
 
   useEffect(() => {
-    const initialPrice = currentProducts?.map((product) => {
-      setPrice(product.sizes[0].price_per_bag);
-    })
-    // const initialSizes = products?.reduce((acc, product) => {
-    //   const defaultSize = product?.sizes[0];
-    //   console.log("defaultSize:", defaultSize);
 
-    //   acc[product?.name] = {
-    //     selectedSize: defaultSize.size_LB,
-    //     price: defaultSize.price_per_bag
-    //   };
-    //   return acc;
-    // }, {});
-    // setSelectedSizes(initialSizes);
+    // Initialize prices with the first available size price for each product on load
+    const initialPrices = currentProducts?.reduce((acc, product) => {
+      acc[product?.name] = product?.sizes[0]?.price_per_bag;
+      return acc;
+    }, {});
+    setPrices(initialPrices);
   }, [currentProducts]);
 
-  // Handle size change for each product
   const handleSizeChange = (productName, selectedSize) => {
-    const product = products.find(p => p.name === productName);
-    const selectedSizeDetails = product.sizes.find(size => size.size_LB === selectedSize);
-
-    setSelectedSizes(prevSizes => ({
-      ...prevSizes,
-      [productName]: {
-        selectedSize,
-        price: selectedSizeDetails.price_per_bag
-      }
+    // Update only the selected product's price based on selected size
+    setPrices((prevPrices) => ({
+      // ...prevPrices,
+      [productName]: selectedSize.price_per_bag
     }));
+    console.log(prices);
   };
-
 
   // const renderPagination = () => {
   //   const pageNumbers = [];
@@ -1578,18 +1564,30 @@ const Product = () => {
                           <div className="p-4 bg-gray-50 flex items-center justify-between">
                             {/* {product.sizes && product.sizes.length > 1 ? (
                             <> */}
-                            <span className="text-xl font-bold">${price[product.name]}</span>
+                            <span className="text-xl font-bold">${prices[product.name]}</span>
                             <select
                               className="border rounded p-2"
-                              value={selectedSizes[product.name]?.selectedSize}
-                              onChange={(e) => handleSizeChange(product.name, e.target.value)}
+                              onChange={(e) => {
+                                const selectedSize = product.sizes.find(size => size.size_LB === e.target.value);
+                                if (selectedSize) {
+                                  handleSizeChange(product.name, selectedSize);
+                                  console.log(product.name, "-", selectedSize.price_per_bag);
+                                }
+                              }}
                             >
-                              {product.sizes.map((size, i) => (
+                              {product?.sizes?.map((size, i) => (
                                 <option key={i} value={size.size_LB}>
                                   {size.size_LB}
                                 </option>
                               ))}
                             </select>
+                            {/* </>
+                          ) : (
+                            <>
+                              <span className="text-xl font-bold">${product.sizes[0].price_per_bag}</span>
+                              <span>{product.sizes[0].size_LB}</span>
+                            </>
+                          )} */}
                           </div>
                         </div>
                       </div>
