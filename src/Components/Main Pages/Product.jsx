@@ -14,6 +14,7 @@ const Product = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [categories, setCategories] = useState("");
   const productsPerPage = 16;
   // const [viewFilters, setShowFilters]=useState(false);
   const [gridColumns, setGridColumns] = useState(3);
@@ -119,8 +120,7 @@ const Product = () => {
       "price_per_lb": 0.81,
       "sizes": [
         {
-          "price_per_bag": 44.55,
-          "size_LB": "55LB",
+          "55LB": 44.55,
         }
       ],
       "rating": 5
@@ -133,8 +133,7 @@ const Product = () => {
       "price_per_lb": 0.89,
       "sizes": [
         {
-          "price_per_bag": 48.95,
-          "size_LB": "55LB",
+          "55LB": 48.95,
         }],
       "rating": 5
     },
@@ -146,8 +145,7 @@ const Product = () => {
       "price_per_lb": 0.94,
       "sizes": [
         {
-          "price_per_bag": 51.70,
-          "size_LB": "55LB",
+          "55LB": 51.70,
         }],
       "rating": 5
     },
@@ -159,8 +157,7 @@ const Product = () => {
       "price_per_lb": 1.17,
       "sizes": [
         {
-          "price_per_bag": 64.35,
-          "size_LB": "55LB",
+          "55LB": 64.35,
         }],
       "rating": 5
     },
@@ -172,8 +169,7 @@ const Product = () => {
       "price_per_lb": 1.10,
       "sizes": [
         {
-          "price_per_bag": 60.50,
-          "size_LB": "55LB",
+          "55LB": 60.50,
         }],
       "rating": 5
     },
@@ -185,8 +181,7 @@ const Product = () => {
       "price_per_lb": 0.99,
       "sizes": [
         {
-          "price_per_bag": 54.45,
-          "size_LB": "55LB",
+          "55LB": 54.45,
         }],
       "rating": 5
     },
@@ -198,8 +193,7 @@ const Product = () => {
       "price_per_lb": 1.12,
       "sizes": [
         {
-          "price_per_bag": 61.60,
-          "size_LB": "55LB",
+          "55LB": 61.60,
         }],
       "rating": 5
     },
@@ -211,8 +205,7 @@ const Product = () => {
       "price_per_lb": 0.74,
       "sizes": [
         {
-          "price_per_bag": 40.70,
-          "size_LB": "55LB",
+          "55LB": 40.70,
         }],
       "rating": 5
     },
@@ -224,8 +217,7 @@ const Product = () => {
       "price_per_lb": 0.69,
       "sizes": [
         {
-          "price_per_bag": 37.95,
-          "size_LB": "55LB",
+          "55LB": 37.95,
         }],
       "rating": 5
     },
@@ -237,8 +229,7 @@ const Product = () => {
       "price_per_lb": 0.81,
       "sizes": [
         {
-          "price_per_bag": 44.55,
-          "size_LB": "55LB",
+          "55LB": 44.55,
         }],
       "rating": 5
     },
@@ -250,8 +241,7 @@ const Product = () => {
       "price_per_lb": 1.79,
       "sizes": [
         {
-          "price_per_bag": 98.45,
-          "size_LB": "55LB",
+          "55LB": 98.45,
         }],
       "rating": 5
     },
@@ -263,8 +253,7 @@ const Product = () => {
       "price_per_lb": 1.59,
       "sizes": [
         {
-          "price_per_bag": 87.70,
-          "size_LB": "55LB",
+          "55LB": 87.70,
         }],
       "rating": 5
     },
@@ -276,8 +265,7 @@ const Product = () => {
       "price_per_lb": 1.85,
       "sizes": [
         {
-          "price_per_bag": 101.75,
-          "size_LB": "55LB",
+          "55LB": 101.75,
         }],
       "rating": 5
     },
@@ -289,8 +277,7 @@ const Product = () => {
       "price_per_lb": 1.55,
       "sizes": [
         {
-          "price_per_bag": 85.25,
-          "size_LB": "55LB",
+          "55LB": 85.25,
         }],
       "rating": 5
     },
@@ -302,8 +289,7 @@ const Product = () => {
       "price_per_lb": 1.62,
       "sizes": [
         {
-          "price_per_bag": 89.10,
-          "size_LB": "55LB",
+          "55LB": 89.10,
         }],
       "rating": 5
     },
@@ -315,8 +301,7 @@ const Product = () => {
       "price_per_lb": 1.29,
       "sizes": [
         {
-          "price_per_bag": 70.99,
-          "size_LB": "55LB",
+          "55LB": 70.99,
         }],
       "rating": 5
     },
@@ -328,8 +313,7 @@ const Product = () => {
       "price_per_lb": 1.36,
       "sizes": [
         {
-          "price_per_bag": 68.00,
-          "size_LB": "50LB",
+          "50LB": 68.00,
         }],
       "rating": 5
     },
@@ -341,8 +325,7 @@ const Product = () => {
       "price_per_lb": 1.38,
       "sizes": [
         {
-          "price_per_bag": 75.90,
-          "size_LB": "55LB",
+          "55LB": 75.90,
         }],
       "rating": 5
     },
@@ -354,8 +337,7 @@ const Product = () => {
       "price_per_lb": 1.69,
       "sizes": [
         {
-          "price_per_bag": 92.99,
-          "size_LB": "55LB",
+          "55LB": 92.99,
         }],
       "rating": 5
     },
@@ -367,8 +349,7 @@ const Product = () => {
       "price_per_lb": 1.83,
       "sizes": [
         {
-          "price_per_bag": 100.65,
-          "size_LB": "55LB",
+          "55LB": 100.65,
         }],
       "rating": 5
     },
@@ -380,8 +361,7 @@ const Product = () => {
       "price_per_lb": 1.43,
       "sizes": [
         {
-          "price_per_bag": 78.65,
-          "size_LB": "55LB",
+          "55LB": 78.65,
         }],
       "rating": 5
     },
@@ -393,8 +373,7 @@ const Product = () => {
       "price_per_lb": 1.38,
       "sizes": [
         {
-          "price_per_bag": 75.99,
-          "size_LB": "55LB",
+          "55LB": 75.99,
         }],
       "rating": 5
     },
@@ -406,8 +385,7 @@ const Product = () => {
       "price_per_lb": 1.31,
       "sizes": [
         {
-          "price_per_bag": 71.99,
-          "size_LB": "55LB",
+          "55LB": 71.99,
         }],
       "rating": 5
     },
@@ -419,8 +397,7 @@ const Product = () => {
       "price_per_lb": 1.46,
       "sizes": [
         {
-          "price_per_bag": 80.30,
-          "size_LB": "55LB",
+          "55LB": 80.30,
         }],
       "rating": 5
     },
@@ -432,8 +409,7 @@ const Product = () => {
       "price_per_lb": 1.48,
       "sizes": [
         {
-          "price_per_bag": 81.40,
-          "size_LB": "55LB",
+          "55LB": 81.40,
         }],
       "rating": 5
     },
@@ -445,8 +421,7 @@ const Product = () => {
       "price_per_lb": 1.20,
       "sizes": [
         {
-          "price_per_bag": 66.00,
-          "size_LB": "55LB",
+          "55LB": 66.00,
         }],
       "rating": 5
     },
@@ -458,8 +433,7 @@ const Product = () => {
       "price_per_lb": 1.14,
       "sizes": [
         {
-          "price_per_bag": 62.70,
-          "size_LB": "55LB",
+          "55LB": 62.70,
         }],
       "rating": 5
     },
@@ -471,8 +445,7 @@ const Product = () => {
       "price_per_lb": 0.99,
       "sizes": [
         {
-          "price_per_bag": 54.45,
-          "size_LB": "55LB",
+          "55LB": 54.45,
         }],
       "rating": 5
     },
@@ -484,8 +457,7 @@ const Product = () => {
       "price_per_lb": 1.59,
       "sizes": [
         {
-          "price_per_bag": 87.45,
-          "size_LB": "55LB",
+          "55LB": 87.45,
         }],
       "rating": 5
     },
@@ -497,8 +469,7 @@ const Product = () => {
       "price_per_lb": 1.66,
       "sizes": [
         {
-          "price_per_bag": 83.00,
-          "size_LB": "50LB",
+          "50LB": 83.00,
         }],
       "rating": 5
     },
@@ -510,8 +481,7 @@ const Product = () => {
       "price_per_lb": 1.58,
       "sizes": [
         {
-          "price_per_bag": 79.00,
-          "size_LB": "50LB",
+          "50LB": 79.00,
         }],
       "rating": 5
     },
@@ -523,8 +493,7 @@ const Product = () => {
       "price_per_lb": 1.76,
       "sizes": [
         {
-          "price_per_bag": 96.80,
-          "size_LB": "55LB",
+          "55LB": 96.80,
         }],
       "rating": 5
     },
@@ -536,8 +505,7 @@ const Product = () => {
       "price_per_lb": 0.76,
       "sizes": [
         {
-          "price_per_bag": 38.00,
-          "size_LB": "50LB",
+          "50LB": 38.00,
         }],
       "rating": 5
     },
@@ -549,8 +517,7 @@ const Product = () => {
       "price_per_lb": 1.00,
       "sizes": [
         {
-          "price_per_bag": 49.99,
-          "size_LB": "50LB",
+          "50LB": 49.99,
         }],
       "rating": 5
     },
@@ -562,8 +529,7 @@ const Product = () => {
       "price_per_lb": 1.86,
       "sizes": [
         {
-          "price_per_bag": 102.30,
-          "size_LB": "55LB",
+          "55LB": 102.30,
         }],
       "rating": 5
     },
@@ -575,8 +541,7 @@ const Product = () => {
       "price_per_lb": 2.02,
       "sizes": [
         {
-          "price_per_bag": 111.10,
-          "size_LB": "55LB",
+          "55LB": 111.10,
         }],
       "rating": 5
     },
@@ -588,8 +553,7 @@ const Product = () => {
       "price_per_lb": 2.04,
       "sizes": [
         {
-          "price_per_bag": 112.20,
-          "size_LB": "55LB",
+          "55LB": 112.20,
         }],
       "rating": 5
     },
@@ -601,8 +565,7 @@ const Product = () => {
       "price_per_lb": 2.63,
       "sizes": [
         {
-          "price_per_bag": 144.65,
-          "size_LB": "55LB",
+          "55LB": 144.65,
         }],
       "rating": 5
     },
@@ -614,8 +577,7 @@ const Product = () => {
       "price_per_lb": 1.13,
       "sizes": [
         {
-          "price_per_bag": 56.50,
-          "size_LB": "50LB",
+          "50LB": 56.50,
         }],
       "rating": 5
     },
@@ -627,11 +589,9 @@ const Product = () => {
       "price_per_lb": 1.35,
       "sizes": [
         {
-          "price_per_bag": 53.99,
-          "size_LB": "40LB",
+          "40LB": 53.99,
         }, {
-          "price_per_bag": 5.49,
-          "size_LB": "4LB",
+          "4LB": 5.49,
         }],
       "rating": 5
     },
@@ -643,8 +603,7 @@ const Product = () => {
       "price_per_lb": 0.76,
       "sizes": [
         {
-          "price_per_bag": 15.29,
-          "size_LB": "20LB",
+          "20LB": 15.29,
         }],
       "rating": 5
     },
@@ -656,8 +615,7 @@ const Product = () => {
       "price_per_lb": 0.82,
       "sizes": [
         {
-          "price_per_bag": 16.30,
-          "size_LB": "20LB",
+          "20LB": 16.30,
         }],
       "rating": 5
     },
@@ -669,16 +627,13 @@ const Product = () => {
       "price_per_lb": 1.37,
       "sizes": [
         {
-          "price_per_bag": 5.49,
-          "size_LB": "4LB",
+          "4LB": 5.49,
         },
         {
-          "price_per_bag": 9.99,
-          "size_LB": "8LB",
+          "8LB": 9.99,
         },
         {
-          "price_per_bag": 17.70,
-          "size_LB": "20LB",
+          "20LB": 17.70,
         }
       ],
       "rating": 5
@@ -691,8 +646,7 @@ const Product = () => {
       "price_per_lb": 0.85,
       "sizes": [
         {
-          "price_per_bag": 17.00,
-          "size_LB": "20LB",
+          "20LB": 17.00,
         }],
       "rating": 5
     },
@@ -704,8 +658,7 @@ const Product = () => {
       "price_per_lb": 0.85,
       "sizes": [
         {
-          "price_per_bag": 17.00,
-          "size_LB": "20LB",
+          "20LB": 17.00,
         }],
       "rating": 5
     },
@@ -717,11 +670,9 @@ const Product = () => {
       "price_per_lb": 1.38,
       "sizes": [
         {
-          "price_per_bag": 55.00,
-          "size_LB": "40LB",
+          "40LB": 55.00,
         }, {
-          "price_per_bag": 15.00,
-          "size_LB": "10LB",
+          "10LB": 15.00,
         }],
       "rating": 5
     },
@@ -733,11 +684,9 @@ const Product = () => {
       "price_per_lb": 1.25,
       "sizes": [
         {
-          "price_per_bag": 50.00,
-          "size_LB": "40LB",
+          "40LB": 50.00,
         }, {
-          "price_per_bag": 13.00,
-          "size_LB": "10LB",
+          "10LB": 13.00,
         }],
       "rating": 5
     },
@@ -749,11 +698,9 @@ const Product = () => {
       "price_per_lb": 1.10,
       "sizes": [
         {
-          "price_per_bag": 44.00,
-          "size_LB": "40LB",
+          "40LB": 44.00,
         }, {
-          "price_per_bag": 11.00,
-          "size_LB": "10LB",
+          "10LB": 11.00,
         }],
       "rating": 5
     },
@@ -765,8 +712,7 @@ const Product = () => {
       "price_per_lb": 1.10,
       "sizes": [
         {
-          "price_per_bag": 44.00,
-          "size_LB": "40LB",
+          "40LB": 44.00,
         }],
       "rating": 5
     },
@@ -778,8 +724,7 @@ const Product = () => {
       "price_per_lb": 1.12,
       "sizes": [
         {
-          "price_per_bag": 44.99,
-          "size_LB": "40LB",
+          "40LB": 44.99,
         }],
       "rating": 5
     },
@@ -791,8 +736,7 @@ const Product = () => {
       "price_per_lb": 7.29,
       "sizes": [
         {
-          "price_per_bag": 7.29,
-          "size_LB": "1LB",
+          "1LB": 7.29,
         }],
       "rating": 5
     },
@@ -804,8 +748,7 @@ const Product = () => {
       "price_per_lb": 15.49,
       "sizes": [
         {
-          "price_per_bag": 15.49,
-          "size_LB": "1LB",
+          "1LB": 15.49,
         }],
       "rating": 5
     },
@@ -817,8 +760,7 @@ const Product = () => {
       "price_per_lb": 6.59,
       "sizes": [
         {
-          "price_per_bag": 6.59,
-          "size_LB": "1LB",
+          "1LB": 6.59,
         }],
       "rating": 5
     },
@@ -830,8 +772,7 @@ const Product = () => {
       "price_per_lb": 6.50,
       "sizes": [
         {
-          "price_per_bag": 6.50,
-          "size_LB": "1LB",
+          "1LB": 6.50,
         }],
       "rating": 5
     },
@@ -843,8 +784,7 @@ const Product = () => {
       "price_per_lb": 4.59,
       "sizes": [
         {
-          "price_per_bag": 4.59,
-          "size_LB": "1LB",
+          "1LB": 4.59,
         }],
       "rating": 5
     },
@@ -856,8 +796,7 @@ const Product = () => {
       "price_per_lb": 4.69,
       "sizes": [
         {
-          "price_per_bag": 4.69,
-          "size_LB": "1LB",
+          "1LB": 4.69,
         }],
       "rating": 5
     },
@@ -869,8 +808,7 @@ const Product = () => {
       "price_per_lb": 3.99,
       "sizes": [
         {
-          "price_per_bag": 3.99,
-          "size_LB": "1LB",
+          "1LB": 3.99,
         }],
       "rating": 5
     },
@@ -882,8 +820,7 @@ const Product = () => {
       "price_per_lb": 6.69,
       "sizes": [
         {
-          "price_per_bag": 6.69,
-          "size_LB": "1LB",
+          "1LB": 6.69,
         }],
       "rating": 5
     },
@@ -895,8 +832,7 @@ const Product = () => {
       "price_per_lb": 5.29,
       "sizes": [
         {
-          "price_per_bag": 5.29,
-          "size_LB": "1LB",
+          "1LB": 5.29,
         }],
       "rating": 5
     },
@@ -908,8 +844,7 @@ const Product = () => {
       "price_per_lb": 7.59,
       "sizes": [
         {
-          "price_per_bag": 7.59,
-          "size_LB": "1LB",
+          "1LB": 7.59,
         }],
       "rating": 5
     },
@@ -921,8 +856,7 @@ const Product = () => {
       "price_per_lb": 3.99,
       "sizes": [
         {
-          "price_per_bag": 3.99,
-          "size_LB": "1LB",
+          "1LB": 3.99,
         }],
       "rating": 5
     },
@@ -934,8 +868,7 @@ const Product = () => {
       "price_per_lb": 13.79,
       "sizes": [
         {
-          "price_per_bag": 13.79,
-          "size_LB": "1LB",
+          "1LB": 13.79,
         }],
       "rating": 5
     },
@@ -947,8 +880,7 @@ const Product = () => {
       "price_per_lb": 12.69,
       "sizes": [
         {
-          "price_per_bag": 12.69,
-          "size_LB": "1LB",
+          "1LB": 12.69,
         }],
       "rating": 5
     },
@@ -960,8 +892,7 @@ const Product = () => {
       "price_per_lb": 2.59,
       "sizes": [
         {
-          "price_per_bag": 2.59,
-          "size_LB": "1LB",
+          "1LB": 2.59,
         }],
       "rating": 5
     },
@@ -973,8 +904,7 @@ const Product = () => {
       "price_per_lb": 2.59,
       "sizes": [
         {
-          "price_per_bag": 2.59,
-          "size_LB": "1LB",
+          "1LB": 2.59,
         }],
       "rating": 5
     },
@@ -986,8 +916,7 @@ const Product = () => {
       "price_per_lb": 4.99,
       "sizes": [
         {
-          "price_per_bag": 4.99,
-          "size_LB": "1LB",
+          "1LB": 4.99,
         }],
       "rating": 5
     },
@@ -999,8 +928,7 @@ const Product = () => {
       "price_per_lb": 5.69,
       "sizes": [
         {
-          "price_per_bag": 5.69,
-          "size_LB": "1LB",
+          "1LB": 5.69,
         }],
       "rating": 5
     },
@@ -1012,8 +940,7 @@ const Product = () => {
       "price_per_lb": 5.69,
       "sizes": [
         {
-          "price_per_bag": 5.69,
-          "size_LB": "1LB",
+          "1LB": 5.69,
         }],
       "rating": 5
     },
@@ -1025,8 +952,7 @@ const Product = () => {
       "price_per_lb": 3.19,
       "sizes": [
         {
-          "price_per_bag": 3.19,
-          "size_LB": "1LB",
+          "1LB": 3.19,
         }],
       "rating": 5
     },
@@ -1038,8 +964,7 @@ const Product = () => {
       "price_per_lb": 3.19,
       "sizes": [
         {
-          "price_per_bag": 3.19,
-          "size_LB": "1LB",
+          "1LB": 3.19,
         }],
       "rating": 5
     },
@@ -1051,8 +976,7 @@ const Product = () => {
       "price_per_lb": 4.50,
       "sizes": [
         {
-          "price_per_bag": 4.50,
-          "size_LB": "1LB",
+          "1LB": 4.50,
         }],
       "rating": 5
     },
@@ -1064,8 +988,7 @@ const Product = () => {
       "price_per_lb": 3.49,
       "sizes": [
         {
-          "price_per_bag": 3.49,
-          "size_LB": "1LB",
+          "1LB": 3.49,
         }],
       "rating": 5
     },
@@ -1077,8 +1000,7 @@ const Product = () => {
       "price_per_lb": 24.99,
       "sizes": [
         {
-          "price_per_bag": 24.99,
-          "size_LB": "1LB",
+          "1LB": 24.99,
         }],
       "rating": 5
     },
@@ -1090,8 +1012,7 @@ const Product = () => {
       "price_per_lb": 34.00,
       "sizes": [
         {
-          "price_per_bag": 22.50,
-          "size_LB": "1LB",
+          "1LB": 22.50,
         }],
       "rating": 5
     },
@@ -1103,8 +1024,7 @@ const Product = () => {
       "price_per_lb": 1.39,
       "sizes": [
         {
-          "price_per_bag": 1.39,
-          "size_LB": "1LB",
+          "1LB": 1.39,
         }],
       "rating": 5
     },
@@ -1116,8 +1036,7 @@ const Product = () => {
       "price_per_lb": 1.39,
       "sizes": [
         {
-          "price_per_bag": 1.39,
-          "size_LB": "1LB",
+          "1LB": 1.39,
         }],
       "rating": 5
     },
@@ -1129,8 +1048,7 @@ const Product = () => {
       "price_per_lb": 11.29,
       "sizes": [
         {
-          "price_per_bag": 11.29,
-          "size_LB": "1LB",
+          "1LB": 11.29,
         }],
       "rating": 5
     },
@@ -1142,8 +1060,7 @@ const Product = () => {
       "price_per_lb": 10.49,
       "sizes": [
         {
-          "price_per_bag": 10.49,
-          "size_LB": "1LB",
+          "1LB": 10.49,
         }],
       "rating": 5
     },
@@ -1155,8 +1072,7 @@ const Product = () => {
       "price_per_lb": 3.99,
       "sizes": [
         {
-          "price_per_bag": 3.99,
-          "size_LB": "1LB",
+          "1LB": 3.99,
         }],
       "rating": 5
     },
@@ -1168,8 +1084,7 @@ const Product = () => {
       "price_per_lb": 3.79,
       "sizes": [
         {
-          "price_per_bag": 3.79,
-          "size_LB": "1LB",
+          "1LB": 3.79,
         }],
       "rating": 5
     },
@@ -1181,8 +1096,7 @@ const Product = () => {
       "price_per_lb": 8.99,
       "sizes": [
         {
-          "price_per_bag": 8.99,
-          "size_LB": "1LB",
+          "1LB": 8.99,
         }],
       "rating": 5
     },
@@ -1194,8 +1108,7 @@ const Product = () => {
       "price_per_lb": 2.59,
       "sizes": [
         {
-          "price_per_bag": 2.59,
-          "size_LB": "1LB",
+          "1LB": 2.59,
         }],
       "rating": 5
     },
@@ -1207,8 +1120,7 @@ const Product = () => {
       "price_per_lb": 3.19,
       "sizes": [
         {
-          "price_per_bag": 3.19,
-          "size_LB": "1LB",
+          "1LB": 3.19,
         }],
       "rating": 5
     },
@@ -1220,8 +1132,7 @@ const Product = () => {
       "price_per_lb": 3.49,
       "sizes": [
         {
-          "price_per_bag": 3.49,
-          "size_LB": "1LB",
+          "1LB": 3.49,
         }],
       "rating": 5
     },
@@ -1233,8 +1144,7 @@ const Product = () => {
       "price_per_lb": 5.19,
       "sizes": [
         {
-          "price_per_bag": 5.19,
-          "size_LB": "1LB",
+          "1LB": 5.19,
         }],
       "rating": 5
     },
@@ -1246,8 +1156,7 @@ const Product = () => {
       "price_per_lb": 14.99,
       "sizes": [
         {
-          "price_per_bag": 14.99,
-          "size_LB": "1LB",
+          "1LB": 14.99,
         }],
       "rating": 5
     },
@@ -1259,8 +1168,7 @@ const Product = () => {
       "price_per_lb": 4.49,
       "sizes": [
         {
-          "price_per_bag": 4.49,
-          "size_LB": "1LB",
+          "1LB": 4.49,
         }],
       "rating": 5
     },
@@ -1272,8 +1180,7 @@ const Product = () => {
       "price_per_lb": 6.00,
       "sizes": [
         {
-          "price_per_bag": 6.00,
-          "size_LB": "1LB",
+          "1LB": 6.00,
         }],
       "rating": 5
     },
@@ -1285,8 +1192,7 @@ const Product = () => {
       "price_per_lb": 7.27,
       "sizes": [
         {
-          "price_per_bag": 16.00,
-          "size_LB": "2.2LB",
+          "2.2LB": 16.00,
         }],
       "rating": 5
     },
@@ -1298,21 +1204,19 @@ const Product = () => {
       "price_per_lb": 1.99,
       "sizes": [
         {
-          "price_per_bag": 1.99,
-          "size_LB": "1LB",
+          "1LB": 1.99,
         }],
       "rating": 5
     },
-    {
-      "image": "/Images/Spices/Peanut_Red_Skin_Big.png",
-      "name": "Peanut Red Skin Big",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-      "category": "Spices",
-      "price_per_lb": 2.49,
-      "price_per_bag": 2.49,
-      "size_LB": "1LB",
-      "rating": 5
-    },
+    // {
+    //   "image": "/Images/Spices/Peanut_Red_Skin_Big.png",
+    //   "name": "Peanut Red Skin Big",
+    //   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    //   "category": "Spices",
+    //   "price_per_lb": 2.49,
+    //    "1L: 2.49,
+    //   "rating": 5
+    // },
     // {
     //   "image": "/Images/Spices/.png",
     //   "name": "Handi Fried Onion (12 * 400)",
@@ -1324,27 +1228,32 @@ const Product = () => {
     // }
   ]
 
-  const toggleCategory = (index) => {
-    setActiveCategory(activeCategory === index ? null : index);
-  };
+  useEffect(() => {
+    handleCategorySelect(localStorage.getItem("categories"));
+  }, [])
 
-  const getGridClass = () => {
-    switch (gridColumns) {
-      case 2:
-        return "grid-cols-1 sm:grid-cols-2";
-      case 3:
-        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
-      case 4:
-        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4";
-      default:
-        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4";
-    }
-  };
+  // const toggleCategory = (index) => {
+  //   setActiveCategory(activeCategory === index ? null : index);
+  // };
+
+  // const getGridClass = () => {
+  //   switch (gridColumns) {
+  //     case 2:
+  //       return "grid-cols-1 sm:grid-cols-2";
+  //     case 3:
+  //       return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
+  //     case 4:
+  //       return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4";
+  //     default:
+  //       return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4";
+  //   }
+  // };
 
   // Handle category selection
   const handleCategorySelect = (category) => {
+    console.log(category);
     setSelectedCategory(category);
-    setCurrentPage(1); // Reset to the first page when a new category is selected
+    setCurrentPage(1);
   };
 
   // Filter products by the selected category
@@ -1359,30 +1268,50 @@ const Product = () => {
   const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
   const handleChange = (event, value) => {
+  console.log(value);
+  
     setCurrentPage(value);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const [prices, setPrices] = useState({});
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   const initialPrices = currentProducts?.reduce((acc, product) => {
+  //     acc[product?.name] = product?.sizes[0]?.price_per_bag;
+  //     return acc;
+  //   }, {});
+  //   setPrices(initialPrices);
+  // }, [currentProducts]);
 
-    // Initialize prices with the first available size price for each product on load
-    const initialPrices = currentProducts?.reduce((acc, product) => {
-      acc[product?.name] = product?.sizes[0]?.price_per_bag;
+  // const handleSizeChange = (productName, selectedSize) => {
+  //   // Update only the selected product's price based on selected size
+  //   setPrices((prevPrices) => ({
+  //     // ...prevPrices,
+  //     [productName]: selectedSize.price_per_bag
+  //   }));
+  //   console.log(prices);
+  // };
+
+  const [selectedPrices, setSelectedPrices] = useState(
+    products.reduce((acc, product) => {
+      acc[product.name] = product.sizes[0][Object.keys(product.sizes[0])[0]]; // Default price from the first size
       return acc;
-    }, {});
-    setPrices(initialPrices);
-  }, [currentProducts]);
+    }, {})
+  );
 
+  // Handle size change for a specific product
   const handleSizeChange = (productName, selectedSize) => {
-    // Update only the selected product's price based on selected size
-    setPrices((prevPrices) => ({
-      // ...prevPrices,
-      [productName]: selectedSize.price_per_bag
+    const price = selectedSize[Object.keys(selectedSize)[0]]; // Get the price using the key
+    setSelectedPrices((prevPrices) => ({
+      ...prevPrices,
+      [productName]: price,
     }));
-    console.log(prices);
   };
-
+  
   // const renderPagination = () => {
   //   const pageNumbers = [];
   //   for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
@@ -1564,22 +1493,32 @@ const Product = () => {
                           <div className="p-4 bg-gray-50 flex items-center justify-between">
                             {/* {product.sizes && product.sizes.length > 1 ? (
                             <> */}
-                            <span className="text-xl font-bold">${prices[product.name]}</span>
+                            {/* <span className="text-xl font-bold">${prices[product.name]}</span> */}
+                            <span className="text-xl font-bold">${selectedPrices[product.name] || product.sizes[0][Object.keys(product.sizes[0])[0]]}</span>
                             <select
                               className="border rounded p-2"
+                              // onChange={(e) => {
+                              //   const selectedSize = product.sizes.find(size => size.size_LB === e.target.value);
+                              //   if (selectedSize) {
+                              //     handleSizeChange(product.name, selectedSize);
+                              //     // console.log(product.name, "-", selectedSize.price_per_bag);
+                              //   }
+                              // }}
                               onChange={(e) => {
-                                const selectedSize = product.sizes.find(size => size.size_LB === e.target.value);
+                                const selectedSize = product.sizes.find(size => Object.keys(size)[0] === e.target.value);
                                 if (selectedSize) {
                                   handleSizeChange(product.name, selectedSize);
-                                  console.log(product.name, "-", selectedSize.price_per_bag);
                                 }
                               }}
                             >
-                              {product?.sizes?.map((size, i) => (
-                                <option key={i} value={size.size_LB}>
-                                  {size.size_LB}
-                                </option>
-                              ))}
+                              {product?.sizes?.map((size, i) => {
+                                const [key, value] = Object.entries(size)[0];
+                                return (
+                                  <option key={i} value={key}>
+                                    {key}
+                                  </option>
+                                )
+                              })}
                             </select>
                             {/* </>
                           ) : (

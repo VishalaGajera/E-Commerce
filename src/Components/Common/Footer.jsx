@@ -36,8 +36,7 @@ export default function Footer() {
                 <img src={CC_TRADERS_2} alt="" className='w-40 h-20' />
               </Link>
             </div>
-            <div className='md:col-span-3 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-5 md:gap-10 gap-5'>
-              
+            <div className='md:col-span-3 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 lg:gap-5 md:gap-10 gap-5'>
               <div className="flex flex-col ">
                 <div>
                   <h3 className="font-bold mb-4 text-xl">Quick Links</h3>
@@ -61,32 +60,52 @@ export default function Footer() {
                   </ul>
                 </div>
               </div>
-              <div className="flex flex-col">
-                <div>
+              <div className='grid md:grid-cols-2 grid-cols-1 w-full  col-span-2 lg:gap-5 md:gap-10 gap-5 '>
+                <div className="flex flex-col  md:items-start">
                   <h3 className="font-bold mb-4 text-xl">Contact Us</h3>
                   <ul className="md:space-y-2 mb-4">
-                    <li><a href="#" className="hover:text-BgGolden text- flex gap-2 items-center"><span className='text-lg'><FiPhone /></span>+1 (437) 606-3251</a></li>
-                    <li><a href="#" className="hover:text-BgGolden text- flex gap-2 items-center"><span className='text-xl'><MdOutlineMail /></span>info@cctraders.ca</a></li>
+                    <li>
+                      <a href="#" className="hover:text-BgGolden text-gray-800 flex gap-2 items-center">
+                        <span className='text-lg'><FiPhone /></span>+1 (437) 606-3251
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="hover:text-BgGolden text-gray-800 flex gap-2 items-center">
+                        <span className='text-xl'><MdOutlineMail /></span>info@cctraders.ca
+                      </a>
+                    </li>
                   </ul>
                 </div>
-              </div>
-              <div className="flex flex-col ">
-                <div>
+
+                <div className="flex flex-col md:items-start">
                   <h3 className="font-bold mb-4 text-xl">Connect with us :</h3>
-                  <ul className="space-x-2 flex text-xl">
-                    <li><a href="#" className="text-white rounded-full bg-BgGolden p-3 flex"><FaFacebookF /></a></li>
-                    <li><a href="#" className="text-white rounded-full bg-BgGolden p-3 flex"><FaLinkedin /></a></li>
-                    <li><a href="#" className="text-white rounded-full bg-BgGolden p-3 flex"><FaInstagram /></a></li>
+                  <ul className="space-x-4 flex text-xl">
+                    <li>
+                      <a href="#" className="text-white rounded-full bg-BgGolden p-3 flex">
+                        <FaFacebookF />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-white rounded-full bg-BgGolden p-3 flex">
+                        <FaLinkedin />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-white rounded-full bg-BgGolden p-3 flex">
+                        <FaInstagram />
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
       <div className="flex justify-center items-center md:pb-5 p-5 border-t w-full gap-5">
         <p className="text-sm flex items-center justify-center gap-1"><span className="text-xl">&copy;</span> 2024 Brand <span className="font-bold">|</span> All Rights Reserved</p>
-            </div>
+      </div>
       {/* </div> */}
     </footer>
   )

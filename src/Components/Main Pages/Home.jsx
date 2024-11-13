@@ -25,9 +25,12 @@ import spices from '../../../public/Images/Product/Spices.png'
 import rice from '../../../public/Images/Product/rice-removebg-preview.png'
 import flour from '../../../public/Images/Product/flour-removebg-preview.png'
 import beans from '../../../public/Images/Product/beans.png'
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [categories,setCategories]=useState("");
+  const navigate=useNavigate();
 
   const sliderImages = [slide1, slide2, slide3, slide4]
 
@@ -83,6 +86,12 @@ const Home = () => {
       </div>
     );
   };
+  
+  const handleCategoriesClick=(categories)=>{
+    localStorage.setItem("categories", categories)
+    navigate('/products')
+  }
+  
   return (
     <div className='flex justify-center items-center bg-white'>
       <div className='flex flex-col justify-center items-center'>
@@ -114,18 +123,19 @@ const Home = () => {
             // className="w-[98.9vw] h-[500px] md:h-[600px] "
             className="h-full w-full overflow-hidden"
           >
-            <SwiperSlide>
+            <SwiperSlide  className="cursor-pointer" onClick={()=>handleCategoriesClick("Rice")}>
               <img src={slide1} alt={`slide 1}`} className="h-full w-full object-fill" />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide  className="cursor-pointer" onClick={()=>handleCategoriesClick("Flours")}>
               <img src={slide2} alt={`slide 2}`} className="h-full w-full object-fill" />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide  className="cursor-pointer" onClick={()=>handleCategoriesClick("Beans & Lentils")}>
               <img src={slide3} alt={`slide 3}`} className="h-full w-full object-fill" />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide  className="cursor-pointer" onClick={()=>handleCategoriesClick("Spices")}>
               <img src={slide4} alt={`slide 4}`} className="h-full w-full object-fill" />
             </SwiperSlide>
+          </Swiper>
             {/* {sliderImages.map((image, index) => {
               return (
                 <SwiperSlide key={index}>
@@ -133,7 +143,6 @@ const Home = () => {
                 </SwiperSlide>
               )
             })} */}
-          </Swiper>
           <div className="custom-prev absolute top-1/2 transform -translate-y-1/2 md:left-10 left-5 z-10 p-3 cursor-pointer border-2 border-BgGolden text-BgGolden rounded-full animate-bg-fade-out hover:animate-bg-fade-in hover:text-white">
             <BsArrowLeft className='md:text-2xl text-xl' />
           </div>
@@ -180,21 +189,21 @@ const Home = () => {
           </div>
 
           <div className='grid 2xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mx-5'>
-            <div className='md:p-5 p-2 border flex items-center gap-5 bg-red-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'>
+            <div className='md:p-5 p-2 border flex items-center gap-5 bg-red-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'  onClick={()=>handleCategoriesClick("Flours")}>
               <img src={flour} alt="" className='w-20' />
               <div className='flex flex-col md:gap-2 gap-0'>
                 <h1 className='md:font-bold font-bold md:text-lg text-base'>Fresh Flours for All Your Baking and Cooking.</h1>
                 <p className='md:text-base text-sm'>explore sher, Ashirwad, Minar…</p>
               </div>
             </div>
-            <div className='md:p-5 p-2 border flex items-center gap-5 bg-green-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'>
+            <div className='md:p-5 p-2 border flex items-center gap-5 bg-green-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'  onClick={()=>handleCategoriesClick("Rice")}>
               <img src={rice} alt="" className='w-20' />
               <div className='flex flex-col md:gap-2 gap-0'>
                 <h1 className='md:font-bold font-bold md:text-lg text-base'>Aromatic Rice for Tasty, Fluffy Meals</h1>
                 <p className='md:text-base text-sm'>explore Maharani, Handi, Marhaba</p>
               </div>
             </div>
-            <div className='md:p-5 p-2 border flex items-center gap-5 bg-blue-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'>
+            <div className='md:p-5 p-2 border flex items-center gap-5 bg-blue-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'  onClick={()=>handleCategoriesClick("Beans & Lentils")}>
               <img src={beans} alt="" className='w-20' />
               <div className='flex flex-col md:gap-2 gap-0'>
                 <h1 className='md:font-bold font-bold md:text-lg text-base'>Explore Our Fresh, Quality Beans & Lentils – Perfect for Nutritious,
@@ -202,7 +211,7 @@ const Home = () => {
                 <p className='md:text-base text-sm'></p>
               </div>
             </div>
-            <div className='md:p-5 p-2 border flex items-center gap-5 bg-yellow-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'>
+            <div className='md:p-5 p-2 border flex items-center gap-5 bg-yellow-200 rounded-tr-3xl rounded-bl-3xl cursor-pointer'  onClick={()=>handleCategoriesClick("Spices")}>
               <img src={spices} alt="" className='w-20' />
               <div className='flex flex-col md:gap-2 gap-0'>
                 <h1 className='md:font-bold font-bold md:text-lg text-base'>Traditional Spice Blends for Great Flavor</h1>
@@ -239,7 +248,6 @@ const Home = () => {
 
           <div className=' relative w-full flex items-center justify-center gap-10 h-32 overflow-hidden'>
             {brand?.map((data, index) => {
-              console.log(index);
               return (
                 <div className={`item item${index + 1} flex justify-center items-center`} key={index} >
                   <img src={data} alt="" className="w-48 h-24" />

@@ -5,6 +5,7 @@ import About from './Components/Main Pages/About'
 import Home from './Components/Main Pages/Home'
 import Contact from './Components/Main Pages/Contact'
 import Product from './Components/Main Pages/Product'
+import ScrollToTop from './Components/Common/ScrollToTop'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <>
     <div className='h-auto'>
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route path='/' element={<Navbar />} >
             <Route index element={<Home />} />
