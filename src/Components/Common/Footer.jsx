@@ -1,15 +1,19 @@
 import CC_TRADERS_2 from '/Images/CC_TRADERS_2.png';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMail, MdOutlineMailOutline } from "react-icons/md";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
+const navigate=useNavigate();
+const handleClick=()=>{
+  navigate('/contact');
+}
   return (
     <footer className="bg-BgColor shadow-custom border-BgGolden text-gray-800 pt-10 w-full h-full flex flex-col justify-center items-center">
       {/* <footer className="bg-black border-t-2 border-black text-white pt-16 px-4 w-full"> */}
       {/* <div className="mx-auto"> */}
-      <h2 className="2xl:text-5xl lg:text-5xl md:text-4xl text-2xl font-serif mb-6 md:text-center text-start uppercase px-5">LET'S CONNECT WITH US BULK ORDER...</h2>
+      <h2 className="2xl:text-5xl lg:text-5xl md:text-4xl text-2xl font-serif mb-6 md:text-center text-start uppercase px-5">LET'S CONNECT WITH US FOR BULK ORDER...</h2>
       {/* <form className="flex  md:flex-row flex-col gap-3 justify-center md:items-center items-start mb-12"> */}
       <form className="flex  md:flex-row flex-col gap-3 justify-center items-center  mb-12">
         {/* <input
@@ -22,6 +26,7 @@ export default function Footer() {
             type="submit"
             // className="bg-BgGolden text-white md:rounded-full rounded-lg md:px-5 px-2 md:py-3 py-2 md:ml-2 w-fit"
             className="bg-BgGolden text-white rounded-lg px-10 font-bold text-xl py-2 md:ml-2 w-fit"
+            onClick={()=>handleClick()}
           >
             {/* SUBSCRIBE NOW */}
             Bulk Inquiry
@@ -81,7 +86,7 @@ export default function Footer() {
                   <h3 className="font-bold mb-4 text-xl">Connect with us :</h3>
                   <ul className="space-x-4 flex text-xl">
                     <li>
-                      <a href="#" className="text-white rounded-full bg-BgGolden p-3 flex">
+                      <a href="https://www.instagram.com/aparna_spices?igsh=MXF3OWZncHBzaTBtZw==" className="text-white rounded-full bg-BgGolden p-3 flex">
                         <FaFacebookF />
                       </a>
                     </li>
