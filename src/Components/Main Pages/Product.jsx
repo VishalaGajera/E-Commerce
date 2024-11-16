@@ -1230,7 +1230,11 @@ const Product = () => {
 
   useEffect(() => {
     handleCategorySelect(localStorage.getItem("categories"));
-  }, [])
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [localStorage.getItem("categories")])
 
   // const toggleCategory = (index) => {
   //   setActiveCategory(activeCategory === index ? null : index);

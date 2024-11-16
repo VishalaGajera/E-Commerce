@@ -5,10 +5,16 @@ import { MdOutlineMail, MdOutlineMailOutline } from "react-icons/md";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
-const navigate=useNavigate();
-const handleClick=()=>{
-  navigate('/contact');
-}
+  const navigate = useNavigate();
+  const handleCategoriesClick = (categories) => {
+    localStorage.setItem("categories", categories)
+    navigate('/products');
+    console.log(categories);
+  }
+
+  const handleClick = () => {
+    navigate('/contact');
+  }
   return (
     <footer className="bg-BgColor shadow-custom border-BgGolden text-gray-800 pt-10 w-full h-full flex flex-col justify-center items-center">
       {/* <footer className="bg-black border-t-2 border-black text-white pt-16 px-4 w-full"> */}
@@ -26,7 +32,7 @@ const handleClick=()=>{
             type="submit"
             // className="bg-BgGolden text-white md:rounded-full rounded-lg md:px-5 px-2 md:py-3 py-2 md:ml-2 w-fit"
             className="bg-BgGolden text-white rounded-lg px-10 font-bold text-xl py-2 md:ml-2 w-fit"
-            onClick={()=>handleClick()}
+            onClick={() => handleClick()}
           >
             {/* SUBSCRIBE NOW */}
             Bulk Inquiry
@@ -46,10 +52,10 @@ const handleClick=()=>{
                 <div>
                   <h3 className="font-bold mb-4 text-xl">Quick Links</h3>
                   <ul className="md:space-y-2">
-                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Home</a></li>
-                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">About Us</a></li>
-                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Products</a></li>
-                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Bulk Inquiries</a></li>
+                    <li><Link to={'/'} className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Home</Link></li>
+                    <li><Link to={'/about'} className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">About Us</Link></li>
+                    <li><Link to={'/products'} className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Products</Link></li>
+                    <li><Link to={'/contact'} className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Bulk Inquiries</Link></li>
                   </ul>
                 </div>
               </div>
@@ -57,11 +63,11 @@ const handleClick=()=>{
                 <div>
                   <h3 className="font-bold mb-4 text-xl">Categories</h3>
                   <ul className="md:space-y-2">
-                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Rice</a></li>
-                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Beans</a></li>
-                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Flour</a></li>
-                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Spices</a></li>
-                    <li><a href="#" className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Spice Mixes</a></li>
+                    <li><span onClick={() => handleCategoriesClick("Rice")} className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Rice</span></li>
+                    <li><span onClick={() => handleCategoriesClick("Beans & Lentils")} className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Beans</span></li>
+                    <li><span onClick={() => handleCategoriesClick("Flours")} className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Flour</span></li>
+                    <li><span onClick={() => handleCategoriesClick("Spices")} className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Spices</span></li>
+                    <li><span onClick={() => handleCategoriesClick("Spices")} className="hover:font-bold hover:translate-x-3 transition-all duration-150 hover:text-BgGolden">Spice Mixes</span></li>
                   </ul>
                 </div>
               </div>
@@ -70,14 +76,14 @@ const handleClick=()=>{
                   <h3 className="font-bold mb-4 text-xl">Contact Us</h3>
                   <ul className="md:space-y-2 mb-4">
                     <li>
-                      <a href="#" className="hover:text-BgGolden text-gray-800 flex gap-2 items-center">
+                      <Link to={'#'} className="hover:text-BgGolden text-gray-800 flex gap-2 items-center">
                         <span className='text-lg'><FiPhone /></span>+1 (437) 606-3251
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-BgGolden text-gray-800 flex gap-2 items-center">
+                      <Link to={'#'} className="hover:text-BgGolden text-gray-800 flex gap-2 items-center">
                         <span className='text-xl'><MdOutlineMail /></span>info@cctraders.ca
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -86,19 +92,19 @@ const handleClick=()=>{
                   <h3 className="font-bold mb-4 text-xl">Connect with us :</h3>
                   <ul className="space-x-4 flex text-xl">
                     <li>
-                      <a href="https://www.instagram.com/aparna_spices?igsh=MXF3OWZncHBzaTBtZw==" className="text-white rounded-full bg-BgGolden p-3 flex">
+                      <Link to={'#'} className="text-white rounded-full bg-BgGolden p-3 flex">
                         <FaFacebookF />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-white rounded-full bg-BgGolden p-3 flex">
+                      <Link to={'#'} className="text-white rounded-full bg-BgGolden p-3 flex">
                         <FaLinkedin />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-white rounded-full bg-BgGolden p-3 flex">
+                      <Link to={"https://www.instagram.com/aparna_spices?igsh=MXF3OWZncHBzaTBtZw=="} className="text-white rounded-full bg-BgGolden p-3 flex">
                         <FaInstagram />
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
