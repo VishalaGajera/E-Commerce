@@ -10,9 +10,12 @@ export const loginSchema = Yup.object().shape({
 });
 
 export const signupSchema = Yup.object().shape({
-  name: Yup.string()
-    .required("Name is required")
-    .min(2, "Name must be at least 2 characters"),
+  firstname: Yup.string()
+    .required("First Name is required")
+    .min(2, "First Name must be at least 2 characters"),
+  lastname: Yup.string()
+    .required("Last Name is required")
+    .min(2, "Last Name must be at least 2 characters"),
   email: Yup.string().email("Invalid email").required("Email is required"),
   password: Yup.string()
     .required("Password is required")

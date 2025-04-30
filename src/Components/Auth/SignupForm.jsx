@@ -29,14 +29,24 @@ const SignupForm = () => {
         </h2>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <TextField
-            label="Name"
-            name="name"
-            type="text"
-            placeholder="Your Name"
-            error={errors.name?.message}
-            {...register("name")}
-          />
+          <div className="grid grid-cols-2 gap-5">
+            <TextField
+              label="First Name"
+              name="firstname"
+              type="text"
+              placeholder="Your Name"
+              error={errors.firstname?.message}
+              {...register("firstname")}
+            />
+            <TextField
+              label="Last Name"
+              name="lastname"
+              type="text"
+              placeholder="Your Name"
+              error={errors.lastname?.message}
+              {...register("lastname")}
+            />
+          </div>
 
           <TextField
             label="Email"
@@ -65,7 +75,9 @@ const SignupForm = () => {
             placeholder="••••••••"
             error={errors.confirmPassword?.message}
             showToggle
-            toggleVisibility={() => setShowConfirmPassword(!showConfirmPassword)}
+            toggleVisibility={() =>
+              setShowConfirmPassword(!showConfirmPassword)
+            }
             {...register("confirmPassword")}
           />
 
