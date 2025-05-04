@@ -1,11 +1,4 @@
-import { useState } from "react";
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  Route,
-  RouterProvider,
-  Routes,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./Components/Main Pages/About";
 import Home from "./Components/Main Pages/Home";
 import Contact from "./Components/Main Pages/Contact";
@@ -13,26 +6,64 @@ import Product from "./Components/Main Pages/Product";
 import ScrollToTop from "./Common/ScrollToTop";
 import MainLayout from "./Layout/MainLayout";
 import Signup from "./Modules/Auth/Signup";
-import Login from "./modules/auth/Login";
+import Login from "./Modules/Auth/Login";
+import ProtectedRoute from "./Components/Auth/ProtectedRoute";
+import PublicRoute from "./Components/Auth/PublicRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/about", element: <About /> },
-      { path: "/products", element: <Product /> },
-      { path: "/contact", element: <Contact /> },
+      {
+        path: "/",
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/about",
+        element: (
+          <ProtectedRoute>
+            <About />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/products",
+        element: (
+          <ProtectedRoute>
+            <Product />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <ProtectedRoute>
+            <Contact />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
   {
     path: "/auth/login",
-    element: <Login />,
+    element: (
+      <PublicRoute>
+        <Login />
+      </PublicRoute>
+    ),
   },
   {
     path: "/auth/register",
-    element: <Signup />,
+    element: (
+      <PublicRoute>
+        <Signup />
+      </PublicRoute>
+    ),
   },
 ]);
 

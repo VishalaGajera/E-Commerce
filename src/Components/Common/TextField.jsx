@@ -1,16 +1,26 @@
+import { useFormControl } from "@mui/material";
 import React from "react";
+import { useController } from "react-hook-form";
 
 const TextField = ({
   label,
   name,
   type = "text",
   value,
-  onChange,
   placeholder,
   error,
   showToggle,
   toggleVisibility,
+  control,
 }) => {
+  const {
+    field: { onChange },
+  } = useController({
+    name,
+    defaultValue: null,
+    control,
+  });
+
   return (
     <div className="mb-4">
       {label && (
@@ -24,7 +34,15 @@ const TextField = ({
           name={name}
           id={name}
           value={value}
-          onChange={onChange}
+          onChange={(event) => {
+            const value = event.target.value || null;
+
+            if (value && type === "number") {
+              onChange(Number(value));
+            } else {
+              onChange(value);
+            }
+          }}
           placeholder={placeholder}
           className={`w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 ${
             error ? "border-red-500" : ""
