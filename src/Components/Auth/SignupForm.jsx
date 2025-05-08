@@ -25,7 +25,6 @@ const SignupForm = () => {
     try {
       await axiosInstance.post("/auth/signup", data);
       toast.success("Signup successful");
-
       navigate("/auth/login");
     } catch (err) {
       toast.error(err.response?.data?.message || "Signup failed");

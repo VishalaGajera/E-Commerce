@@ -1,23 +1,16 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pagination from "@mui/material/Pagination";
-import PaginationItem from "@mui/material/PaginationItem";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaFilter } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { useQuery } from "@tanstack/react-query";
 import Loader from "./loader";
-import axios from "axios";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
+import { axiosInstance } from "../../Common/AxiosInstance";
 
 const Product = () => {
   const [viewFilters, setViewFilters] = useState(false);
   const [selectedPrices, setSelectedPrices] = useState({});
-  // const [selectedCategory, setSelectedCategory] = useState("all");
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [products, setProducts] = useState([]);
   const productsPerPage = 2;
-  const URL = import.meta.env.VITE_REACT_APP_LOCAL_URL;
-  // const storeCategory = localStorage.getItem("categories");
 
   const {
     categories,
@@ -35,45 +28,8 @@ const Product = () => {
   } = useProductContext();
 
   useEffect(() => {
-    console.log("productData.metaData :", productData?.metaData);
-  }, [productData]);
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-
-  // const { data, isFetching, error, refetch } = useQuery({
-  //   queryKey: ["fetchProducts"],
-  //   queryFn: async () => {
-  //     const response = await axios.get(`${URL}product/getAllProducts?page=${currentPage}&categoryId=${selectedCategory}`);
-  //     return response.data;
-  //   },
-  //   initialData: {
-  //     products: [],
-  //     metadata: {
-  //       totalcount: 0,
-  //       totalpages: 0,
-  //       page: 0,
-  //       count: 0,
-  //     },
-  //   },
-  // });
-
-  // const {
-  //   data: categoryData,
-  //   isFetching: isCategoryFetching,
-  //   error: categoryError,
-  // } = useQuery({
-  //   queryKey: ["fetchCategories"],
-  //   queryFn: async () => {
-  //     const response = await axios.get(`${URL}category/getAllCategory`);
-  //   //   console.log("response :", response);
-  //     return response.data;
-  //   },
-  // });
 
   const fetchProducts = async () => {
     const initialPrices = productData?.products?.reduce((acc, product) => {
@@ -111,18 +67,48 @@ const Product = () => {
 
   const handlePaginationChange = (page) => {
     setCurrentPage(page);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // const totalpages = productData?.metadata?.totalpages || 0;
   const totalpages = productData?.metadata?.totalpages ?? 1;
 
   useEffect(() => {
     refetchProducts();
   }, [currentPage]);
+
+  // ✅ Handle Add to Cart logic
+  // const handleAddToCart = (product, selectedSize, price) => {
+  //   if (!selectedSize || price === undefined) {
+  //     toast.error("Please select a size before adding to cart.");
+  //     return;
+  //   }
+  //   toast.success(`${product.name} (${selectedSize}) added to cart!`);
+  // };
+  
+  const handleAddToCart = async (product, selectedSize, price, size) => {
+    if (!selectedSize || price === undefined) {
+      toast.error("Please select a size before adding to cart.");
+      return;
+    }
+  
+    const userId = "user123"; // Replace this with real user ID from context/localStorage
+  
+    try {
+      const response = await axiosInstance.post("/cart/insertData", {
+        userId,
+        productId: product._id,
+        size: selectedSize,
+        quantity: 1,
+      });
+  
+      toast.success(`${product.name} (${selectedSize}) added to cart!`);
+    } catch (error) {
+      const errorMessage =
+        error.response?.data?.message || "Something went wrong!";
+      toast.error(`Failed to add to cart: ${errorMessage}`);
+    }
+  };
+  
 
   return (
     <div className="flex justify-center items-center bg-BgColor">
@@ -139,7 +125,9 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className="grid md:grid-cols-4 grid-cols-1 w-full md:py-20 pt-20  overflow-hidden md:gap-0 gap-5">
+
+          <div className="grid md:grid-cols-4 grid-cols-1 w-full md:py-20 pt-20 overflow-hidden md:gap-0 gap-5">
+            {/* Filter Toggle Button */}
             <div className="md:hidden flex justify-center items-center w-full">
               <div
                 className="bg-BgGolden border-2 border-BgGolden hover:bg-BgColor hover:text-BgGolden cursor-pointer py-1 w-36 font-bold rounded-lg text-lg text-white"
@@ -151,6 +139,8 @@ const Product = () => {
                 </span>
               </div>
             </div>
+
+            {/* Sidebar Filter Panel */}
             <div className="md:flex flex-col gap-1 w-full border-r-2">
               <div
                 className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${
@@ -170,7 +160,8 @@ const Product = () => {
                     &times;
                   </span>
                 </div>
-                <div></div>
+
+                {/* Categories List */}
                 <div className="md:flex flex-col gap-1 w-full">
                   {isCategoriesLoading ? (
                     <p className="p-3">Loading categories...</p>
@@ -205,6 +196,8 @@ const Product = () => {
                 </div>
               </div>
             </div>
+
+            {/* Products Listing */}
             <div className="md:col-span-3">
               <main className="flex-1 md:pl-5">
                 {isProductsLoading ? (
@@ -215,13 +208,11 @@ const Product = () => {
                     <Loader />
                   </div>
                 ) : (
-                  <div
-                    className={`grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full`}
-                  >
+                  <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full">
                     {productData?.products?.map((product, index) => {
                       const category = categories?.find(
                         (cat) => cat._id === product.categoryId._id
-                      ).name;
+                      )?.name;
                       return (
                         <div
                           key={index}
@@ -237,13 +228,15 @@ const Product = () => {
                               {category}
                             </span>
                           </div>
-                          <div className="flex flex-col justify-between ">
-                          <div className="p-2">
-                            <h2 className="text-lg font-semibold mb-2 line-clamp-1">
-                              {product.name}
-                            </h2>
-                          </div>
-                            <div className="p-4 bg-gray-50 flex items-center justify-between ">
+
+                          <div className="flex flex-col justify-between">
+                            <div className="p-2">
+                              <h2 className="text-lg font-semibold mb-2 line-clamp-1">
+                                {product.name}
+                              </h2>
+                            </div>
+
+                            <div className="p-4 bg-gray-50 flex items-center justify-between">
                               <span className="text-xl font-bold">
                                 $
                                 {selectedPrices[product._id] !== undefined
@@ -254,12 +247,11 @@ const Product = () => {
                                 className="border rounded p-2"
                                 onChange={(e) => {
                                   const selectedSize = e.target.value;
-                                  const selectedPrice =
-                                    product.sizes[selectedSize];
                                   handleSizeChange(
                                     product._id,
                                     selectedSize,
-                                    product.sizes
+                                    product.sizes,
+                                    selectedPrices
                                   );
                                 }}
                               >
@@ -272,12 +264,34 @@ const Product = () => {
                                 )}
                               </select>
                             </div>
+
+                            {/* ✅ Add to Cart Button */}
+                            <div className="px-4 pb-4">
+                              <button
+                                className="w-full bg-BgGolden text-white font-semibold py-2 rounded hover:bg-yellow-600 transition-all"
+                                onClick={() =>
+                                  handleAddToCart(
+                                    product,
+                                    Object.keys(product.sizes).find(
+                                      (key) =>
+                                        product.sizes[key] ===
+                                        selectedPrices[product._id]
+                                    ),
+                                    selectedPrices[product._id]
+                                  )
+                                }
+                              >
+                                Add to Cart
+                              </button>
+                            </div>
                           </div>
                         </div>
                       );
                     })}
                   </div>
                 )}
+
+                {/* Pagination */}
                 <div className="flex justify-center mt-10">
                   <Pagination
                     count={totalpages}

@@ -24,20 +24,12 @@ const LoginForm = () => {
     mode: "a",
   });
 
-  console.log("call--watch()", watch());
-
-  console.log("call--errors", errors);
-
   const navigate = useNavigate();
-
   const onSubmit = handleSubmit(async (data) => {
     try {
       const res = await axiosInstance.post("/auth/login", data);
-
       localStorage.setItem("token", res.data.token);
-
       toast.success("Login successfully");
-
       navigate("/");
     } catch (err) {
       toast.error(err.response?.data?.message || "Login failed");

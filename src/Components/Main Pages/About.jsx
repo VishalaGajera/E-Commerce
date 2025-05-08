@@ -1,4 +1,4 @@
-// import React from 'react'
+  // import React from 'react'
 // import aboutImg from '../../assets/Images/ContactImg.jpg'
 
 // const About = () => {
@@ -101,7 +101,7 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col min-h-screen pb-5">
       <main className="flex-grow">
-        <section className="relative md:h-[130vh] h-72">
+        <section className="relative md:h-[80vh] h-72">
           {/* <img
             src={aboutImg}
             alt="Fresh salad"
@@ -190,7 +190,7 @@ export default function AboutUs() {
               </p>
             </div>
           </div>
-          <div className="lg:w-2/3 w-full md:h-[600px] h-auto flex items-center justify-center">
+          {/* <div className="lg:w-2/3 w-full md:h-[600px] h-auto flex items-center justify-center">
             <video
               src={fresh_spices}
               autoPlay
@@ -198,7 +198,7 @@ export default function AboutUs() {
               muted
               className="h-full w-full object-fill"
             />
-          </div>
+          </div> */}
           <div className="flex  md:flex-row flex-col items-center justify-center md:gap-0 gap-5">
             <div className="md:order-2 order-first">
               <img

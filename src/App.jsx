@@ -9,6 +9,8 @@ import Signup from "./Modules/Auth/Signup";
 import Login from "./Modules/Auth/Login";
 import ProtectedRoute from "./Components/Auth/ProtectedRoute";
 import PublicRoute from "./Components/Auth/PublicRoute";
+import ShoppingCart from "./Modules/Product/ShoppingCart";
+import Checkout from "./Modules/Product/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,22 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Contact />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/shopping-cart",
+        element: (
+          <ProtectedRoute>
+            <ShoppingCart />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/checkout",
+        element: (
+          <ProtectedRoute>
+            <Checkout />
           </ProtectedRoute>
         ),
       },
