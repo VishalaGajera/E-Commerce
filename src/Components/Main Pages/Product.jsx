@@ -85,8 +85,8 @@ const Product = () => {
   //   toast.success(`${product.name} (${selectedSize}) added to cart!`);
   // };
   
-  const handleAddToCart = async (product, selectedSize, price, size) => {
-    if (!selectedSize || price === undefined) {
+  const handleAddToCart = async (product, selectedSize, price) => {
+    if (!selectedSize || !price) {
       toast.error("Please select a size before adding to cart.");
       return;
     }
@@ -99,6 +99,7 @@ const Product = () => {
         productId: product._id,
         size: selectedSize,
         quantity: 1,
+        price
       });
   
       toast.success(`${product.name} (${selectedSize}) added to cart!`);
@@ -256,7 +257,7 @@ const Product = () => {
                                 }}
                               >
                                 {Object.entries(product.sizes).map(
-                                  ([size, price]) => (
+                                  ([size]) => (
                                     <option key={size} value={size}>
                                       {size}
                                     </option>
