@@ -28,6 +28,8 @@ export const ProductProvider = ({ children }) => {
       const res = await axios.get(`${URL}category/getAllCategory`);
       return res.data;
     },
+    gcTime: Infinity,
+    staleTime: Infinity
   });
 
   const {
@@ -43,30 +45,7 @@ export const ProductProvider = ({ children }) => {
       );
       return res.data;
     },
-    // keepPreviousData: true,
   });
-
-  // const fetchData = async (
-  //   page = currentPage,
-  //   categoryId = selectedCategoryId
-  // ) => {
-  //   try {
-  //     setLoading(true);
-  //     const productRes = await axios.get(`${URL}products/getAllProducts?page=${page}&categoryId=${categoryId}`);
-  //     const categoryRes = await axios.get(`${URL}category/getAllCategory`);
-  //     setProducts(productRes.data.products);
-  //     setMetadata(productRes.data.metadata);
-  //     setCategories(categoryRes.data);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, [currentPage, selectedCategoryId]);
 
   return (
     <ProductContext.Provider

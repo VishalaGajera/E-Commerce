@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import HorizontalRuleRoundedIcon from "@mui/icons-material/HorizontalRuleRounded";
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
+import { FaPlus, FaMinus } from "react-icons/fa6";
 
 export default function CartItem({ title, color, size, price, quantity, image }) {
   return (
@@ -26,7 +24,7 @@ export default function CartItem({ title, color, size, price, quantity, image })
         <div className="flex items-center max-[500px]:justify-center h-full max-md:mt-3">
           <div className="flex items-center h-full">
             <button className="group rounded-l-xl px-3 py-[10px] border border-gray-200 flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-50 hover:border-gray-300 hover:shadow-gray-300 focus-within:outline-gray-300">
-              <HorizontalRuleRoundedIcon />
+              <FaPlus />
             </button>
             <input
               type="text"
@@ -34,7 +32,7 @@ export default function CartItem({ title, color, size, price, quantity, image })
               placeholder="1"
             />
             <button className="group rounded-r-xl px-3 py-[10px] border border-gray-200 flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-50 hover:border-gray-300 hover:shadow-gray-300 focus-within:outline-gray-300">
-              <AddRoundedIcon />
+              <FaMinus />
             </button>
           </div>
         </div>

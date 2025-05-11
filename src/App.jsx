@@ -11,6 +11,7 @@ import ProtectedRoute from "./Components/Auth/ProtectedRoute";
 import PublicRoute from "./Components/Auth/PublicRoute";
 import ShoppingCart from "./Modules/Product/ShoppingCart";
 import Checkout from "./Modules/Product/Checkout";
+import { AuthProvider } from "./Providers/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -88,9 +89,11 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router}>
-        <ScrollToTop />
-      </RouterProvider>
+      <AuthProvider>
+        <RouterProvider router={router}>
+          <ScrollToTop />
+        </RouterProvider>
+      </AuthProvider>
       {/* <div className="h-auto">
         <BrowserRouter>
           <Routes>

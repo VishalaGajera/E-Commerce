@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HorizontalRuleRoundedIcon from "@mui/icons-material/HorizontalRuleRounded";
-import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import CartItem from "./CartItem";
 import { CartHeader } from "./CartHeader";
 
@@ -21,12 +19,12 @@ const ShoppingCart = () => {
               </div>
             </div>
           </div>
-          <div className="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto relative z-10">
+          <div className="w-full px-4 md:px-5 lg-6 relative z-10">
             <div className="grid grid-cols-12 gap-10">
               <div className="col-span-12 xl:col-span-8 p-5 my-14 w-full max-xl:max-w-3xl bg-white rounded-xl shadow-lg">
                 <div className="flex items-center justify-between pb-5 border-b border-gray-300">
                   <h2 className="font-manrope font-bold text-3xl leading-10 text-black">
-                    Shopping Cart
+                    Cart Item
                   </h2>
                   <h2 className="font-manrope font-bold text-xl leading-8 text-gray-600">
                     3 Items

@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../../Validation/Auth";
 import { axiosInstance } from "../../Common/AxiosInstance";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -27,7 +28,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const onSubmit = handleSubmit(async (data) => {
     try {
-      const res = await axiosInstance.post("/auth/login", data);
+      const res = await axios.post("/auth/login", data);
       localStorage.setItem("token", res.data.token);
       toast.success("Login successfully");
       navigate("/");
