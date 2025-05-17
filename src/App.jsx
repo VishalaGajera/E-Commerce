@@ -16,7 +16,11 @@ import { AuthProvider } from "./Providers/AuthProvider";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: (
+      // <AuthProvider>
+      <MainLayout />
+      // </AuthProvider>
+    ),
     children: [
       {
         path: "/",
@@ -89,11 +93,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <AuthProvider>
-        <RouterProvider router={router}>
-          <ScrollToTop />
-        </RouterProvider>
-      </AuthProvider>
+      <RouterProvider router={router}>
+        <ScrollToTop />
+      </RouterProvider>
       {/* <div className="h-auto">
         <BrowserRouter>
           <Routes>

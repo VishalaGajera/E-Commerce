@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Pagination from "@mui/material/Pagination";
+// import Pagination from "@mui/material/Pagination";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaFilter } from "react-icons/fa";
 import { toast } from "react-toastify";
 import Loader from "./loader";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
 import { axiosInstance } from "../../Common/AxiosInstance";
+import AddCartModal from "../../Modules/Product/AddCartModal";
 
 const Product = () => {
   const [viewFilters, setViewFilters] = useState(false);
   const [selectedPrices, setSelectedPrices] = useState({});
+  const [isAddCartModalOpen, setIsAddCartModalOpen] = useState(false);
   const productsPerPage = 2;
 
   const {
@@ -84,15 +86,16 @@ const Product = () => {
   //   }
   //   toast.success(`${product.name} (${selectedSize}) added to cart!`);
   // };
-  
+
   const handleAddToCart = async (product, selectedSize, price) => {
+    setIsAddCartModalOpen(true);
     if (!selectedSize || !price) {
       toast.error("Please select a size before adding to cart.");
       return;
     }
-  
+
     const userId = "user123"; // Replace this with real user ID from context/localStorage
-  
+
     try {
       const response = await axiosInstance.post("/cart/insertData", {
         userId,
@@ -101,7 +104,7 @@ const Product = () => {
         quantity: 1,
         price
       });
-  
+
       toast.success(`${product.name} (${selectedSize}) added to cart!`);
     } catch (error) {
       const errorMessage =
@@ -109,7 +112,10 @@ const Product = () => {
       toast.error(`Failed to add to cart: ${errorMessage}`);
     }
   };
-  
+
+  const handleCloseAddCartModal = () => {
+    setIsAddCartModalOpen(false);
+  };
 
   return (
     <div className="flex justify-center items-center bg-BgColor">
@@ -144,13 +150,11 @@ const Product = () => {
             {/* Sidebar Filter Panel */}
             <div className="md:flex flex-col gap-1 w-full border-r-2">
               <div
-                className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${
-                  viewFilters
-                    ? "translate-x-0 overflow-y-scroll z-50"
-                    : "translate-x-full"
-                } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${
-                  viewFilters ? "h-full w-full" : ""
-                } md:block`}
+                className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${viewFilters
+                  ? "translate-x-0 overflow-y-scroll z-50"
+                  : "translate-x-full"
+                  } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${viewFilters ? "h-full w-full" : ""
+                  } md:block`}
               >
                 <div className="flex justify-between items-center bg-white p-3 md:hidden">
                   <p className="text-lg font-bold">Filters</p>
@@ -170,18 +174,16 @@ const Product = () => {
                     categories?.map((menu, index) => (
                       <div
                         key={index}
-                        className={`bg-BgColor border-b ${
-                          selectedCategoryId === menu._id
-                            ? "border-BgGolden"
-                            : ""
-                        }`}
+                        className={`bg-BgColor border-b ${selectedCategoryId === menu._id
+                          ? "border-BgGolden"
+                          : ""
+                          }`}
                       >
                         <div
-                          className={`flex flex-row justify-between items-center cursor-pointer p-3 ${
-                            selectedCategoryId === menu._id
-                              ? "text-BgGolden"
-                              : "text-black"
-                          }`}
+                          className={`flex flex-row justify-between items-center cursor-pointer p-3 ${selectedCategoryId === menu._id
+                            ? "text-BgGolden"
+                            : "text-black"
+                            }`}
                           onClick={() => {
                             handleCategorySelect(menu._id);
                             setViewFilters(false);
@@ -294,17 +296,18 @@ const Product = () => {
 
                 {/* Pagination */}
                 <div className="flex justify-center mt-10">
-                  <Pagination
+                  {/* <Pagination
                     count={totalpages}
                     onChange={(e, page) => handlePaginationChange(page)}
                     color="primary"
-                  />
+                  /> */}
                 </div>
               </main>
             </div>
           </div>
         </div>
       </div>
+      {isAddCartModalOpen && <AddCartModal onClose={handleCloseAddCartModal} />}
     </div>
   );
 };

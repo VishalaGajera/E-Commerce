@@ -1,11 +1,13 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { useAuth } from "./AuthProvider";
 
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const URL = import.meta.env.VITE_REACT_APP_LOCAL_URL;
+  // const { user } = useAuth();
   // const [products, setProducts] = useState([]);
   // const [categories, setCategories] = useState([]);
   // const [metadata, setMetadata] = useState(null);
@@ -28,6 +30,7 @@ export const ProductProvider = ({ children }) => {
       const res = await axios.get(`${URL}category/getAllCategory`);
       return res.data;
     },
+    // enabled: !!user && !authLoading,
     gcTime: Infinity,
     staleTime: Infinity
   });
@@ -45,6 +48,9 @@ export const ProductProvider = ({ children }) => {
       );
       return res.data;
     },
+    // enabled: !!user && !authLoading,
+    gcTime: Infinity,
+    staleTime: Infinity
   });
 
   return (
