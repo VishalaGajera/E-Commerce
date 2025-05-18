@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiPlus } from "react-icons/fi";
-import { FiMinus } from "react-icons/fi";
 
 const FAQs = () => {
   const [isVisible, setIsVisible] = useState(null);
@@ -55,15 +54,13 @@ const FAQs = () => {
         <div className="flex flex-col justify-center items-center mb-10 gap-10 w-full">
           <div className="flex flex-col items-center justify-center mx-5">
             <div className="mb-5">
-              <h1 className="text-center text-3xl font-bold">
-                How can we help you?
-              </h1>
+              <h1 className="text-center text-3xl font-bold">How can we help you?</h1>
               <div className="flex items-center justify-center mt-5">
-                <div className='relative flex justify-center items-center'>
-                  <div className='w-36 h-0.5 bg-BgGolden z-20'></div>
-                  <div className='absolute w-4 h-4 bg-BgGolden rotate-45 z-10'></div>
-                  <div className='absolute w-4 h-4 left-[75px] bg-BgGolden rotate-45 opacity-30'></div>
-                  <div className='absolute w-4 h-4 right-[75px] bg-BgGolden rotate-45 opacity-30'></div>
+                <div className="relative flex justify-center items-center">
+                  <div className="w-36 h-0.5 bg-BgGolden z-20"></div>
+                  <div className="absolute w-4 h-4 bg-BgGolden rotate-45 z-10"></div>
+                  <div className="absolute w-4 h-4 left-[75px] bg-BgGolden rotate-45 opacity-30"></div>
+                  <div className="absolute w-4 h-4 right-[75px] bg-BgGolden rotate-45 opacity-30"></div>
                 </div>
               </div>
             </div>
@@ -73,20 +70,27 @@ const FAQs = () => {
             {/* {productQuestions?.map((ques, index) => { */}
             {Array.from({ length: 10 }).map((_, index) => {
               return (
-                <div key={index} className={`flex flex-col w-full gap-3 border-l-2 border-black rounded-lg p-5 bg-white py-4 ${isVisible === index ? "border-l-BgGolden" : ""}`}>
+                <div
+                  key={index}
+                  className={`flex flex-col w-full gap-3 border-l-2 border-black rounded-lg p-5 bg-white py-4 ${isVisible === index ? "border-l-BgGolden" : ""}`}
+                >
                   <div
                     className={` font-bold text-lg flex flex-row justify-between items-center cursor-pointer gap-4 w-full ${isVisible === index ? "text-BgGolden" : ""}`}
                     onClick={() => toggleSection(index)}
                   >
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, aperiam?</h2>
+                    <h2>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, aperiam?
+                    </h2>
                     <span className="flex">
-                      <FiPlus className={`duration-75 transform text-2xl ${isVisible === index ? "rotate-45 " : "rotate-0"}`} />
+                      <FiPlus
+                        className={`duration-75 transform text-2xl ${isVisible === index ? "rotate-45 " : "rotate-0"}`}
+                      />
                     </span>
                   </div>
-                  <div
-                    className={`${isVisible === index ? "block" : "hidden"}`}
-                  >
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium pariatur non minus magnam architecto ducimus perspiciatis aperiam error porro quas, eos quaerat eligendi rerum, officia facere nulla! Qui, vel nulla?
+                  <div className={`${isVisible === index ? "block" : "hidden"}`}>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium pariatur
+                    non minus magnam architecto ducimus perspiciatis aperiam error porro quas, eos
+                    quaerat eligendi rerum, officia facere nulla! Qui, vel nulla?
                   </div>
                 </div>
               );

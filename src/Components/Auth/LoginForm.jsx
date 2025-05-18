@@ -88,8 +88,6 @@
 
 // export default LoginForm;
 
-
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -97,8 +95,8 @@ import TextField from "../Common/TextField";
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../../Validation/Auth";
 import { axiosInstance } from "../../Common/AxiosInstance";
-import axios from "axios";
 import { toast } from "react-toastify";
+import { useSession } from "../../Providers/AuthProvider.jsx";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -107,7 +105,6 @@ const LoginForm = () => {
     control,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm({
     defaultValues: {
       email: "",
@@ -118,11 +115,17 @@ const LoginForm = () => {
   });
 
   const navigate = useNavigate();
+
+  const { login } = useSession();
+
   const onSubmit = handleSubmit(async (data) => {
     try {
-      const res = await axios.post("/auth/login", data);
+      const res = await axiosInstance.post("/auth/login", data);
       localStorage.setItem("token", res.data.token); // remove this line and call the login in authProvider
       toast.success("Login successfully");
+
+      login(res.data);
+
       navigate("/");
     } catch (err) {
       toast.error(err.response?.data?.message || "Login failed");

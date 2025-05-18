@@ -1,5 +1,3 @@
-import React from "react";
-
 export const CartHeader = () => {
   return (
     // <div className="grid grid-cols-12 mt-5 max-md:hidden pb-3 border-b border-gray-200">

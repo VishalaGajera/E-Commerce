@@ -11,16 +11,11 @@ import ProtectedRoute from "./Components/Auth/ProtectedRoute";
 import PublicRoute from "./Components/Auth/PublicRoute";
 import ShoppingCart from "./Modules/Product/ShoppingCart";
 import Checkout from "./Modules/Product/Checkout";
-import { AuthProvider } from "./Providers/AuthProvider";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      // <AuthProvider>
-      <MainLayout />
-      // </AuthProvider>
-    ),
+    element: <MainLayout />,
     children: [
       {
         path: "/",
@@ -96,23 +91,6 @@ function App() {
       <RouterProvider router={router}>
         <ScrollToTop />
       </RouterProvider>
-      {/* <div className="h-auto">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/fileupload" element={<FileUpload />} />
-            <Route path="/" element={<Navbar />}>
-              <Route index element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/products" element={<Product />} />
-              <Route path="/addProduct" element={<AddProduct />} />
-              <Route path="/editProduct" element={<EditProduct />} />
-              <Route path="/productdashboard" element={<ProductDashboard />} />
-              <Route path="/productcopy" element={<ProductCopy />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </div> */}
     </>
   );
 }

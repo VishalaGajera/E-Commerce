@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import { CartHeader } from "./CartHeader";
@@ -89,7 +88,10 @@ const ShoppingCart = () => {
                         Proceed to Checkout
                       </button>
                       <span>
-                        or <Link to={'/products'} className="underline text-blue-700">Continue Shopping</Link>
+                        or{" "}
+                        <Link to={"/products"} className="underline text-blue-700">
+                          Continue Shopping
+                        </Link>
                       </span>
                     </div>
                   </form>

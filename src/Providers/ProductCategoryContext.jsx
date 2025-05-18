@@ -1,23 +1,12 @@
-import React, { createContext, useState, useEffect, useContext } from "react";
-import axios from "axios";
+import { createContext, useState, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useAuth } from "./AuthProvider";
+import { axiosInstance } from "../Common/AxiosInstance.js";
 
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const URL = import.meta.env.VITE_REACT_APP_LOCAL_URL;
-  // const { user } = useAuth();
-  // const [products, setProducts] = useState([]);
-  // const [categories, setCategories] = useState([]);
-  // const [metadata, setMetadata] = useState(null);
-  // const [loading, setLoading] = useState(true);
-
-  // Filters
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategoryId, setSelectedCategoryId] = useState("all");
-
-  const pageSize = 12;
 
   const {
     data: categories,
@@ -27,12 +16,12 @@ export const ProductProvider = ({ children }) => {
   } = useQuery({
     queryKey: ["categories"],
     queryFn: async () => {
-      const res = await axios.get(`${URL}category/getAllCategory`);
+      const res = await axiosInstance.get(`/category/getAllCategory`);
       return res.data;
     },
     // enabled: !!user && !authLoading,
     gcTime: Infinity,
-    staleTime: Infinity
+    staleTime: Infinity,
   });
 
   const {
@@ -43,14 +32,14 @@ export const ProductProvider = ({ children }) => {
   } = useQuery({
     queryKey: ["products", currentPage, selectedCategoryId],
     queryFn: async () => {
-      const res = await axios.get(
-        `${URL}product/getAllProducts?page=${currentPage}&categoryId=${selectedCategoryId}`
+      const res = await axiosInstance.get(
+        `/product/getAllProducts?page=${currentPage}&categoryId=${selectedCategoryId}`
       );
       return res.data;
     },
     // enabled: !!user && !authLoading,
     gcTime: Infinity,
-    staleTime: Infinity
+    staleTime: Infinity,
   });
 
   return (

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -26,11 +25,16 @@ import flour from "../../../public/Images/Product/flour-removebg-preview.png";
 import beans from "../../../public/Images/Product/beans.png";
 import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
+import { useSession } from "../../Providers/AuthProvider.jsx";
 
-const Home = () => {  
+const Home = () => {
   const navigate = useNavigate();
 
   const { categories, setSelectedCategoryId } = useProductContext();
+
+  const { user } = useSession();
+
+  console.log("call--user", user); 
 
   const brand = [
     Maggi,
@@ -65,9 +69,7 @@ const Home = () => {
   // };
 
   const handleCategoriesClick = (categoryName) => {
-    const selectedCategory = categories.find(
-      (cat) => cat.name === categoryName
-    );
+    const selectedCategory = categories.find((cat) => cat.name === categoryName);
 
     if (selectedCategory) {
       setSelectedCategoryId(selectedCategory._id);
@@ -106,45 +108,20 @@ const Home = () => {
             // className="w-[98.9vw] h-[500px] md:h-[600px] "
             className="h-full w-full overflow-hidden"
           >
-            <SwiperSlide
-              className="cursor-pointer"
-              onClick={() => handleCategoriesClick("Rice")}
-            >
-              <img
-                src={slide1}
-                alt={`slide 1}`}
-                className="h-full w-full object-fill"
-              />
+            <SwiperSlide className="cursor-pointer" onClick={() => handleCategoriesClick("Rice")}>
+              <img src={slide1} alt={`slide 1}`} className="h-full w-full object-fill" />
             </SwiperSlide>
-            <SwiperSlide
-              className="cursor-pointer"
-              onClick={() => handleCategoriesClick("Flours")}
-            >
-              <img
-                src={slide2}
-                alt={`slide 2}`}
-                className="h-full w-full object-fill"
-              />
+            <SwiperSlide className="cursor-pointer" onClick={() => handleCategoriesClick("Flours")}>
+              <img src={slide2} alt={`slide 2}`} className="h-full w-full object-fill" />
             </SwiperSlide>
             <SwiperSlide
               className="cursor-pointer"
               onClick={() => handleCategoriesClick("Beans & Lentils")}
             >
-              <img
-                src={slide3}
-                alt={`slide 3}`}
-                className="h-full w-full object-fill"
-              />
+              <img src={slide3} alt={`slide 3}`} className="h-full w-full object-fill" />
             </SwiperSlide>
-            <SwiperSlide
-              className="cursor-pointer"
-              onClick={() => handleCategoriesClick("Spices")}
-            >
-              <img
-                src={slide4}
-                alt={`slide 4}`}
-                className="h-full w-full object-fill"
-              />
+            <SwiperSlide className="cursor-pointer" onClick={() => handleCategoriesClick("Spices")}>
+              <img src={slide4} alt={`slide 4}`} className="h-full w-full object-fill" />
             </SwiperSlide>
           </Swiper>
           {/* {sliderImages.map((image, index) => {
@@ -179,9 +156,7 @@ const Home = () => {
         <div className="flex flex-col gap-10 relative py-20">
           <div className="flex flex-col gap-10 items-center justify-center mx-5">
             <div>
-              <h1 className="font-bold md:text-4xl text-3xl text-center">
-                Products
-              </h1>
+              <h1 className="font-bold md:text-4xl text-3xl text-center">Products</h1>
               <div className="flex items-center justify-center mt-5">
                 <div className="relative flex justify-center items-center">
                   <div className="w-36 h-0.5 bg-BgGolden z-20"></div>
@@ -192,18 +167,15 @@ const Home = () => {
               </div>
             </div>
             <p className="lg:w-3/5 w-full text-center md:text-base text-sm">
-              At CrossContinents Traders, we are dedicated to bringing you the
-              finest selection of Rice, Flours, Beans & Lentils, Spices and many
-              other Spice mixes like MDH and Shan sourced from trusted suppliers
-              who share our passion for quality. Each product is carefully
-              chosen to ensure it meets our high standards, delivering an
-              authentic taste experience to your kitchen. Each item in our
-              collection has been chosen with care to ensure it’s fresh,
-              flavorful, and meets the highest quality standards. Whether you're
-              an experienced cook or just beginning your culinary journey, our
-              products provide the perfect foundation for creating dishes that
-              delight the senses. Let us be part of your kitchen with products
-              that bring health, taste, and authenticity to every meal.
+              At CrossContinents Traders, we are dedicated to bringing you the finest selection of
+              Rice, Flours, Beans & Lentils, Spices and many other Spice mixes like MDH and Shan
+              sourced from trusted suppliers who share our passion for quality. Each product is
+              carefully chosen to ensure it meets our high standards, delivering an authentic taste
+              experience to your kitchen. Each item in our collection has been chosen with care to
+              ensure it’s fresh, flavorful, and meets the highest quality standards. Whether you're
+              an experienced cook or just beginning your culinary journey, our products provide the
+              perfect foundation for creating dishes that delight the senses. Let us be part of your
+              kitchen with products that bring health, taste, and authenticity to every meal.
             </p>
           </div>
 
@@ -217,9 +189,7 @@ const Home = () => {
                 <h1 className="md:font-bold font-bold md:text-lg text-base">
                   Fresh Flours for All Your Baking and Cooking.
                 </h1>
-                <p className="md:text-base text-sm">
-                  explore sher, Ashirwad, Minar…
-                </p>
+                <p className="md:text-base text-sm">explore sher, Ashirwad, Minar…</p>
               </div>
             </div>
             <div
@@ -231,9 +201,7 @@ const Home = () => {
                 <h1 className="md:font-bold font-bold md:text-lg text-base">
                   Aromatic Rice for Tasty, Fluffy Meals
                 </h1>
-                <p className="md:text-base text-sm">
-                  explore Maharani, Handi, Marhaba
-                </p>
+                <p className="md:text-base text-sm">explore Maharani, Handi, Marhaba</p>
               </div>
             </div>
             <div
@@ -243,8 +211,8 @@ const Home = () => {
               <img src={beans} alt="" className="w-20" />
               <div className="flex flex-col md:gap-2 gap-0">
                 <h1 className="md:font-bold font-bold md:text-lg text-base">
-                  Explore Our Fresh, Quality Beans & Lentils – Perfect for
-                  Nutritious, Flavorful Meals!
+                  Explore Our Fresh, Quality Beans & Lentils – Perfect for Nutritious, Flavorful
+                  Meals!
                 </h1>
                 <p className="md:text-base text-sm"></p>
               </div>
@@ -258,9 +226,7 @@ const Home = () => {
                 <h1 className="md:font-bold font-bold md:text-lg text-base">
                   Traditional Spice Blends for Great Flavor
                 </h1>
-                <p className="md:text-base text-sm">
-                  explore our raw spices, MDH, Shan
-                </p>
+                <p className="md:text-base text-sm">explore our raw spices, MDH, Shan</p>
               </div>
             </div>
             <div className="absolute top-20 -left-2 -rotate-12 lg:flex hidden transform scale-x-[-1]">
@@ -283,9 +249,7 @@ const Home = () => {
         <div className=" w-full flex flex-col justify-center items-center pb-20 overflow-hidden">
           <div className="flex justify-center items-center flex-col gap-10 px-5">
             <div className="text-center">
-              <h1 className="font-bold md:text-4xl text-3xl text-center">
-                Available Brands
-              </h1>
+              <h1 className="font-bold md:text-4xl text-3xl text-center">Available Brands</h1>
               <div className="flex items-center justify-center mt-5">
                 <div className="relative flex justify-center items-center">
                   <div className="w-36 h-0.5 bg-BgGolden z-20"></div>
@@ -296,12 +260,10 @@ const Home = () => {
               </div>
             </div>
             <p className="text-center md:w-3/4 w-full md:text-base text-sm">
-              We proudly offer a diverse range of premium brands, handpicked for
-              their quality and reputation. Our collection features trusted
-              names across various categories, ensuring you find the perfect
-              products to meet your needs. Each brand is known for its
-              commitment to excellence, providing you with reliability and style
-              in every purchase.
+              We proudly offer a diverse range of premium brands, handpicked for their quality and
+              reputation. Our collection features trusted names across various categories, ensuring
+              you find the perfect products to meet your needs. Each brand is known for its
+              commitment to excellence, providing you with reliability and style in every purchase.
             </p>
           </div>
 
@@ -309,9 +271,7 @@ const Home = () => {
             {brand?.map((data, index) => {
               return (
                 <div
-                  className={`item item${
-                    index + 1
-                  } flex justify-center items-center`}
+                  className={`item item${index + 1} flex justify-center items-center`}
                   key={index}
                 >
                   <img src={data} alt="" className="w-48 h-24" />

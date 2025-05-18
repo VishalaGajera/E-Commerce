@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // import Pagination from "@mui/material/Pagination";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaFilter } from "react-icons/fa";
 import { toast } from "react-toastify";
 import Loader from "./loader";
@@ -102,13 +101,12 @@ const Product = () => {
         productId: product._id,
         size: selectedSize,
         quantity: 1,
-        price
+        price,
       });
 
       toast.success(`${product.name} (${selectedSize}) added to cart!`);
     } catch (error) {
-      const errorMessage =
-        error.response?.data?.message || "Something went wrong!";
+      const errorMessage = error.response?.data?.message || "Something went wrong!";
       toast.error(`Failed to add to cart: ${errorMessage}`);
     }
   };
@@ -150,18 +148,15 @@ const Product = () => {
             {/* Sidebar Filter Panel */}
             <div className="md:flex flex-col gap-1 w-full border-r-2">
               <div
-                className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${viewFilters
-                  ? "translate-x-0 overflow-y-scroll z-50"
-                  : "translate-x-full"
-                  } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${viewFilters ? "h-full w-full" : ""
-                  } md:block`}
+                className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${
+                  viewFilters ? "translate-x-0 overflow-y-scroll z-50" : "translate-x-full"
+                } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${
+                  viewFilters ? "h-full w-full" : ""
+                } md:block`}
               >
                 <div className="flex justify-between items-center bg-white p-3 md:hidden">
                   <p className="text-lg font-bold">Filters</p>
-                  <span
-                    className="cursor-pointer text-3xl"
-                    onClick={() => setViewFilters(false)}
-                  >
+                  <span className="cursor-pointer text-3xl" onClick={() => setViewFilters(false)}>
                     &times;
                   </span>
                 </div>
@@ -174,16 +169,14 @@ const Product = () => {
                     categories?.map((menu, index) => (
                       <div
                         key={index}
-                        className={`bg-BgColor border-b ${selectedCategoryId === menu._id
-                          ? "border-BgGolden"
-                          : ""
-                          }`}
+                        className={`bg-BgColor border-b ${
+                          selectedCategoryId === menu._id ? "border-BgGolden" : ""
+                        }`}
                       >
                         <div
-                          className={`flex flex-row justify-between items-center cursor-pointer p-3 ${selectedCategoryId === menu._id
-                            ? "text-BgGolden"
-                            : "text-black"
-                            }`}
+                          className={`flex flex-row justify-between items-center cursor-pointer p-3 ${
+                            selectedCategoryId === menu._id ? "text-BgGolden" : "text-black"
+                          }`}
                           onClick={() => {
                             handleCategorySelect(menu._id);
                             setViewFilters(false);
@@ -258,13 +251,11 @@ const Product = () => {
                                   );
                                 }}
                               >
-                                {Object.entries(product.sizes).map(
-                                  ([size]) => (
-                                    <option key={size} value={size}>
-                                      {size}
-                                    </option>
-                                  )
-                                )}
+                                {Object.entries(product.sizes).map(([size]) => (
+                                  <option key={size} value={size}>
+                                    {size}
+                                  </option>
+                                ))}
                               </select>
                             </div>
 
@@ -276,9 +267,7 @@ const Product = () => {
                                   handleAddToCart(
                                     product,
                                     Object.keys(product.sizes).find(
-                                      (key) =>
-                                        product.sizes[key] ===
-                                        selectedPrices[product._id]
+                                      (key) => product.sizes[key] === selectedPrices[product._id]
                                     ),
                                     selectedPrices[product._id]
                                   )

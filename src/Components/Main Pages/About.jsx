@@ -82,18 +82,11 @@
 
 // export default About
 
-import React from "react";
-import aboutImg from "/Images/ContactImg.jpg";
-import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import fresh_spices from "../../../public/Images/fresh_spices.mp4";
 import Mission from "../../../public/Images/Mission.jpg";
 import delivery from "../../../public/Images/delivery.png";
 
@@ -175,18 +168,14 @@ export default function AboutUs() {
               />
             </div>
             <div className="md:w-1/2  md:text-center text-start shadow-2xl bg-BgColor px-5 py-10 border-r-2 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-r-3xl">
-              <h2 className="md:text-3xl text-2xl font-bold mb-4">
-                Who are We?
-              </h2>
+              <h2 className="md:text-3xl text-2xl font-bold mb-4">Who are We?</h2>
               <p className="text-gray-600 md:text-base text-sm">
-                At CC Traders, we are dedicated to connecting businesses with
-                the highest quality food products at wholesale prices. With
-                years of experience in the industry, we understand the unique
-                needs of restaurants, retailers, and distributors. Our extensive
-                network of trusted suppliers ensures that we deliver fresh,
-                reliable, and sustainable products to meet the demands of your
-                business. We are your one-stop solution for all your wholesale
-                food needs.
+                At CC Traders, we are dedicated to connecting businesses with the highest quality
+                food products at wholesale prices. With years of experience in the industry, we
+                understand the unique needs of restaurants, retailers, and distributors. Our
+                extensive network of trusted suppliers ensures that we deliver fresh, reliable, and
+                sustainable products to meet the demands of your business. We are your one-stop
+                solution for all your wholesale food needs.
               </p>
             </div>
           </div>
@@ -211,18 +200,14 @@ export default function AboutUs() {
               />
             </div>
             <div className="md:w-1/2 md:text-center text-start shadow-2xl bg-BgColor px-5 py-10 md:border-l-2 border-r-2 md:border-r-0 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-l-3xl">
-              <h2 className="md:text-3xl text-2xl font-bold mb-4">
-                Our Mission
-              </h2>
+              <h2 className="md:text-3xl text-2xl font-bold mb-4">Our Mission</h2>
               <p className="text-gray-600 md:text-base text-sm">
-                Our mission at CC Traders is to make high-quality food
-                accessible and affordable for businesses of all sizes. We strive
-                to simplify the food supply chain by offering a seamless and
-                reliable wholesale experience. Sustainability, integrity, and
-                customer satisfaction are at the heart of everything we do. We
-                aim to foster long-term partnerships with our clients by
-                consistently delivering fresh, high-grade products and helping
-                them thrive in a competitive marketplace.
+                Our mission at CC Traders is to make high-quality food accessible and affordable for
+                businesses of all sizes. We strive to simplify the food supply chain by offering a
+                seamless and reliable wholesale experience. Sustainability, integrity, and customer
+                satisfaction are at the heart of everything we do. We aim to foster long-term
+                partnerships with our clients by consistently delivering fresh, high-grade products
+                and helping them thrive in a competitive marketplace.
               </p>
             </div>
           </div>

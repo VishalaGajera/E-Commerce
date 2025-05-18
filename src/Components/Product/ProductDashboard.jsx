@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ProductDashboard() {
   const [products, setProducts] = useState([]);
@@ -47,10 +47,7 @@ export default function ProductDashboard() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product) => (
-            <div
-              key={product._id}
-              className="border rounded-lg bg-white shadow-md p-4"
-            >
+            <div key={product._id} className="border rounded-lg bg-white shadow-md p-4">
               <img
                 src={product.image}
                 alt={product.name}
@@ -60,14 +57,10 @@ export default function ProductDashboard() {
               <p className="text-gray-600 mb-4">{product.description}</p>
               <p className="text-gray-600 mb-4">Category: {product.category}</p>
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Select Size
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Select Size</label>
                 <select
                   className="block w-full border rounded-md py-2 px-3"
-                  onChange={(e) =>
-                    handleSizeChange(product._id, e.target.value, product.sizes)
-                  }
+                  onChange={(e) => handleSizeChange(product._id, e.target.value, product.sizes)}
                 >
                   {Object.entries(product.sizes).map(([size, price]) => (
                     <option key={size} value={size}>

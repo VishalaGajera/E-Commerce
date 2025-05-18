@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
 
@@ -59,7 +59,6 @@ const Contact = () => {
     }
   };
 
-
   return (
     <div className="flex justify-center items-center w-full flex-col bg-white pb-10">
       <div className="flex justify-center items-center w-full h-full flex-col gap-10 py-10">
@@ -83,10 +82,9 @@ const Contact = () => {
                   We would love to hear from you!
                 </h2>
                 <p className="text-gray-600 lg:w-3/4 md:text-base text-sm">
-                  Thank you for considering CrossContinents Traders Ltd. We
-                  value your inquiries, feedback, and the opportunity to assist
-                  you. Feel free to reach out to us through the following
-                  channels:
+                  Thank you for considering CrossContinents Traders Ltd. We value your inquiries,
+                  feedback, and the opportunity to assist you. Feel free to reach out to us through
+                  the following channels:
                 </p>
               </div>
               <div className="flex flex-col gap-6">

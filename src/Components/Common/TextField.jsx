@@ -1,4 +1,3 @@
-import React from "react";
 import { useController } from "react-hook-form";
 
 const TextField = ({
@@ -39,8 +38,9 @@ const TextField = ({
           placeholder={placeholder}
           ref={ref}
           onBlur={onBlur}
-          className={`w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 ${error ? "border-red-500" : ""
-            }`}
+          className={`w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 ${
+            error ? "border-red-500" : ""
+          }`}
         />
         {showToggle && (
           <button
