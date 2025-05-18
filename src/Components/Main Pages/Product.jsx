@@ -122,7 +122,7 @@ const Product = () => {
       <div className="container h-full">
         <div className="flex flex-col justify-center items-center mx-5 py-10 h-full">
           <div className="flex justify-center items-center flex-col">
-            <h1 className="font-bold text-5xl">Products</h1>
+            <h1 className="font-bold md:text-5xl text-3xl">Products</h1>
             <div className="flex items-center justify-center mt-5">
               <div className="relative flex justify-center items-center">
                 <div className="w-36 h-0.5 bg-BgGolden z-20"></div>

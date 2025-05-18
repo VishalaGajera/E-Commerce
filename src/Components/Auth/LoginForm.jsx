@@ -121,7 +121,7 @@ const LoginForm = () => {
   const onSubmit = handleSubmit(async (data) => {
     try {
       const res = await axios.post("/auth/login", data);
-      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("token", res.data.token); // remove this line and call the login in authProvider
       toast.success("Login successfully");
       navigate("/");
     } catch (err) {

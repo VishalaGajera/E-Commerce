@@ -1,4 +1,4 @@
-  // import React from 'react'
+// import React from 'react'
 // import aboutImg from '../../assets/Images/ContactImg.jpg'
 
 // const About = () => {
@@ -13,7 +13,7 @@
 //                 }}>
 //                 <div className='bg-black w-full h-full bg-opacity-70 flex justify-center items-center text-center '>
 //                     <div className='w-2/4 flex items-center gap-4 flex-col'>
-//                         <h1 className='font-bold text-5xl'>ABOUT US</h1>
+//                         <h1 className='font-bold md:text-5xl text-3xl'>ABOUT US</h1>
 //                         <p className='text-lg'>With over 50 years of experience in the market, HOS Global Foods is the most popular choice for quality South Asian flavors and the largest South Asian distributor in the USA.</p>
 //                     </div>
 //                 </div>

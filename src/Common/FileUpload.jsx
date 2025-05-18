@@ -8,8 +8,8 @@ export const FileUpload = () => {
     const [fileURL, setFileURL] = useState("");
 
     const handleFileChange = (event) => {
-    console.log(event.target.files[0]);
-    
+        console.log(event.target.files[0]);
+
         setFile(event.target.files[0]);
     }
 
@@ -17,28 +17,28 @@ export const FileUpload = () => {
         try {
             setUploading(true);
             if (!file) {
-                alert("Please select a file to upload.");
+                alert("Please select a file before proceeding with the upload.");
                 return;
             }
-    
+
             const fileExt = file.name.split(".").pop();
             const fileName = `${Math.random()}.${fileExt}`;
             const filePath = `${fileName}`;
-    
+
             // Correct usage of 'from' method
             let { data, error } = await supabase.storage
                 .from("E-Commerce")
                 .upload(filePath, file);
-    
+
             if (error) {
                 throw error;
             }
-    
+
             // Get the public URL of the uploaded file
             const { data: url } = await supabase.storage
                 .from("E-Commerce")
                 .getPublicUrl(filePath);
-    
+
             console.log(url.publicUrl);
             setFileURL(url.publicUrl);
             alert("File uploaded successfully.");
@@ -49,7 +49,7 @@ export const FileUpload = () => {
             setUploading(false);
         }
     };
-    
+
 
     return (
         <>

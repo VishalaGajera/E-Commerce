@@ -26,7 +26,7 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
     setResponseMsg("");
-  
+
     try {
       const response = await fetch(`${URL}contact`, {
         method: "POST",
@@ -35,14 +35,14 @@ const Contact = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       const text = await response.text();
       const data = text ? JSON.parse(text) : {};
-  
+
       if (!response.ok) {
         throw new Error(data.error || "Something went wrong");
       }
-  
+
       setResponseMsg(data.message || "Message sent successfully");
       setFormData({
         firstName: "",
@@ -58,13 +58,13 @@ const Contact = () => {
       setIsLoading(false);
     }
   };
-  
+
 
   return (
     <div className="flex justify-center items-center w-full flex-col bg-white pb-10">
       <div className="flex justify-center items-center w-full h-full flex-col gap-10 py-10">
         <div className="flex justify-center items-center flex-col">
-          <h1 className="font-bold text-5xl">Contact</h1>
+          <h1 className="font-bold md:text-5xl text-3xl">Contact</h1>
           <div className="flex items-center justify-center mt-5">
             <div className="relative flex justify-center items-center">
               <div className="w-36 h-0.5 bg-BgGolden z-20"></div>

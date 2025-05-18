@@ -9,7 +9,7 @@ const ShoppingCart = () => {
       <div className="container h-full">
         <div className="flex flex-col justify-center items-center mx-5 py-10 h-full">
           <div className="flex justify-center items-center flex-col">
-            <h1 className="font-bold text-5xl">Shopping Cart</h1>
+            <h1 className="font-bold md:text-5xl text-3xl">Shopping Cart</h1>
             <div className="flex items-center justify-center mt-5">
               <div className="relative flex justify-center items-center">
                 <div className="w-36 h-0.5 bg-BgGolden z-20"></div>
@@ -19,22 +19,22 @@ const ShoppingCart = () => {
               </div>
             </div>
           </div>
-          <div className="w-full px-4 md:px-5 lg-6 relative z-10">
-            <div className="grid grid-cols-12 gap-10">
-              <div className="col-span-12 xl:col-span-8 p-5 my-14 w-full max-xl:max-w-3xl bg-white rounded-xl shadow-lg">
+          <div className="w-full md:px-5 lg-6 relative z-10">
+            <div className="grid grid-cols-12 xl:gap-10">
+              <div className="col-span-12 xl:col-span-8 py-10 lg:py-24 w-full">
                 <div className="flex items-center justify-between pb-5 border-b border-gray-300">
-                  <h2 className="font-manrope font-bold text-3xl leading-10 text-black">
+                  <h2 className="font-manrope font-bold md:text-3xl text-xl leading-10 text-black">
                     Cart Item
                   </h2>
-                  <h2 className="font-manrope font-bold text-xl leading-8 text-gray-600">
+                  <h2 className="font-manrope font-bold md:text-xl text-base leading-8 text-gray-600">
                     3 Items
                   </h2>
                 </div>
                 <CartHeader />
                 <CartItem />
               </div>
-              
-              <div className=" col-span-12 xl:col-span-4 bg-white  h-fit w-full max-w-3xl xl:max-w-lg my-14 pt-5 pb-8 px-8 shadow-lg rounded-xl">
+
+              <div className=" col-span-12 xl:col-span-4 bg-white h-fit w-full xl:my-14 pt-6 pb-8 px-8 shadow-lg rounded-xl">
                 <h2 className="font-manrope font-bold text-3xl leading-10 text-black pb-5 border-b border-gray-300">
                   Order Summary
                 </h2>
@@ -89,7 +89,7 @@ const ShoppingCart = () => {
                         Proceed to Checkout
                       </button>
                       <span>
-                        or <Link className="underline text-blue-700">Continue Shopping</Link>
+                        or <Link to={'/products'} className="underline text-blue-700">Continue Shopping</Link>
                       </span>
                     </div>
                   </form>
