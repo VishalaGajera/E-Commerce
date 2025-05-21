@@ -6,8 +6,11 @@ import Loader from "./loader";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
 import { axiosInstance } from "../../Common/AxiosInstance";
 import AddCartModal from "../../Modules/Product/AddCartModal";
+import { useSession } from "../../Providers/AuthProvider";
 
 const Product = () => {
+  const { user } = useSession();
+  console.log("call--user", user);
   const [viewFilters, setViewFilters] = useState(false);
   const [selectedPrices, setSelectedPrices] = useState({});
   const [isAddCartModalOpen, setIsAddCartModalOpen] = useState(false);
@@ -93,22 +96,28 @@ const Product = () => {
       return;
     }
 
-    const userId = "user123"; // Replace this with real user ID from context/localStorage
-
-    try {
-      const response = await axiosInstance.post("/cart/insertData", {
-        userId,
-        productId: product._id,
-        size: selectedSize,
-        quantity: 1,
-        price,
-      });
-
-      toast.success(`${product.name} (${selectedSize}) added to cart!`);
-    } catch (error) {
-      const errorMessage = error.response?.data?.message || "Something went wrong!";
-      toast.error(`Failed to add to cart: ${errorMessage}`);
-    }
+    if (!user) {
+      toast.error("Please login to add to cart.");
+      return;
+    } else {
+      try {
+        const response = await axiosInstance.post("/cart/insertData", {
+          userId: user._id,
+          productId: product._id,
+          size: selectedSize,
+          quantity: 1,
+          price,
+        });
+        if (response.data.success) {
+          toast.success(response.data.message);
+        } else {
+          toast.error(response.data.message);
+        }
+      } catch (error) {
+        const errorMessage = error.response?.data?.message || "Something went wrong!";
+        toast.error(`Failed to add to cart: ${errorMessage}`);
+      }
+    };
   };
 
   const handleCloseAddCartModal = () => {
@@ -148,11 +157,9 @@ const Product = () => {
             {/* Sidebar Filter Panel */}
             <div className="md:flex flex-col gap-1 w-full border-r-2">
               <div
-                className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${
-                  viewFilters ? "translate-x-0 overflow-y-scroll z-50" : "translate-x-full"
-                } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${
-                  viewFilters ? "h-full w-full" : ""
-                } md:block`}
+                className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${viewFilters ? "translate-x-0 overflow-y-scroll z-50" : "translate-x-full"
+                  } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${viewFilters ? "h-full w-full" : ""
+                  } md:block`}
               >
                 <div className="flex justify-between items-center bg-white p-3 md:hidden">
                   <p className="text-lg font-bold">Filters</p>
@@ -169,14 +176,12 @@ const Product = () => {
                     categories?.map((menu, index) => (
                       <div
                         key={index}
-                        className={`bg-BgColor border-b ${
-                          selectedCategoryId === menu._id ? "border-BgGolden" : ""
-                        }`}
+                        className={`bg-BgColor border-b ${selectedCategoryId === menu._id ? "border-BgGolden" : ""
+                          }`}
                       >
                         <div
-                          className={`flex flex-row justify-between items-center cursor-pointer p-3 ${
-                            selectedCategoryId === menu._id ? "text-BgGolden" : "text-black"
-                          }`}
+                          className={`flex flex-row justify-between items-center cursor-pointer p-3 ${selectedCategoryId === menu._id ? "text-BgGolden" : "text-black"
+                            }`}
                           onClick={() => {
                             handleCategorySelect(menu._id);
                             setViewFilters(false);
@@ -296,7 +301,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      {isAddCartModalOpen && <AddCartModal onClose={handleCloseAddCartModal} />}
+      {/* {isAddCartModalOpen && <AddCartModal onClose={handleCloseAddCartModal} />} */}
     </div>
   );
 };

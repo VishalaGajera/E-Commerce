@@ -1,8 +1,71 @@
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import { CartHeader } from "./CartHeader";
+import { useSession } from "../../Providers/AuthProvider";
+import { axiosInstance } from "../../Common/AxiosInstance";
+import { useEffect, useState } from "react";
 
 const ShoppingCart = () => {
+  const { user } = useSession();
+  const [cartData, setCartData] = useState([]);
+  const [quantities, setQuantities] = useState({});
+
+  useEffect(() => {
+    const fetchCart = async () => {
+      try {
+        const res = await axiosInstance.get(`cart/fetchCartProduct/${user._id}`);
+        const data = res.data;
+        console.log(data);
+        if (data.success) {
+          setCartData(data.cart);
+          const qtyMap = {};
+          data.cart.forEach((item) => {
+            qtyMap[item._id] = item.quantity || 1;
+          });
+          setQuantities(qtyMap);
+        } else {
+          console.error("Failed to fetch cart:", data.message);
+        }
+      } catch (err) {
+        console.error("Error fetching cart:", err);
+      }
+    };
+
+    if (user?._id) {
+      fetchCart();
+    }
+  }, [user]);
+
+  const syncWithBackend = async (newQty, item) => {
+    console.log("user._id :", user._id);
+    try {
+      const res = await axiosInstance.post(`cart/updateData/${item._id}`, {
+        userId: user._id,
+        productId: item.productId._id,
+        size: item.size,
+        quantity: newQty,
+      });
+      console.log(res);
+    } catch (error) {
+      console.error("Error updating quantity:", error);
+    }
+  };
+
+  const handleQuantityChange = (item, newQuantity) => {
+    console.log("item :", item);
+    syncWithBackend(newQuantity, item);
+    setQuantities((prev) => ({
+      ...prev,
+      [item._id]: newQuantity,
+    }));
+  };
+
+  const totalItems = Object.values(quantities).reduce((sum, qty) => sum + qty, 0);
+  const totalAmount = cartData.reduce(
+    (sum, item) => sum + item.price * (quantities[item._id] || 1),
+    0
+  ).toFixed(2);
+
   return (
     <div className="flex justify-center items-center bg-BgColor">
       <div className="container h-full">
@@ -18,75 +81,64 @@ const ShoppingCart = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:px-5 lg-6 relative z-10">
+
+          <div className="w-full md:px-5 lg:6 relative z-10">
             <div className="grid grid-cols-12 xl:gap-10">
               <div className="col-span-12 xl:col-span-8 py-10 lg:py-24 w-full">
                 <div className="flex items-center justify-between pb-5 border-b border-gray-300">
-                  <h2 className="font-manrope font-bold md:text-3xl text-xl leading-10 text-black">
+                  <h2 className="font-manrope font-bold md:text-3xl text-xl text-black">
                     Cart Item
                   </h2>
-                  <h2 className="font-manrope font-bold md:text-xl text-base leading-8 text-gray-600">
-                    3 Items
+                  <h2 className="font-manrope font-bold md:text-xl text-base text-gray-600">
+                    {totalItems} Items
                   </h2>
                 </div>
                 <CartHeader />
-                <CartItem />
+                {cartData.map((item) => (
+                  <CartItem
+                    key={item._id}
+                    item={item}
+                    onQuantityChange={handleQuantityChange}
+                  />
+                ))}
               </div>
 
-              <div className=" col-span-12 xl:col-span-4 bg-white h-fit w-full xl:my-14 pt-6 pb-8 px-8 shadow-lg rounded-xl">
-                <h2 className="font-manrope font-bold text-3xl leading-10 text-black pb-5 border-b border-gray-300">
+              <div className="col-span-12 xl:col-span-4 bg-white h-fit w-full xl:my-14 pt-6 pb-8 px-8 shadow-lg rounded-xl">
+                <h2 className="font-manrope font-bold text-3xl text-black pb-5 border-b border-gray-300">
                   Order Summary
                 </h2>
                 <div className="mt-5">
                   <div className="flex items-center justify-between pb-5">
-                    <p className="font-norCartHeadermal text-lg leading-8 text-black">3 Items</p>
-                    <p className="font-medium text-lg leading-8 text-black">$480.00</p>
+                    <p className="text-lg text-black">{totalItems} Items</p>
+                    <p className="text-lg text-black">${totalAmount}</p>
                   </div>
                   <form>
                     <div className="space-y-2">
                       <dl className="flex items-center justify-between gap-4">
-                        <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
-                          Original price
-                        </dt>
-                        <dd className="text-base font-medium text-gray-900 dark:text-white">
-                          $7,592.00
-                        </dd>
+                        <dt className="text-base text-gray-500">Original price</dt>
+                        <dd className="text-base font-medium text-gray-900">${totalAmount}</dd>
                       </dl>
 
                       <dl className="flex items-center justify-between gap-4">
-                        <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
-                          Savings
-                        </dt>
-                        <dd className="text-base font-medium text-green-600">-$299.00</dd>
+                        <dt className="text-base text-gray-500">Savings</dt>
+                        <dd className="text-base font-medium text-green-600">-$0.00</dd>
                       </dl>
 
                       <dl className="flex items-center justify-between gap-4">
-                        <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
-                          Store Pickup
-                        </dt>
-                        <dd className="text-base font-medium text-gray-900 dark:text-white">$99</dd>
+                        <dt className="text-base text-gray-500">Tax</dt>
+                        <dd className="text-base font-medium text-gray-900">$0.00</dd>
                       </dl>
 
-                      <dl className="flex items-center justify-between gap-4">
-                        <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
-                          Tax
-                        </dt>
-                        <dd className="text-base font-medium text-gray-900 dark:text-white">
-                          $799
-                        </dd>
-                      </dl>
-
-                      <dl className="flex items-center justify-between gap-4 border-t border-gray-200 py-3 dark:border-gray-700">
-                        <dt className="text-base font-bold text-gray-900 dark:text-white">Total</dt>
-                        <dd className="text-base font-bold text-gray-900 dark:text-white">
-                          $8,191.00
-                        </dd>
+                      <dl className="flex items-center justify-between gap-4 border-t border-gray-200 py-3">
+                        <dt className="text-base font-bold text-gray-900">Total</dt>
+                        <dd className="text-base font-bold text-gray-900">${totalAmount}</dd>
                       </dl>
                     </div>
+
                     <div className="flex items-center flex-col gap-2 pt-2">
-                      <button className="rounded-lg w-full bg-blue-600 py-2.5 px-4 text-white text-sm font-semibold text-center transition-all duration-500">
+                      <Link to={"/checkout"} className="rounded-lg w-full bg-blue-600 py-2.5 px-4 text-white text-sm font-semibold">
                         Proceed to Checkout
-                      </button>
+                      </Link>
                       <span>
                         or{" "}
                         <Link to={"/products"} className="underline text-blue-700">

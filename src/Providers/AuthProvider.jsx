@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useMemo } from "react";
+import { createContext, useContext, useState, useMemo, useEffect } from "react";
 import axios from "axios";
 import { axiosInstance } from "../Common/AxiosInstance.js";
 import { toast } from "react-toastify";
@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   axios.defaults.withCredentials = true;
 
-  useMemo(() => {
+  useEffect(() => {
     const fetchUser = async () => {
       try {
         const res = await axiosInstance.get("/auth/me");
@@ -35,7 +35,8 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    navigate("/auth/login");
   };
 
   return (
