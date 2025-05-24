@@ -5,8 +5,8 @@ export const FileUpload = () => {
   const [file, setFile] = useState(null);
 
   const [uploading, setUploading] = useState(false);
-  const [fileURL, setFileURL] = useState("");
 
+  const [fileURL, setFileURL] = useState("");
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
