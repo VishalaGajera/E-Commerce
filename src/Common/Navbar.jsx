@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import CC_TRADERS_2 from "/Images/CC_TRADERS_2.png";
 
+// eslint-disable-next-line sonarjs/cognitive-complexity
 export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 

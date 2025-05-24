@@ -1,6 +1,7 @@
 import babelParser from "@babel/eslint-parser";
 import unusedImports from "eslint-plugin-unused-imports";
 import reactPlugin from "eslint-plugin-react";
+import sonarjs from "eslint-plugin-sonarjs";
 
 export default [
   {
@@ -33,6 +34,7 @@ export default [
     plugins: {
       react: reactPlugin,
       "unused-imports": unusedImports,
+      sonarjs,
     },
     rules: {
       // Core styling
@@ -93,6 +95,7 @@ export default [
         { blankLine: "always", prev: "expression", next: "*" },
         { blankLine: "always", prev: "*", next: "expression" },
       ],
+      "sonarjs/cognitive-complexity": ["error", 4],
     },
   },
 ];

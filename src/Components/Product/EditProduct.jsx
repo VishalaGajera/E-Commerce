@@ -93,6 +93,7 @@ export default function EditProduct() {
     }));
   };
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   const validateForm = () => {
     let newErrors = {};
 

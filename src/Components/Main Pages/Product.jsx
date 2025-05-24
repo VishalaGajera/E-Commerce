@@ -5,6 +5,7 @@ import { useProductContext } from "../../Providers/ProductCategoryContext";
 import { axiosInstance } from "../../Common/AxiosInstance";
 import { useSession } from "../../Providers/AuthProvider";
 
+// eslint-disable-next-line sonarjs/cognitive-complexity
 const Product = () => {
   const { user } = useSession();
 
@@ -78,6 +79,7 @@ const Product = () => {
   //   toast.success(`${product.name} (${selectedSize}) added to cart!`);
   // };
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   const handleAddToCart = async (product, selectedSize, price) => {
     if (!selectedSize || !price) {
       toast.error("Please select a size before adding to cart.");

@@ -74,6 +74,7 @@ export default function AddProduct() {
     });
   };
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   const validateForm = () => {
     let newErrors = {};
 
@@ -116,6 +117,7 @@ export default function AddProduct() {
     setErrors({});
   };
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   const handleSubmit = async (e) => {
     e.preventDefault();
 
