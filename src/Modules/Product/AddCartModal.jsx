@@ -9,6 +9,7 @@ import { IoCheckbox } from "react-icons/io5";
 
 const AddCartModal = ({ onClose }) => {
   const [isChecked, setIsChecked] = useState(false);
+
   const [activeTab, setActiveTab] = useState("");
 
   const [products] = useState([

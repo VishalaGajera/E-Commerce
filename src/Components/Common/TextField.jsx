@@ -33,6 +33,7 @@ const TextField = ({
           value={value}
           onChange={(e) => {
             const val = e.target.value || "";
+
             onChange(type === "number" ? Number(val) : val);
           }}
           placeholder={placeholder}

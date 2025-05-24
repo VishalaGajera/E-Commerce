@@ -1,11 +1,10 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
-import { ToastContainer } from "react-toastify";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { ProductProvider } from "./Providers/ProductCategoryContext";
 import { AuthProvider } from "./Providers/AuthProvider.jsx";
+import { ProductProvider } from "./Providers/ProductCategoryContext.jsx";
+import App from "./App.jsx";
+import { ToastContainer } from "react-toastify";
 
 const queryClient = new QueryClient();
 

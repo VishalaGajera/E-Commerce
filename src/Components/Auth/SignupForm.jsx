@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link, useNavigate } from "react-router-dom";
-import TextField from "../Common/TextField";
+import { useNavigate } from "react-router-dom";
 import { signupSchema } from "../../Validation/Auth";
 import { axiosInstance } from "../../Common/AxiosInstance";
 import { toast } from "react-toastify";
 
 const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const navigate = useNavigate();
 
   const {
@@ -24,7 +25,9 @@ const SignupForm = () => {
   const onSubmit = handleSubmit(async (data) => {
     try {
       await axiosInstance.post("/auth/signup", data);
+
       toast.success("Signup successful");
+
       navigate("/auth/login");
     } catch (err) {
       toast.error(err.response?.data?.message || "Signup failed");

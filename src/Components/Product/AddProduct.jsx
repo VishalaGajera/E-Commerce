@@ -1,10 +1,13 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { supabase } from "../../../../Backend/Config/supabaseClient";
 
 export default function AddProduct() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [imageUrl, setImageUrl] = useState("");
+
   const [imageFile, setImageFile] = useState(null);
+
   const [formData, setFormData] = useState({
     image: "",
     name: "",
@@ -14,12 +17,14 @@ export default function AddProduct() {
     sizes: {},
     rating: "5",
   });
+
   const [errors, setErrors] = useState({});
+
   const [newSize, setNewSize] = useState({ size: "", price: "" });
-  const fileInputRef = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -28,14 +33,17 @@ export default function AddProduct() {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
+
     if (file) {
       setImageFile(file);
+
       setImageUrl(URL.createObjectURL(file));
     }
   };
 
   const handleSizeChange = (e) => {
     const { name, value } = e.target;
+
     setNewSize((prevSize) => ({
       ...prevSize,
       [name]: value,
@@ -51,6 +59,7 @@ export default function AddProduct() {
           [newSize.size]: parseFloat(newSize.price),
         },
       }));
+
       setNewSize({ size: "", price: "" });
     }
   };
@@ -58,23 +67,33 @@ export default function AddProduct() {
   const removeSize = (sizeToRemove) => {
     setFormData((prevData) => {
       const newSizes = { ...prevData.sizes };
+
       delete newSizes[sizeToRemove];
+
       return { ...prevData, sizes: newSizes };
     });
   };
 
   const validateForm = () => {
     let newErrors = {};
+
     if (!imageFile) newErrors.image = "Product image is required.";
+
     if (!formData.name) newErrors.name = "Product name is required.";
+
     if (formData.description.length < 10)
       newErrors.description = "Description must be at least 10 characters.";
+
     if (!formData.category) newErrors.category = "Category is required.";
+
     if (!formData.price_per_lb || parseFloat(formData.price_per_lb) <= 0)
       newErrors.price_per_lb = "Price must be positive.";
+
     if (Object.keys(formData.sizes).length === 0)
       newErrors.sizes = "At least one size is required.";
+
     setErrors(newErrors);
+
     return Object.keys(newErrors).length === 0;
   };
 
@@ -88,24 +107,30 @@ export default function AddProduct() {
       sizes: {},
       rating: "5",
     });
+
     setImageUrl("");
+
     setImageFile(null);
+
     // fileInputRef.current.value = "";
     setErrors({});
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!validateForm()) return;
 
     setIsSubmitting(true);
 
     try {
       const fileExt = imageFile.name.split(".").pop();
+
       const fileName = `${Date.now()}.${fileExt}`;
+
       const filePath = `products/${fileName}`;
 
-      let { data, error } = await supabase.storage.from("E-Commerce").upload(filePath, imageFile);
+      let { error } = await supabase.storage.from("E-Commerce").upload(filePath, imageFile);
 
       if (error) throw error;
 
@@ -115,7 +140,6 @@ export default function AddProduct() {
         ...formData,
         image: url.publicUrl,
       };
-      console.log(formDataToSubmit);
 
       const response = await fetch("http://localhost:5000/api/product/insertData", {
         method: "POST",
@@ -127,13 +151,14 @@ export default function AddProduct() {
 
       if (response.ok) {
         alert("Product added successfully!");
+
         resetForm();
       } else {
         const errorData = await response.json();
+
         alert("Error: " + errorData.message);
       }
     } catch (error) {
-      console.error("Error submitting product:", error);
       alert("Something went wrong. Please try again.");
     }
 

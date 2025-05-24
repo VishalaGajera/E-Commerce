@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { FiPhone } from "react-icons/fi";
-import { MdOutlineMail } from "react-icons/md";
 
 const Contact = () => {
   const URL = import.meta.env.VITE_REACT_APP_LOCAL_URL;
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -13,6 +12,7 @@ const Contact = () => {
   });
 
   const [responseMsg, setResponseMsg] = useState("");
+
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -24,7 +24,9 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setIsLoading(true);
+
     setResponseMsg("");
 
     try {
@@ -37,6 +39,7 @@ const Contact = () => {
       });
 
       const text = await response.text();
+
       const data = text ? JSON.parse(text) : {};
 
       if (!response.ok) {
@@ -44,6 +47,7 @@ const Contact = () => {
       }
 
       setResponseMsg(data.message || "Message sent successfully");
+
       setFormData({
         firstName: "",
         lastName: "",
@@ -52,7 +56,6 @@ const Contact = () => {
         email: "",
       });
     } catch (error) {
-      console.error(error);
       setResponseMsg(error.message);
     } finally {
       setIsLoading(false);

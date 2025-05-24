@@ -7,6 +7,7 @@ const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
+
   const [selectedCategoryId, setSelectedCategoryId] = useState("all");
 
   const { user } = useSession();
@@ -19,7 +20,8 @@ export const ProductProvider = ({ children }) => {
   } = useQuery({
     queryKey: ["categories"],
     queryFn: async () => {
-      const res = await axiosInstance.get(`/category/getAllCategory`);
+      const res = await axiosInstance.get("/category/getAllCategory");
+
       return res.data;
     },
     enabled: !!user,
@@ -37,6 +39,7 @@ export const ProductProvider = ({ children }) => {
       const res = await axiosInstance.get(
         `/product/getAllProducts?page=${currentPage}&categoryId=${selectedCategoryId}`
       );
+
       return res.data;
     },
     enabled: !!user,

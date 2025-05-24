@@ -2,27 +2,33 @@ import { useEffect, useState } from "react";
 
 export default function ProductDashboard() {
   const [products, setProducts] = useState([]);
-  const [selectedPrices, setSelectedPrices] = useState({}); // To track selected prices for each product
+
+  const [selectedPrices, setSelectedPrices] = useState({});
 
   // Fetch products from the API
   const fetchProducts = async () => {
     try {
       const response = await fetch("http://localhost:5000/api/product/getAllProducts");
+
       const data = await response.json();
+
       if (response.ok) {
         setProducts(data.products);
+
         // Initialize selectedPrices with the first price of each product
         const initialPrices = data.products.reduce((acc, product) => {
           const firstSize = Object.keys(product.sizes)[0];
+
           acc[product._id] = firstSize ? product.sizes[firstSize] : null;
+
           return acc;
         }, {});
+
         setSelectedPrices(initialPrices);
       } else {
         alert(data.message || "Failed to fetch products.");
       }
     } catch (error) {
-      console.error("Error fetching products:", error);
       alert("Something went wrong. Please try again later.");
     }
   };
@@ -62,7 +68,7 @@ export default function ProductDashboard() {
                   className="block w-full border rounded-md py-2 px-3"
                   onChange={(e) => handleSizeChange(product._id, e.target.value, product.sizes)}
                 >
-                  {Object.entries(product.sizes).map(([size, price]) => (
+                  {Object.entries(product.sizes).map(([size]) => (
                     <option key={size} value={size}>
                       {size}
                     </option>

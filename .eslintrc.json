@@ -12,12 +12,21 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier","unused-imports"],
+  "plugins": ["react", "prettier", "unused-imports"],
   "rules": {
     "prettier/prettier": "error",
-    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
-    "react/react-in-jsx-scope": "off",
-     "unused-imports/no-unused-imports": "warn"
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "react": {

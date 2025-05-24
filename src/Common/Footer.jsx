@@ -1,12 +1,6 @@
 import CC_TRADERS_2 from "/Images/CC_TRADERS_2.png";
-import { Link, useNavigate } from "react-router-dom";
-import { FiPhone } from "react-icons/fi";
-import { MdOutlineMail } from "react-icons/md";
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
-  const navigate = useNavigate();
-
   return (
     <footer className="bg-BgColor shadow-custom border-BgGolden text-gray-800 pt-10 w-full h-full flex flex-col justify-center items-center">
       <h2 className="2xl:text-5xl lg:text-5xl md:text-4xl text-2xl font-serif mb-6 md:text-center text-start uppercase px-5">

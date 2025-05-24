@@ -18,15 +18,16 @@ import axios from "axios";
 
 // Get token from localStorage or cookies
 const token = localStorage.getItem("token");
+
 const URL = import.meta.env.VITE_REACT_APP_LOCAL_URL;
 
 export const axiosInstance = axios.create({
   baseURL: URL,
   headers: {
     "Content-Type": "application/json",
-    authorization: token ? `Bearer ${token}` : "", // Check if token exists
+    authorization: token ? `Bearer ${token}` : "",
   },
-  withCredentials: true, // If you use cookies
+  withCredentials: true,
 });
 
 // Add an interceptor to handle 401 errors (JWT expired or unauthorized)
@@ -36,8 +37,9 @@ axiosInstance.interceptors.response.use(
     const navigateToLogin = () => {
       // Check if the current path is not already the login page to prevent looping
       if (!window.location.pathname.includes("/auth/login")) {
-        localStorage.removeItem("token"); // Remove expired token
-        window.location.href = "/auth/login"; // Redirect to login page
+        localStorage.removeItem("token");
+
+        window.location.href = "/auth/login";
       }
     };
 
@@ -51,6 +53,6 @@ axiosInstance.interceptors.response.use(
 
 // This can be used to update the authorization header if the token changes
 export const updateAuthHeader = (newToken) => {
-  axiosInstance.defaults.headers['Authorization'] = `Bearer ${newToken}`;
+  axiosInstance.defaults.headers["Authorization"] = `Bearer ${newToken}`;
 };
 

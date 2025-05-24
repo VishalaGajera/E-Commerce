@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import { CiSearch } from "react-icons/ci";
-import { HiMenuAlt3 } from "react-icons/hi";
-import { RxCross1 } from "react-icons/rx";
+import { useLocation } from "react-router-dom";
 import CC_TRADERS_2 from "/Images/CC_TRADERS_2.png";
 
-const Navbar = () => {
+export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+
   const location = useLocation();
+
   const isActive = (path) => location.pathname === path;
+
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (e) => {
@@ -169,5 +169,3 @@ const Navbar = () => {
     </div>
   );
 };
-
-export default Navbar;

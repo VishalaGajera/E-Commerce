@@ -7,6 +7,7 @@ const AuthContext = createContext();
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
   const [loading, setLoading] = useState(true);
 
   axios.defaults.withCredentials = true;
@@ -18,7 +19,6 @@ export const AuthProvider = ({ children }) => {
 
         setUser(res.data.user);
       } catch (err) {
-        console.error(err.response.data.message);
         setUser(null);
       } finally {
         setLoading(false);
@@ -30,11 +30,13 @@ export const AuthProvider = ({ children }) => {
 
   const login = (data) => {
     setUser(data.user);
+
     localStorage.setItem("token", data.token);
   };
 
   const logout = () => {
     setUser(null);
+
     localStorage.removeItem("token");
   };
 
@@ -45,6 +47,7 @@ export const AuthProvider = ({ children }) => {
 
 export const useSession = () => {
   const context = useContext(AuthContext);
+
   if (!context) {
     throw new Error("useSession must be used within an AuthProvider");
   }
