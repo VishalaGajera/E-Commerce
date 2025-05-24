@@ -1,24 +1,24 @@
-import { createContext, useContext, useState, useMemo, useEffect } from "react";
+import { createContext, useContext, useState, useMemo } from "react";
 import axios from "axios";
 import { axiosInstance } from "../Common/AxiosInstance.js";
-import { toast } from "react-toastify";
 
 const AuthContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   axios.defaults.withCredentials = true;
 
-  useEffect(() => {
+  useMemo(() => {
     const fetchUser = async () => {
       try {
         const res = await axiosInstance.get("/auth/me");
 
         setUser(res.data.user);
       } catch (err) {
-        toast.error(err.response.data.message);
+        console.error(err.response.data.message);
         setUser(null);
       } finally {
         setLoading(false);
@@ -36,7 +36,6 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem("token");
-    navigate("/auth/login");
   };
 
   return (
