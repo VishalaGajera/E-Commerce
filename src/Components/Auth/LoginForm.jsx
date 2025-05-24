@@ -91,14 +91,13 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import TextField from "../Common/TextField";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { loginSchema } from "../../Validation/Auth";
 import { axiosInstance } from "../../Common/AxiosInstance";
 import { toast } from "react-toastify";
 import { useSession } from "../../Providers/AuthProvider.jsx";
 
-const LoginForm = () => {
+export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -151,7 +150,7 @@ const LoginForm = () => {
           <TextField
             label="Password"
             name="password"
-            type={showPassword ? "text" : "password"} //you can handle this in TextField no need to handle here
+            type={showPassword ? "text" : "password"}
             placeholder="*"
             error={errors.password?.message}
             showToggle={true}

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { FiPlus } from "react-icons/fi";
 
 const FAQs = () => {
   const [isVisible, setIsVisible] = useState(null);
+
   const toggleSection = (section) => {
     if (isVisible === section) {
       setIsVisible(null);

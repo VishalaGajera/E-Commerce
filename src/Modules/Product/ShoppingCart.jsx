@@ -7,26 +7,34 @@ import { useEffect, useState } from "react";
 
 const ShoppingCart = () => {
   const { user } = useSession();
+
   const [cartData, setCartData] = useState([]);
+
   const [quantities, setQuantities] = useState({});
 
   useEffect(() => {
     const fetchCart = async () => {
       try {
         const res = await axiosInstance.get(`cart/fetchCartProduct/${user._id}`);
+
         const data = res.data;
-        console.log(data);
+
         if (data.success) {
           setCartData(data.cart);
+
           const qtyMap = {};
+
           data.cart.forEach((item) => {
             qtyMap[item._id] = item.quantity || 1;
           });
+
           setQuantities(qtyMap);
         } else {
+          // eslint-disable-next-line no-console
           console.error("Failed to fetch cart:", data.message);
         }
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.error("Error fetching cart:", err);
       }
     };
@@ -36,24 +44,7 @@ const ShoppingCart = () => {
     }
   }, [user]);
 
-  const syncWithBackend = async (newQty, item) => {
-    console.log("user._id :", user._id);
-    try {
-      const res = await axiosInstance.post(`cart/updateData/${item._id}`, {
-        userId: user._id,
-        productId: item.productId._id,
-        size: item.size,
-        quantity: newQty,
-      });
-      console.log(res);
-    } catch (error) {
-      console.error("Error updating quantity:", error);
-    }
-  };
-
   const handleQuantityChange = (item, newQuantity) => {
-    console.log("item :", item);
-    syncWithBackend(newQuantity, item);
     setQuantities((prev) => ({
       ...prev,
       [item._id]: newQuantity,
@@ -61,6 +52,7 @@ const ShoppingCart = () => {
   };
 
   const totalItems = Object.values(quantities).reduce((sum, qty) => sum + qty, 0);
+
   const totalAmount = cartData.reduce(
     (sum, item) => sum + item.price * (quantities[item._id] || 1),
     0

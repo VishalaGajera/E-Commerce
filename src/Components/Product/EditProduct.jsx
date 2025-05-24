@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 
 export default function EditProduct() {
   const [isLoading, setIsLoading] = useState(true);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [formData, setFormData] = useState({
     image: "",
     name: "",
@@ -12,12 +14,14 @@ export default function EditProduct() {
     sizes: [],
     rating: "5",
   });
+
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
     // Simulate fetching product data
     const fetchProductData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate API delay
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       setFormData({
         image: "",
         name: "IC 1121 Basmati Long Grain Steam Rice",
@@ -31,13 +35,16 @@ export default function EditProduct() {
         ],
         rating: "5",
       });
+
       setIsLoading(false);
     };
+
     fetchProductData();
   }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -46,21 +53,26 @@ export default function EditProduct() {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
+
     if (file) {
       const reader = new FileReader();
+
       reader.onloadend = () => {
         setFormData((prevData) => ({
           ...prevData,
           image: reader.result,
         }));
       };
+
       reader.readAsDataURL(file);
     }
   };
 
   const handleSizeChange = (index, field, value) => {
     const newSizes = [...formData.sizes];
+
     newSizes[index][field] = value;
+
     setFormData((prevData) => ({
       ...prevData,
       sizes: newSizes,
@@ -83,32 +95,45 @@ export default function EditProduct() {
 
   const validateForm = () => {
     let newErrors = {};
+
     if (!formData.image) newErrors.image = "Product image is required";
+
     if (!formData.name) newErrors.name = "Product name is required";
+
     if (formData.description.length < 10)
       newErrors.description = "Description must be at least 10 characters";
+
     if (!formData.category) newErrors.category = "Category is required";
+
     if (!formData.price_per_lb || parseFloat(formData.price_per_lb) <= 0)
       newErrors.price_per_lb = "Price must be positive";
+
     if (formData.sizes.length === 0) newErrors.sizes = "At least one size is required";
+
     formData.sizes.forEach((size, index) => {
       if (!size.size) newErrors[`size-${index}`] = "Size is required";
+
       if (!size.price || parseFloat(size.price) <= 0)
         newErrors[`price-${index}`] = "Price must be positive";
     });
+
     setErrors(newErrors);
+
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+
     // Here you would typically send the updated data to your backend
-    console.log("Updated product data:", formData);
-    await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulating API call
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     setIsSubmitting(false);
+
     alert("Product updated successfully!");
   };
 

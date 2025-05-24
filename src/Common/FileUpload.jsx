@@ -1,68 +1,63 @@
-import { useState } from 'react';
-import { supabase } from '../../../../Backend/Config/supabaseClient';
-
+import { useState } from "react";
+import { supabase } from "../../../../Backend/Config/supabaseClient";
 
 export const FileUpload = () => {
-    const [file, setFile] = useState(null);
-    const [uploading, setUploading] = useState(false);
-    const [fileURL, setFileURL] = useState("");
+  const [file, setFile] = useState(null);
 
-    const handleFileChange = (event) => {
-        console.log(event.target.files[0]);
+  const [uploading, setUploading] = useState(false);
+  const [fileURL, setFileURL] = useState("");
 
-        setFile(event.target.files[0]);
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  const handleUpload = async () => {
+    try {
+      setUploading(true);
+
+      if (!file) {
+        alert("Please select a file before proceeding with the upload.");
+
+        return;
+      }
+
+      const fileExt = file.name.split(".").pop();
+
+      const fileName = `${Math.random()}.${fileExt}`;
+
+      const filePath = `${fileName}`;
+
+      // Correct usage of 'from' method
+      let { error } = await supabase.storage.from("E-Commerce").upload(filePath, file);
+
+      if (error) {
+        throw error;
+      }
+
+      const { data: url } = await supabase.storage.from("E-Commerce").getPublicUrl(filePath);
+
+      setFileURL(url.publicUrl);
+
+      alert("File uploaded successfully.");
+    } catch (error) {
+      alert(`Error uploading file: ${error.message}`);
+    } finally {
+      setUploading(false);
     }
+  };
 
-    const handleUpload = async () => {
-        try {
-            setUploading(true);
-            if (!file) {
-                alert("Please select a file before proceeding with the upload.");
-                return;
-            }
-
-            const fileExt = file.name.split(".").pop();
-            const fileName = `${Math.random()}.${fileExt}`;
-            const filePath = `${fileName}`;
-
-            // Correct usage of 'from' method
-            let { data, error } = await supabase.storage
-                .from("E-Commerce")
-                .upload(filePath, file);
-
-            if (error) {
-                throw error;
-            }
-
-            // Get the public URL of the uploaded file
-            const { data: url } = await supabase.storage
-                .from("E-Commerce")
-                .getPublicUrl(filePath);
-
-            console.log(url.publicUrl);
-            setFileURL(url.publicUrl);
-            alert("File uploaded successfully.");
-        } catch (error) {
-            console.error("Error uploading file:", error.message);
-            alert(`Error uploading file: ${error.message}`);
-        } finally {
-            setUploading(false);
-        }
-    };
-
-
-    return (
-        <>
-            <input type="file" onChange={handleFileChange} />
-            <button onClick={handleUpload} disabled={uploading}>{uploading ? "Uploading..." : "Upload"}</button>
-            {
-                fileURL && (
-                    <div>
-                        <p>File Upload to : {fileURL}</p>
-                        <img src={fileURL} alt="Uploaded file" style={{ width: "300px", height: "auto" }} />
-                    </div>
-                )
-            }
-        </>
-    )
-}
+  return (
+    <>
+      <input type="file" onChange={handleFileChange} />
+      <button onClick={handleUpload} disabled={uploading}>
+        {uploading ? "Uploading..." : "Upload"}
+      </button>
+      {fileURL && (
+        <div>
+          <p>File Upload to : {fileURL}</p>
+          <img src={fileURL} alt="Uploaded file" style={{ width: "300px", height: "auto" }} />
+        </div>
+      )}
+    </>
+  );
+};

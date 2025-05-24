@@ -1,4 +1,3 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -18,23 +17,17 @@ import slide1 from "/Images/slider/slide1.png";
 import slide2 from "/Images/slider/slide2.png";
 import slide3 from "/Images/slider/slide3.png";
 import slide4 from "/Images/slider/slide4.png";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import spices from "../../../public/Images/Product/Spices.png";
 import rice from "../../../public/Images/Product/rice-removebg-preview.png";
 import flour from "../../../public/Images/Product/flour-removebg-preview.png";
 import beans from "../../../public/Images/Product/beans.png";
 import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
-import { useSession } from "../../Providers/AuthProvider.jsx";
 
 const Home = () => {
   const navigate = useNavigate();
 
   const { categories, setSelectedCategoryId } = useProductContext();
-
-  const { user } = useSession();
-
-  console.log("call--user", user); 
 
   const brand = [
     Maggi,
@@ -74,6 +67,7 @@ const Home = () => {
     if (selectedCategory) {
       setSelectedCategoryId(selectedCategory._id);
     }
+
     navigate("/products");
   };
 
@@ -109,19 +103,19 @@ const Home = () => {
             className="h-full w-full overflow-hidden"
           >
             <SwiperSlide className="cursor-pointer" onClick={() => handleCategoriesClick("Rice")}>
-              <img src={slide1} alt={`slide 1}`} className="h-full w-full object-fill" />
+              <img src={slide1} alt={"slide 1}"} className="h-full w-full object-fill" />
             </SwiperSlide>
             <SwiperSlide className="cursor-pointer" onClick={() => handleCategoriesClick("Flours")}>
-              <img src={slide2} alt={`slide 2}`} className="h-full w-full object-fill" />
+              <img src={slide2} alt={"slide 2}"} className="h-full w-full object-fill" />
             </SwiperSlide>
             <SwiperSlide
               className="cursor-pointer"
               onClick={() => handleCategoriesClick("Beans & Lentils")}
             >
-              <img src={slide3} alt={`slide 3}`} className="h-full w-full object-fill" />
+              <img src={slide3} alt={"slide 3}"} className="h-full w-full object-fill" />
             </SwiperSlide>
             <SwiperSlide className="cursor-pointer" onClick={() => handleCategoriesClick("Spices")}>
-              <img src={slide4} alt={`slide 4}`} className="h-full w-full object-fill" />
+              <img src={slide4} alt={"slide 4}"} className="h-full w-full object-fill" />
             </SwiperSlide>
           </Swiper>
           {/* {sliderImages.map((image, index) => {
@@ -132,7 +126,7 @@ const Home = () => {
               )
             })} */}
           <div className="custom-prev absolute top-1/2 transform -translate-y-1/2 md:left-10 left-0 z-10 p-3 cursor-pointer md:border-2 border-BgGolden text-BgGolden rounded-full bg-transparent md:hover:bg-BgGolden md:hover:text-white">
-            <BsArrowLeft className="text-2xl" />
+            {/* <BsArrowLeft className="text-2xl" /> */}
           </div>
           <div className="custom-next absolute top-1/2 transform -translate-y-1/2 md:right-10 right-0 z-10 p-3 cursor-pointer md:border-2 border-BgGolden text-BgGolden rounded-full  bg-transparent md:hover:bg-BgGolden md:hover:text-white">
             <BsArrowRight className="text-2xl" />

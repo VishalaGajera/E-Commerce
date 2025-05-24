@@ -1,4 +1,4 @@
-import { Navigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("token");
@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children }) => {
   }
 
   if (!token) {
-    return <Navigate to="/auth/login" replace />; // Redirect to login if no token
+    return <Navigate to="/auth/login" replace />;
   }
 
   return children;
