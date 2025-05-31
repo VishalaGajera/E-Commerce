@@ -1,19 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 
 export default function CartItem({ item, onQuantityChange }) {
   const [quantity, setQuantity] = useState(item.quantity || 1);
 
-  useEffect(() => {
-    onQuantityChange(item, quantity);
-  }, [quantity]);
+  // useEffect(() => {
+  // }, [quantity]);
 
   const handleIncrement = () => {
     setQuantity((prevQty) => prevQty + 1);
+
+    onQuantityChange(item, quantity);
   };
 
   const handleDecrement = () => {
     setQuantity((prevQty) => (prevQty > 1 ? prevQty - 1 : 1));
+
+    onQuantityChange(item, quantity);
   };
 
   return (

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 // import Pagination from "@mui/material/Pagination";
 import { toast } from "react-toastify";
+import { FaFilter } from "react-icons/fa";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
 import { axiosInstance } from "../../Common/AxiosInstance";
 import { useSession } from "../../Providers/AuthProvider";
+import Loader from "../../Components/Main Pages/loader";
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
 const Product = () => {
@@ -146,11 +148,9 @@ const Product = () => {
             {/* Sidebar Filter Panel */}
             <div className="md:flex flex-col gap-1 w-full border-r-2">
               <div
-                className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${
-                  viewFilters ? "translate-x-0 overflow-y-scroll z-50" : "translate-x-full"
-                } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${
-                  viewFilters ? "h-full w-full" : ""
-                } md:block`}
+                className={`fixed inset-0 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${viewFilters ? "translate-x-0 overflow-y-scroll z-50" : "translate-x-full"
+                  } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${viewFilters ? "h-full w-full" : ""
+                  } md:block`}
               >
                 <div className="flex justify-between items-center bg-white p-3 md:hidden">
                   <p className="text-lg font-bold">Filters</p>
@@ -167,14 +167,12 @@ const Product = () => {
                     categories?.map((menu, index) => (
                       <div
                         key={index}
-                        className={`bg-BgColor border-b ${
-                          selectedCategoryId === menu._id ? "border-BgGolden" : ""
-                        }`}
+                        className={`bg-BgColor border-b ${selectedCategoryId === menu._id ? "border-BgGolden" : ""
+                          }`}
                       >
                         <div
-                          className={`flex flex-row justify-between items-center cursor-pointer p-3 ${
-                            selectedCategoryId === menu._id ? "text-BgGolden" : "text-black"
-                          }`}
+                          className={`flex flex-row justify-between items-center cursor-pointer p-3 ${selectedCategoryId === menu._id ? "text-BgGolden" : "text-black"
+                            }`}
                           onClick={() => {
                             handleCategorySelect(menu._id);
 

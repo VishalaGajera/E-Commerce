@@ -23,6 +23,8 @@ import flour from "../../../public/Images/Product/flour-removebg-preview.png";
 import beans from "../../../public/Images/Product/beans.png";
 import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { BsArrowRight } from "react-icons/bs";
 
 const Home = () => {
   const navigate = useNavigate();

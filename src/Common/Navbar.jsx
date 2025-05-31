@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import CC_TRADERS_2 from "/Images/CC_TRADERS_2.png";
+import { CiSearch } from "react-icons/ci";
+import { HiMenuAlt3 } from "react-icons/hi";
+import { BsCart3 } from "react-icons/bs";
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
 export const Navbar = () => {
@@ -107,6 +110,9 @@ export const Navbar = () => {
                   >
                     Contact
                   </NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/shopping-cart"}><BsCart3 /></NavLink>
                 </li>
               </ul>
             </div>

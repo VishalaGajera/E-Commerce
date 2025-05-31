@@ -91,11 +91,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../../Validation/Auth";
 import { axiosInstance } from "../../Common/AxiosInstance";
 import { toast } from "react-toastify";
 import { useSession } from "../../Providers/AuthProvider.jsx";
+import TextField from "../Common/TextField.jsx";
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -151,7 +152,7 @@ export const LoginForm = () => {
             label="Password"
             name="password"
             type={showPassword ? "text" : "password"}
-            placeholder="*"
+            placeholder="*********"
             error={errors.password?.message}
             showToggle={true}
             toggleVisibility={() => setShowPassword(!showPassword)}

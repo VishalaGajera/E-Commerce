@@ -1,4 +1,8 @@
+import { Link } from "react-router-dom";
 import CC_TRADERS_2 from "/Images/CC_TRADERS_2.png";
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineMail } from "react-icons/md";
+import { FaFacebookF, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (

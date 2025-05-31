@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineMail } from "react-icons/md";
 
 const Contact = () => {
   const URL = import.meta.env.VITE_REACT_APP_LOCAL_URL;

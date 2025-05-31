@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         path: "/checkout",
         element: (
           <ProtectedRoute>
-            <Checkout />
+          <Checkout />
           </ProtectedRoute>
         ),
       },
