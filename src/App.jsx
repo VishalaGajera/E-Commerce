@@ -11,6 +11,7 @@ import ProtectedRoute from "./Components/Auth/ProtectedRoute";
 import PublicRoute from "./Components/Auth/PublicRoute";
 import ShoppingCart from "./Modules/Product/ShoppingCart";
 import Checkout from "./Modules/Product/Checkout";
+import PaymentForm from "./Modules/Product/Payment";
 
 const router = createBrowserRouter([
   {
@@ -61,7 +62,15 @@ const router = createBrowserRouter([
         path: "/checkout",
         element: (
           <ProtectedRoute>
-          <Checkout />
+            <Checkout />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/payment",
+        element: (
+          <ProtectedRoute>
+            <PaymentForm />
           </ProtectedRoute>
         ),
       },
