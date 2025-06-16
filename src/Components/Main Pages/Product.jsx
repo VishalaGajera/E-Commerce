@@ -1,19 +1,28 @@
 import { useEffect, useState } from "react";
-// import Pagination from "@mui/material/Pagination";
+import Pagination from "@mui/material/Pagination";
+import PaginationItem from "@mui/material/PaginationItem";
 import { toast } from "react-toastify";
 import { FaFilter } from "react-icons/fa";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
-import { axiosInstance } from "../../Common/AxiosInstance";
-import { useSession } from "../../Providers/AuthProvider";
+// import { axiosInstance } from "../../Common/AxiosInstance";
+// import { useSession } from "../../Providers/AuthProvider";
 import Loader from "../../Components/Main Pages/loader";
+// import { BsCart3 } from "react-icons/bs";
+// import ButtonLoader from "../UI/ButtonLoader";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
 const Product = () => {
-  const { user } = useSession();
+  // const { user } = useSession();
+
 
   const [viewFilters, setViewFilters] = useState(false);
 
   const [selectedPrices, setSelectedPrices] = useState({});
+
+  // const [cartPending, setCartPending] = useState(false);
+
+  // const [cartLoadingProductId, setCartLoadingProductId] = useState(null);
 
   const {
     categories,
@@ -22,6 +31,7 @@ const Product = () => {
     isProductsLoading,
     productsError,
     currentPage,
+    setCurrentPage,
     selectedCategoryId,
     setSelectedCategoryId,
     refetchProducts,
@@ -41,6 +51,27 @@ const Product = () => {
     }, {});
 
     setSelectedPrices(initialPrices);
+  };
+
+  // const productsPerPage = productData?.metadata.count;
+  // const indexOfLastProduct = currentPage * productsPerPage;
+
+  // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+
+  // const currentProducts = productData?.products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  const totalPages = productData?.metadata.totalpages;
+
+  const handleChange = (event, value) => {
+
+    setCurrentPage(value);
+
+    refetchProducts();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -82,39 +113,53 @@ const Product = () => {
   // };
 
   // eslint-disable-next-line sonarjs/cognitive-complexity
-  const handleAddToCart = async (product, selectedSize, price) => {
-    if (!selectedSize || !price) {
-      toast.error("Please select a size before adding to cart.");
+  // const handleAddToCart = async (product, selectedSize, price) => {
+  //   setCartPending(true);
 
-      return;
-    }
+  //   if (!selectedSize || !price) {
+  //     toast.error("Please select a size before adding to cart.");
 
-    if (!user) {
-      toast.error("Please login to add to cart.");
+  //     setCartPending(false);
 
-      return;
-    } else {
-      try {
-        const response = await axiosInstance.post("/cart/insertData", {
-          userId: user._id,
-          productId: product._id,
-          size: selectedSize,
-          quantity: 1,
-          price,
-        });
+  //     return;
+  //   }
 
-        if (response.data.success) {
-          toast.success(response.data.message);
-        } else {
-          toast.error(response.data.message);
-        }
-      } catch (error) {
-        const errorMessage = error.response?.data?.message || "Something went wrong!";
+  // if (!user) {
+  //   toast.error("Please login to add to cart.");
 
-        toast.error(`Failed to add to cart: ${errorMessage}`);
-      }
-    }
-  };
+  //   setCartPending(false);
+
+  //   return;
+  // }
+
+  //   setCartLoadingProductId(product._id);
+
+  //   try {
+
+  //     const response = await axiosInstance.post("/cart/insertData", {
+  //       userId: user._id,
+  //       productId: product._id,
+  //       size: selectedSize,
+  //       quantity: 1,
+  //       price,
+  //     });
+
+  //     if (response.data.success) {
+  //       toast.success(response.data.message);
+  //     } else {
+  //       toast.error(response.data.message);
+  //     }
+
+  //     setCartPending(false);
+
+  //   } catch (error) {
+  //     const errorMessage = error.response?.data?.message || "Something went wrong!";
+
+  //     setCartPending(false);
+
+  //     toast.error(`Failed to add to cart: ${errorMessage}`);
+  //   }
+  // };
 
   return (
     <div className="flex justify-center items-center bg-BgColor">
@@ -200,6 +245,7 @@ const Product = () => {
                   </div>
                 ) : (
                   <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full">
+                    {/* {productData?.products?.map((product, index) => { */}
                     {productData?.products?.map((product, index) => {
                       const category = categories?.find(
                         (cat) => cat._id === product.categoryId._id
@@ -222,42 +268,60 @@ const Product = () => {
                           </div>
 
                           <div className="flex flex-col justify-between">
-                            <div className="p-2">
+                            <div className="py-2 px-4">
                               <h2 className="text-lg font-semibold mb-2 line-clamp-1">
                                 {product.name}
                               </h2>
                             </div>
 
+                            {/* <div className="p-4 bg-gray-50 flex items-center justify-between"> */}
                             <div className="p-4 bg-gray-50 flex items-center justify-between">
-                              <span className="text-xl font-bold">
-                                $
-                                {selectedPrices[product._id] !== undefined
-                                  ? selectedPrices[product._id].toFixed(2)
-                                  : "Select a size"}
-                              </span>
-                              <select
-                                className="border rounded p-2"
-                                onChange={(e) => {
-                                  const selectedSize = e.target.value;
+                              <div className="flex items-center gap-2">
+                                <span className="text-xl font-bold">
+                                  {/* $
+                                  {selectedPrices[product._id] !== undefined
+                                    ? selectedPrices[product._id].toFixed(2)
+                                    : "Select a size"} */}
+                                  Size :
+                                </span>
+                                <select
+                                  className="border rounded-md p-2"
+                                  onChange={(e) => {
+                                    const selectedSize = e.target.value;
 
-                                  handleSizeChange(
-                                    product._id,
-                                    selectedSize,
-                                    product.sizes,
-                                    selectedPrices
-                                  );
-                                }}
+                                    handleSizeChange(
+                                      product._id,
+                                      selectedSize,
+                                      product.sizes,
+                                      selectedPrices
+                                    );
+                                  }}
+                                >
+                                  {Object.entries(product.sizes).map(([size]) => (
+                                    <option key={size} value={size}>
+                                      {size}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
+                              {/* <button
+                                className="text-xl rounded-md bg-white border py-2 px-4"
+                                onClick={() =>
+                                  handleAddToCart(
+                                    product,
+                                    Object.keys(product.sizes).find(
+                                      (key) => product.sizes[key] === selectedPrices[product._id]
+                                    ),
+                                    selectedPrices[product._id]
+                                  )
+                                }
                               >
-                                {Object.entries(product.sizes).map(([size]) => (
-                                  <option key={size} value={size}>
-                                    {size}
-                                  </option>
-                                ))}
-                              </select>
+                                {cartLoadingProductId === product._id && cartPending ? <ButtonLoader /> : <BsCart3 />}
+                              </button> */}
                             </div>
 
                             {/* ✅ Add to Cart Button */}
-                            <div className="px-4 pb-4">
+                            {/* <div className="px-4 pb-4">
                               <button
                                 className="w-full bg-BgGolden text-white font-semibold py-2 rounded hover:bg-yellow-600 transition-all"
                                 onClick={() =>
@@ -272,7 +336,7 @@ const Product = () => {
                               >
                                 Add to Cart
                               </button>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       );
@@ -281,16 +345,32 @@ const Product = () => {
                 )}
 
                 {/* Pagination */}
-                <div className="flex justify-center mt-10">
-                  {/* <Pagination
+                {/* <div className="flex justify-center mt-10">
+                  <Pagination
                     count={totalpages}
                     onChange={(e, page) => handlePaginationChange(page)}
                     color="primary"
-                  /> */}
+                  />
+                </div> */}
+                <div className="flex justify-center mt-10">
+                  <Pagination
+                    count={totalPages}
+                    page={currentPage}
+                    onChange={handleChange}
+                    renderItem={(item) => (
+                      <PaginationItem
+                        components={{ previous: FiChevronLeft, next: FiChevronRight }}
+                        {...item}
+                      />
+                    )}
+                    siblingCount={0}
+                    boundaryCount={2}
+                    hideNextButton={false}
+                    hidePrevButton={false}
+                  />
                 </div>
               </main>
             </div>
-            ;;
           </div>
         </div>
       </div>

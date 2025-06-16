@@ -24,7 +24,7 @@ import beans from "../../../public/Images/Product/beans.png";
 import { useNavigate } from "react-router-dom";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -128,7 +128,7 @@ const Home = () => {
               )
             })} */}
           <div className="custom-prev absolute top-1/2 transform -translate-y-1/2 md:left-10 left-0 z-10 p-3 cursor-pointer md:border-2 border-BgGolden text-BgGolden rounded-full bg-transparent md:hover:bg-BgGolden md:hover:text-white">
-            {/* <BsArrowLeft className="text-2xl" /> */}
+            <BsArrowLeft className="text-2xl" />
           </div>
           <div className="custom-next absolute top-1/2 transform -translate-y-1/2 md:right-10 right-0 z-10 p-3 cursor-pointer md:border-2 border-BgGolden text-BgGolden rounded-full  bg-transparent md:hover:bg-BgGolden md:hover:text-white">
             <BsArrowRight className="text-2xl" />

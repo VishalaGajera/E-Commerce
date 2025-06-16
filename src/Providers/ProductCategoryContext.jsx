@@ -1,7 +1,7 @@
 import { createContext, useState, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "../Common/AxiosInstance.js";
-import { useSession } from "./AuthProvider.jsx";
+// import { useSession } from "./AuthProvider.jsx";
 
 const ProductContext = createContext();
 
@@ -10,7 +10,7 @@ export const ProductProvider = ({ children }) => {
 
   const [selectedCategoryId, setSelectedCategoryId] = useState("all");
 
-  const { user } = useSession();
+  // const { user } = useSession();
 
   const {
     data: categories,
@@ -24,25 +24,25 @@ export const ProductProvider = ({ children }) => {
 
       return res.data;
     },
-    enabled: !!user,
+    // enabled: !!user,
   });
 
   const {
     data: productData,
     isLoading: isProductsLoading,
-
     error: productsError,
     refetch: refetchProducts,
   } = useQuery({
     queryKey: ["products", currentPage, selectedCategoryId],
     queryFn: async () => {
+    
       const res = await axiosInstance.get(
         `/product/getAllProducts?page=${currentPage}&categoryId=${selectedCategoryId}`
       );
 
       return res.data;
     },
-    enabled: !!user,
+    // enabled: !!user,
   });
 
   return (

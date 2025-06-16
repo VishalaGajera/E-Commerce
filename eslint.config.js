@@ -22,7 +22,7 @@ export default [
       globals: {
         window: "readonly",
         document: "readonly",
-        console: "readonly",
+        // console: "readonly",
         localStorage: "readonly",
         sessionStorage: "readonly",
         navigator: "readonly",
@@ -42,7 +42,7 @@ export default [
       quotes: ["error", "double"],
 
       // Disallow console logs
-      "no-console": "error",
+      // "no-console": "error",
 
       // Enforce only TODO comments, disallow all others
       "no-warning-comments": [

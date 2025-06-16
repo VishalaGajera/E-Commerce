@@ -88,13 +88,15 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Mission from "../../../public/Images/Mission.jpg";
-import delivery from "../../../public/Images/delivery.png";
+// import delivery from "../../../public/Images/delivery.png";
+// import Deliery2 from "../../../public/Images/Deliery2.png";
+import delivery3 from "../../../public/Images/delivery3.png";
 
 export default function AboutUs() {
   return (
     <div className="flex flex-col min-h-screen pb-5">
       <main className="flex-grow">
-        <section className="relative md:h-[80vh] h-72">
+        <section className="relative md:h-[95vh] h-72">
           {/* <img
             src={aboutImg}
             alt="Fresh salad"
@@ -130,7 +132,7 @@ export default function AboutUs() {
               /> */}
           {/* </SwiperSlide>
             <SwiperSlide> */}
-          <img src={delivery} alt="Delivery" className="h-full w-full" />
+          <img src={delivery3} alt="Delivery" className="h-full w-full  " />
           {/* </SwiperSlide>
           </Swiper>
           <div className="custom-prev absolute top-1/2 transform -translate-y-1/2 md:left-10 left-5 z-10 p-3 cursor-pointer border-2 border-BgGolden text-BgGolden rounded-full animate-bg-fade-out hover:animate-bg-fade-in hover:text-white">

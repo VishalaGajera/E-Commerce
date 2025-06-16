@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import CC_TRADERS_2 from "/Images/CC_TRADERS_2.png";
-import { CiSearch } from "react-icons/ci";
+// import { CiSearch } from "react-icons/ci";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { BsCart3 } from "react-icons/bs";
+// import { BsCart3 } from "react-icons/bs";
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
 export const Navbar = () => {
@@ -13,11 +13,11 @@ export const Navbar = () => {
 
   const isActive = (path) => location.pathname === path;
 
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
 
-  const handleInputChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
+  // const handleInputChange = (e) => {
+  //   setSearchTerm(e.target.value);
+  // };
 
   return (
     <div className="flex flex-col justify-center items-center w-full">
@@ -30,7 +30,7 @@ export const Navbar = () => {
               {/* Logo */}
             </NavLink>
             {/* </div> */}
-            <div className="gap-3 items-center lg:flex hidden">
+            {/* <div className="gap-3 items-center lg:flex hidden">
               <div className="flex items-center gap-3 px-4 border rounded-md py-2 w-96">
                 <input
                   type="text"
@@ -44,7 +44,7 @@ export const Navbar = () => {
                   <CiSearch className="text-xl" />
                 </span>
               </div>
-            </div>
+            </div> */}
             {/* <div className='flex items-center gap-3'>
                                 <span><FaRegCircleUser className='text-lg' /></span>
                                 <span className=''>Sign In</span>
@@ -111,9 +111,9 @@ export const Navbar = () => {
                     Contact
                   </NavLink>
                 </li>
-                <li>
+                {/* <li>
                   <NavLink to={"/shopping-cart"}><BsCart3 /></NavLink>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="md:hidden flex">

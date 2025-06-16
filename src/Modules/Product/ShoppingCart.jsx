@@ -46,7 +46,6 @@ const ShoppingCart = () => {
   }, [user]);
 
   const syncWithBackend = async (newQty, item) => {
-    // console.log("user._id :", user._id);
     try {
       await axiosInstance.patch(`cart/updateData/${item._id}`, {
         userId: user._id,
@@ -54,14 +53,12 @@ const ShoppingCart = () => {
         size: item.size,
         quantity: newQty,
       });
-      // console.log(res);
-    } catch (error) {      
-      toast.error( error.response.data.message);
+    } catch (error) {
+      toast.error(error.response.data.message);
     }
   };
 
   const handleQuantityChange = (item, newQuantity) => {
-    // console.log("item :", item);
     syncWithBackend(newQuantity, item);
 
     setQuantities((prev) => ({
@@ -147,12 +144,12 @@ const ShoppingCart = () => {
                     </div>
 
                     <div className="flex items-center flex-col gap-2 pt-2">
-                      <Link to={"/checkout"} className="rounded-lg w-full bg-blue-600 py-2.5 px-4 text-white text-sm font-semibold text-center">
+                      {/* <Link to={"/checkout"} className="rounded-lg w-full bg-blue-600 py-2.5 px-4 text-white text-sm font-semibold text-center">
                         Proceed to Checkout
-                      </Link>
+                      </Link> */}
                       <span>
-                        or{" "}
-                        <Link to={"/products"} className="underline text-blue-700">
+                        {/* or{" "} */}
+                        <Link to={"/products"} className="rounded-lg w-full bg-blue-600 py-2.5 px-4 text-white text-sm font-semibold text-center">
                           Continue Shopping
                         </Link>
                       </span>

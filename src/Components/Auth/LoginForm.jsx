@@ -28,10 +28,8 @@
 //   const navigate = useNavigate();
 
 //   const onSubmit = async (data) => {
-//     console.log("data :", data)
 //     try {
 //       const res = await axios.post(`auth/login`, data);
-//       console.log("res :", res)
 //       localStorage.setItem("token", res.data.token);
 //       toast.success("Login successfully");
 //       navigate("/");
