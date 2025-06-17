@@ -6,7 +6,9 @@ const MainLayout = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <div className="pt-24">
+        <Outlet />
+      </div>
       <Footer />
     </>
   );
