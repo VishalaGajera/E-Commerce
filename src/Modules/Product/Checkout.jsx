@@ -57,16 +57,13 @@ const PAYMENT_METHODS = [
   },
 ];
 
+
 const CheckoutPage = () => {
   const { user } = useSession();
-
+  
   const queryClient = useQueryClient();
-
+  
   const [quantityMap, setQuantityMap] = useState({});
-
-  // const [shippingCost, setShippingCost] = useState(10);
-
-  // const [selectedPayment, setSelectedPayment] = useState("creditcard");
 
   const {
     register,
@@ -81,7 +78,9 @@ const CheckoutPage = () => {
       shippingMethod: "regular",
     },
   });
-
+  
+  console.log("error L", errors);
+  
   const watchedPayment = watch("paymentMethod", "creditcard");
 
   const watchedShipping = watch("shippingMethod");
@@ -129,60 +128,6 @@ const CheckoutPage = () => {
   });
 
   const onSubmit = (data) => {
-    // const formData = getValues();
-
-    // if (
-    //   !formData.email ||
-    //   !formData.phone ||
-    //   !formData.firstName ||
-    //   !formData.lastName ||
-    //   !formData.city ||
-    //   !formData.district ||
-    //   !formData.streetAddress
-    // ) {
-    //   return toast.error("Please fill in all required fields.");
-    // }
-
-    // const orderPayload = {
-    //   userId: user._id,
-    //   contact: {
-    //     email: formData.email,
-    //     phone: formData.phone,
-    //   },
-    //   shippingAddress: {
-    //     firstName: formData.firstName,
-    //     lastName: formData.lastName,
-    //     city: formData.city,
-    //     district: formData.district,
-    //     street: formData.streetAddress,
-    //   },
-    //   items: orderItems.map((item) => ({
-    //     productId: item.productId._id,
-    //     name: item.productId.name,
-    //     size: item.size,
-    //     quantity: quantityMap[item._id] || 1,
-    //     price: item.price,
-    //   })),
-    //   shippingCost,
-    //   subtotal,
-    //   total,
-    //   payment: {
-    //     method: selectedPayment,
-    //     ...(selectedPayment === "creditcard" && {
-    //       cardName: formData.cardName,
-    //       cardNumber: formData.cardNumber,
-    //       expiry: formData.expiry,
-    //       cvv: formData.cvv,
-    //     }),
-    //     ...(selectedPayment === "phonepe" && {
-    //       phonepeNumber: formData.phonepeNumber,
-    //     }),
-    //     ...(selectedPayment === "googlepay" && {
-    //       googlePayId: formData.googlePayId,
-    //     }),
-    //   },
-    // };
-
     const orderPayload = {
       userId: user._id,
       email: data.email,
@@ -222,21 +167,7 @@ const CheckoutPage = () => {
 
     placeOrder(orderPayload);
   };
-
-  // const handleIncrement = (id) => {
-  //   setQuantityMap((prev) => ({
-  //     ...prev,
-  //     [id]: (prev[id] || 1) + 1,
-  //   }));
-  // };
-
-  // const handleDecrement = (id) => {
-  //   setQuantityMap((prev) => ({
-  //     ...prev,
-  //     [id]: Math.max((prev[id] || 1) - 1, 1),
-  //   }));
-  // };
-
+  
   const handleQuantityChange = (id, change) => {
     setQuantityMap((prev) => ({
       ...prev,

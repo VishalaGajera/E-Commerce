@@ -10,15 +10,21 @@ export const loginSchema = Yup.object().shape({
 export const signupSchema = Yup.object().shape({
   firstname: Yup.string()
     .required("First Name is required")
-    .min(2, "First Name must be at least 2 characters"),
+    .matches(/^[A-Za-z]+$/, "First Name can only contain letters")
+    .min(3, "First Name must be at least 3 characters"),
   lastname: Yup.string()
     .required("Last Name is required")
-    .min(2, "Last Name must be at least 2 characters"),
+    .matches(/^[A-Za-z]+$/, "Last Name can only contain letters")
+    .min(3, "Last Name must be at least 3 characters"),
   email: Yup.string().email("Invalid email").required("Email is required"),
   password: Yup.string()
     .required("Password is required")
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#^()\-_=+{};:,<.>]).{6,}$/,
+      "Password must include uppercase, lowercase, number, and special character"
+    )
     .min(6, "Password must be at least 6 characters"),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password")], "Passwords must match")
-    .required("Confirm Password is required"),
+    .required("Confirm Password is required")
+    .oneOf([Yup.ref("password")], "Passwords must match"),
 });
