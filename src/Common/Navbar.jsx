@@ -1,13 +1,17 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import CC_TRADERS_2 from "/Images/CC_TRADERS_2.png";
 // import { CiSearch } from "react-icons/ci";
 import { HiMenuAlt3 } from "react-icons/hi";
-import {RxCross1} from "react-icons/rx";
-import { BsCart3 } from "react-icons/bs";
+import { RxCross1 } from "react-icons/rx";
+import { useSession } from "../Providers/AuthProvider";
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
 export const Navbar = () => {
+  const navigate = useNavigate();
+
+  const { setUser } = useSession();
+
   const [showMenu, setShowMenu] = useState(false);
 
   const location = useLocation();
@@ -20,10 +24,18 @@ export const Navbar = () => {
   //   setSearchTerm(e.target.value);
   // };
 
+  const logout = () => {
+    setUser(null);
+
+    localStorage.removeItem("token");
+
+    navigate("/auth/login");
+  };
+
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <div className="fixed top-0 left-0 z-50 flex justify-center items-center w-full h-24 shadow-lg lg:px-10 px-5 bg-white">
-        <div className="container">
+        <div className="lg:container w-full">
           <header className="flex justify-between items-center w-full">
             {/* <div> */}
             <NavLink to={"/"} className="flex justify-center items-center h-24">
@@ -52,23 +64,23 @@ export const Navbar = () => {
                             </div> */}
             <div className="md:flex hidden">
               <ul className="flex justify-center items-center gap-10">
-                <li className="relative">
+                {/* <li className="relative">
                   <NavLink
                     to={"/"}
                     className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/")
-                        ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
-                        : ""
+                      ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
+                      : ""
                       }`}
                   >
                     Home
                   </NavLink>
-                </li>
+                </li> */}
                 <li className="relative">
                   <NavLink
                     to={"/about"}
                     className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/about")
-                        ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
-                        : ""
+                      ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
+                      : ""
                       }`}
                   >
                     About Us
@@ -78,8 +90,8 @@ export const Navbar = () => {
                   <NavLink
                     to={"/products"}
                     className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/products")
-                        ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
-                        : ""
+                      ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
+                      : ""
                       }`}
                   >
                     Products
@@ -101,15 +113,21 @@ export const Navbar = () => {
                   <NavLink
                     to={"/contact"}
                     className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/contact")
-                        ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
-                        : ""
+                      ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
+                      : ""
                       }`}
                   >
                     Contact
                   </NavLink>
                 </li>
+                <li className="relative">
+                  <NavLink to={"/shopping-cart"} className={`after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:rounded-md after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:bg-BgGolden text-base hover:after:origin-left hover:after:scale-x-100 hover:text-BgGolden font-bold ${isActive("/shopping-cart")
+                    ? "after:scale-x-100 after:bg-BgGolden text-BgGolden font-bold"
+                    : ""
+                    }`}>Shopping Cart</NavLink>
+                </li>
                 <li>
-                  <NavLink to={"/shopping-cart"}><BsCart3 /></NavLink>
+                  <span onClick={() => logout()} className={"cursor-pointer px-5 py-2 rounded-lg font-medium bg-BgGolden text-white"}>Logout</span>
                 </li>
               </ul>
             </div>
@@ -154,6 +172,9 @@ export const Navbar = () => {
                                             </li> */}
                       <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
                         <NavLink to={"/contact"}>Contact</NavLink>
+                      </li>
+                      <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
+                        <button onClick={logout}>Logout</button>
                       </li>
                     </ul>
                   </div>

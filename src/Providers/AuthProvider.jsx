@@ -6,6 +6,7 @@ const AuthContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
+
   const [user, setUser] = useState(null);
 
   const [loading, setLoading] = useState(true);
@@ -38,10 +39,11 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
 
     localStorage.removeItem("token");
+
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, login, logout, loading, setUser }}>{children}</AuthContext.Provider>
   );
 };
 
@@ -52,7 +54,7 @@ export const useSession = () => {
     throw new Error("useSession must be used within an AuthProvider");
   }
 
-  const { user, login, logout, loading } = context;
+  const { user, login, logout, loading, setUser } = context;
 
-  return { user, login, logout, loading };
+  return { user, login, logout, loading, setUser };
 };

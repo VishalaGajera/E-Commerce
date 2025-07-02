@@ -238,7 +238,7 @@ export const SignupForm = () => {
   const password = watch("password");
 
   return (
-    <div className="min-h-screen flex bg-white">
+    <div className="min-h-dvh flex bg-white">
       {/* Left Side - Lottie */}
       <div className="hidden lg:block lg:w-1/2 h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 relative overflow-hidden">
         <div className="absolute top-20 left-10 w-20 h-20 bg-green-200 rounded-full opacity-40 animate-pulse"></div>
@@ -251,15 +251,15 @@ export const SignupForm = () => {
       </div>
 
       {/* Right Side - Signup */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-8 lg:px-16">
+      <div className="w-full lg:w-1/2 flex items-center justify-center px-5 sm:px-10 lg:px-16">
         <div className="w-full max-w-md">
-          <div className="mb-5">
-            <h1 className="text-4xl font-bold text-gray-900 mb-3">Create Account</h1>
-            <p className="text-gray-600 text-lg">Join us today and start your amazing journey.</p>
+          <div className="sm:mb-5 mb-7">
+            <h1 className="sm:text-4xl text-3xl font-bold text-gray-900 sm:mb-3 mb-0">Create Account</h1>
+            <p className="text-gray-600 sm:text-lg text-base">Join us and start your amazing journey.</p>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-2 sm:gap-4">
               <TextField
                 label="First Name"
                 name="firstname"
@@ -285,7 +285,7 @@ export const SignupForm = () => {
               error={errors.email?.message}
             />
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 grid-cols-1 sm:gap-4">
               <TextField
                 label="Password"
                 name="password"
@@ -351,17 +351,17 @@ export const SignupForm = () => {
           </form>
 
           {/* Divider */}
-          <div className="relative my-5">
+          {/* <div className="relative my-5">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300"></div>
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="px-4 bg-white text-gray-500">Or sign up with</span>
             </div>
-          </div>
+          </div> */}
 
           {/* Social Buttons */}
-          <div className="flex items-center justify-between gap-5">
+          {/* <div className="flex items-center justify-between gap-5">
             <button className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -377,10 +377,10 @@ export const SignupForm = () => {
               </svg>
               <span className="ml-2 text-sm font-medium text-gray-700">Facebook</span>
             </button>
-          </div>
+          </div> */}
 
           {/* Login Link */}
-          <p className="text-center text-gray-600 mt-8">
+          <p className="text-center text-gray-600 sm:mt-8 mt-5">
             Already have an account?{" "}
             <Link to={"/auth/login"} className="font-semibold text-blue-600 hover:text-blue-800">
               Sign in

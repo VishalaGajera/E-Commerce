@@ -297,13 +297,13 @@ export const LoginForm = () => {
 
 
   return (
-    <div className="min-h-screen flex bg-white">
+    <div className="min-h-dvh flex items-center justify-center bg-white">
       {/* Left Side - Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-8 lg:px-16">
+      <div className="w-full lg:w-1/2 flex items-center justify-center px-5 sm:px-8 lg:px-16">
         <div className="w-full max-w-md">
-          <div className="mb-10">
-            <h1 className="text-4xl font-bold text-gray-900 mb-3">Welcome Back!</h1>
-            <p className="text-gray-600 text-lg">
+          <div className="sm:mb-5 mb-7 ">
+            <h1 className="sm:text-4xl text-3xl font-bold text-gray-900 mb-3">Welcome Back!</h1>
+            <p className="text-gray-600 sm:text-lg text-base">
               Please sign in to your account to continue your journey with us.
             </p>
           </div>
@@ -340,9 +340,9 @@ export const LoginForm = () => {
                 />
                 <span className="ml-2 text-sm text-gray-700">Remember me</span>
               </label>
-              <button className="text-sm text-blue-600 hover:text-blue-800 font-medium">
+              {/* <button className="text-sm text-blue-600 hover:text-blue-800 font-medium">
                 Forgot Password?
-              </button>
+              </button> */}
             </div>
 
             {/* Submit */}
@@ -362,26 +362,24 @@ export const LoginForm = () => {
             </button>
 
             {/* Divider */}
-            <div className="relative my-8">
+            {/* <div className="relative my-8">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-300"></div>
               </div>
               <div className="relative flex justify-center text-sm">
                 <span className="px-4 bg-white text-gray-500">Or sign in with</span>
               </div>
-            </div>
+            </div> */}
 
             {/* Social Buttons */}
-            <div className="flex items-center justify-between gap-5">
+            {/* <div className="flex items-center justify-between gap-5">
               <button className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                {/* Google Icon */}
                 <span className="ml-2 text-sm font-medium text-gray-700">Google</span>
               </button>
               <button className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                {/* Facebook Icon */}
                 <span className="ml-2 text-sm font-medium text-gray-700">Facebook</span>
               </button>
-            </div>
+            </div> */}
 
             {/* Sign up link */}
             <p className="text-center text-gray-600 mt-8">
