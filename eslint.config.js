@@ -79,22 +79,22 @@ export default [
       "react/react-in-jsx-scope": "off",
 
       // Padding between statements
-      "padding-line-between-statements": [
-        "error",
-        { blankLine: "never", prev: "import", next: "import" },
-        { blankLine: "never", prev: ["const", "let", "var"], next: ["const", "let", "var"] },
-        {
-          blankLine: "always",
-          prev: "import",
-          next: ["const", "let", "var", "function", "class", "export"],
-        },
-        { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
-        { blankLine: "always", prev: "*", next: ["const", "let", "var"] },
-        { blankLine: "always", prev: "if", next: "*" },
-        { blankLine: "always", prev: "*", next: "if" },
-        { blankLine: "always", prev: "expression", next: "*" },
-        { blankLine: "always", prev: "*", next: "expression" },
-      ],
+      // "padding-line-between-statements": [
+      //   "error",
+      //   { blankLine: "never", prev: "import", next: "import" },
+      //   { blankLine: "never", prev: ["const", "let", "var"], next: ["const", "let", "var"] },
+      //   {
+      //     blankLine: "always",
+      //     prev: "import",
+      //     next: ["const", "let", "var", "function", "class", "export"],
+      //   },
+      //   { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
+      //   { blankLine: "always", prev: "*", next: ["const", "let", "var"] },
+      //   { blankLine: "always", prev: "if", next: "*" },
+      //   { blankLine: "always", prev: "*", next: "if" },
+      //   { blankLine: "always", prev: "expression", next: "*" },
+      //   { blankLine: "always", prev: "*", next: "expression" },
+      // ],
       "sonarjs/cognitive-complexity": ["error", 4],
     },
   },

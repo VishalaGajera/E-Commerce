@@ -174,7 +174,7 @@ export const Navbar = () => {
                         <NavLink to={"/contact"}>Contact</NavLink>
                       </li>
                       <li className="p-4 border-b" onClick={() => setShowMenu(false)}>
-                        <button onClick={logout}>Logout</button>
+                        <button onClick={()=>logout()}>Logout</button>
                       </li>
                     </ul>
                   </div>

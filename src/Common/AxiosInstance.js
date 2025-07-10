@@ -13,14 +13,13 @@
 //   withCredentials: true,
 // });
 
-
 import axios from "axios";
 
 // Get token from localStorage or cookies
 const token = localStorage.getItem("token");
 
 const URL = import.meta.env.VITE_REACT_APP_LOCAL_URL;
-
+console.log("token :", token);
 export const axiosInstance = axios.create({
   baseURL: URL,
   headers: {
@@ -55,4 +54,3 @@ axiosInstance.interceptors.response.use(
 export const updateAuthHeader = (newToken) => {
   axiosInstance.defaults.headers["Authorization"] = `Bearer ${newToken}`;
 };
-

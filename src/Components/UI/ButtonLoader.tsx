@@ -3,7 +3,7 @@ import React from "react";
 const ButtonLoader = () => {
   return (
     <svg
-      className="w-6 h-6 animate-spin text-blue-500"
+      className="w-6 h-6 animate-spin text-white"
       viewBox="25 25 50 50"
       xmlns="http://www.w3.org/2000/svg"
     >

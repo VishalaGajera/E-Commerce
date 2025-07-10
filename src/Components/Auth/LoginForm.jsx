@@ -260,7 +260,7 @@ export const LoginForm = () => {
       password: "",
     },
     resolver: yupResolver(loginSchema),
-    mode: "a",
+    mode: "all",
   });
 
   const [showPassword, setShowPassword] = useState(false);

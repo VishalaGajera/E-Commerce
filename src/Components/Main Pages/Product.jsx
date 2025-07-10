@@ -1,28 +1,28 @@
+/* eslint-disable sonarjs/cognitive-complexity */
 import { useEffect, useState } from "react";
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import { toast } from "react-toastify";
 import { FaFilter } from "react-icons/fa";
 import { useProductContext } from "../../Providers/ProductCategoryContext";
-// import { axiosInstance } from "../../Common/AxiosInstance";
-// import { useSession } from "../../Providers/AuthProvider";
+import { axiosInstance } from "../../Common/AxiosInstance";
+import { useSession } from "../../Providers/AuthProvider";
 import Loader from "../../Components/Main Pages/loader";
-// import { BsCart3 } from "react-icons/bs";
-// import ButtonLoader from "../UI/ButtonLoader";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
 const Product = () => {
-  // const { user } = useSession();
+  const { user } = useSession();
 
+  const [cartProductIds, setCartProductIds] = useState([]);
 
   const [viewFilters, setViewFilters] = useState(false);
 
   const [selectedPrices, setSelectedPrices] = useState({});
 
-  // const [cartPending, setCartPending] = useState(false);
+  const [cartPending, setCartPending] = useState(false);
 
-  // const [cartLoadingProductId, setCartLoadingProductId] = useState(null);
+  const [cartLoadingProductId, setCartLoadingProductId] = useState(null);
 
   const {
     categories,
@@ -40,6 +40,29 @@ const Product = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  useEffect(() => {
+    const fetchCartItems = async () => {
+      if (!user) return;
+
+      try {
+        const response = await axiosInstance.get(`/cart/fetchCartProduct/${user._id}`);
+
+        if (response.data.success) {
+          const productIds = response.data.cartItems.map(item => item.productId);
+
+          setCartProductIds(productIds);
+        }
+      } catch (err) {
+        console.log("err :", err);
+        console.log("Failed to fetch cart items", err);
+      }
+    };
+
+    fetchCartItems();
+  }, [user]);
+
+  console.log("cartProductIds :", cartProductIds);
 
   const fetchProducts = async () => {
     const initialPrices = productData?.products?.reduce((acc, product) => {
@@ -113,53 +136,57 @@ const Product = () => {
   // };
 
   // eslint-disable-next-line sonarjs/cognitive-complexity
-  // const handleAddToCart = async (product, selectedSize, price) => {
-  //   setCartPending(true);
+  const handleAddToCart = async (product, selectedSize, price) => {
+    setCartPending(true);
 
-  //   if (!selectedSize || !price) {
-  //     toast.error("Please select a size before adding to cart.");
+    if (!selectedSize || !price) {
+      toast.error("Please select a size before adding to cart.");
 
-  //     setCartPending(false);
+      setCartPending(false);
 
-  //     return;
-  //   }
+      return;
+    }
 
-  // if (!user) {
-  //   toast.error("Please login to add to cart.");
+    if (!user) {
+      toast.error("Please login to add to cart.");
 
-  //   setCartPending(false);
+      setCartPending(false);
 
-  //   return;
-  // }
+      return;
+    }
 
-  //   setCartLoadingProductId(product._id);
+    setCartLoadingProductId(product._id);
 
-  //   try {
+    try {
 
-  //     const response = await axiosInstance.post("/cart/insertData", {
-  //       userId: user._id,
-  //       productId: product._id,
-  //       size: selectedSize,
-  //       quantity: 1,
-  //       price,
-  //     });
+      const response = await axiosInstance.post("/cart/insertData", {
+        userId: user._id,
+        productId: product._id,
+        size: selectedSize,
+        quantity: 1,
+        price,
+      });
 
-  //     if (response.data.success) {
-  //       toast.success(response.data.message);
-  //     } else {
-  //       toast.error(response.data.message);
-  //     }
+      if (response.data.success) {
+        toast.success(response.data.message);
 
-  //     setCartPending(false);
+        if (!cartProductIds.includes(product._id)) {
+          setCartProductIds(prev => [...prev, product._id]);
+        }
+      } else {
+        toast.error(response.data.message);
+      }
 
-  //   } catch (error) {
-  //     const errorMessage = error.response?.data?.message || "Something went wrong!";
+      setCartPending(false);
 
-  //     setCartPending(false);
+    } catch (error) {
+      const errorMessage = error.response?.data?.message || "Something went wrong!";
 
-  //     toast.error(`Failed to add to cart: ${errorMessage}`);
-  //   }
-  // };
+      setCartPending(false);
+
+      toast.error(`Failed to add to cart: ${errorMessage}`);
+    }
+  };
 
   return (
     <div className="flex justify-center items-center bg-BgColor">
@@ -245,7 +272,6 @@ const Product = () => {
                   </div>
                 ) : (
                   <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full">
-                    {/* {productData?.products?.map((product, index) => { */}
                     {productData?.products?.map((product, index) => {
                       const category = categories?.find(
                         (cat) => cat._id === product.categoryId._id
@@ -321,22 +347,31 @@ const Product = () => {
                             </div>
 
                             {/* ✅ Add to Cart Button */}
-                            {/* <div className="px-4 pb-4">
-                              <button
-                                className="w-full bg-BgGolden text-white font-semibold py-2 rounded hover:bg-yellow-600 transition-all"
-                                onClick={() =>
+                            <button
+                              className={`w-full text-white font-semibold py-2 rounded transition-all ${cartProductIds.includes(product._id)
+                                ? "bg-green-500 cursor-not-allowed"
+                                : "bg-BgGolden hover:bg-yellow-600"
+                                }`}
+                              onClick={() => {
+                                if (!cartProductIds.includes(product._id)) {
                                   handleAddToCart(
                                     product,
                                     Object.keys(product.sizes).find(
                                       (key) => product.sizes[key] === selectedPrices[product._id]
                                     ),
                                     selectedPrices[product._id]
-                                  )
+                                  );
                                 }
-                              >
-                                Add to Cart
-                              </button>
-                            </div> */}
+                              }}
+                              disabled={cartProductIds.includes(product._id)}
+                            >
+                              {cartProductIds.includes(product._id)
+                                ? "Already Added"
+                                : cartLoadingProductId === product._id && cartPending
+                                  ? "Adding..."
+                                  : "Add to Cart"}
+                            </button>
+
                           </div>
                         </div>
                       );
