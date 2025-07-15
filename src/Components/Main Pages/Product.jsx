@@ -47,22 +47,19 @@ const Product = () => {
 
       try {
         const response = await axiosInstance.get(`/cart/fetchCartProduct/${user._id}`);
-
         if (response.data.success) {
-          const productIds = response.data.cartItems.map(item => item.productId);
+          const productIds = response.data.cart.map(item => item.productId._id);
 
           setCartProductIds(productIds);
         }
       } catch (err) {
         console.log("err :", err);
-        console.log("Failed to fetch cart items", err);
+        toast.error("Failed to fetch cart items", err);
       }
     };
 
     fetchCartItems();
   }, [user]);
-
-  console.log("cartProductIds :", cartProductIds);
 
   const fetchProducts = async () => {
     const initialPrices = productData?.products?.reduce((acc, product) => {
@@ -187,6 +184,8 @@ const Product = () => {
       toast.error(`Failed to add to cart: ${errorMessage}`);
     }
   };
+
+  console.log("cartProductIds :", cartProductIds);
 
   return (
     <div className="flex justify-center items-center bg-BgColor">
