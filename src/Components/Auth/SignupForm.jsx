@@ -202,7 +202,6 @@ export const SignupForm = () => {
     resolver: yupResolver(signupSchema),
     mode: "all",
   });
-
   const [agreeToTerms, setAgreeToTerms] = useState(false);
 
   const [agreeError, setAgreeError] = useState("");
@@ -223,11 +222,15 @@ export const SignupForm = () => {
     setIsLoading(true);
 
     try {
-      await axiosInstance.post("/auth/signup", data);
+      const response = await axiosInstance.post("/auth/signup", data);
 
-      toast.success("Signup successful");
+      toast.success(response.data.message || "Registration successful! Please check your email for OTP verification.");
 
-      navigate("/auth/login");
+      // Store email for OTP verification
+      localStorage.setItem("pendingEmail", data.email);
+
+      // Redirect to OTP verification
+      navigate("/auth/verify-otp", { state: { email: data.email } });
     } catch (err) {
       toast.error(err.response?.data?.message || "Signup failed");
     } finally {
@@ -291,8 +294,6 @@ export const SignupForm = () => {
                 name="password"
                 type="password"
                 placeholder="Enter password"
-                showToggle
-                toggleVisibility={() => { }}
                 control={control}
                 error={errors.password?.message}
               />
@@ -301,8 +302,6 @@ export const SignupForm = () => {
                 name="confirmPassword"
                 type="password"
                 placeholder="Confirm password"
-                showToggle
-                toggleVisibility={() => { }}
                 control={control}
                 error={
                   watch("confirmPassword") !== password ? "Passwords do not match" : ""

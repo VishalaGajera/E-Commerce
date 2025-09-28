@@ -14,6 +14,7 @@ const ButtonLoader = () => {
         fill="none"
         stroke="currentColor"
         strokeWidth="4"
+        className="circle"
       />
     </svg>
   );

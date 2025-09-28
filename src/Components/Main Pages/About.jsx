@@ -158,59 +158,102 @@ export default function AboutUs() {
           </div> */}
         </section>
 
-        <section className="max-w-full px-5 my-16 flex flex-col  gap-20 items-center">
-          <div className="flex md:flex-row flex-col items-center justify-center md:gap-0 gap-5">
-            <div className="">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgA-QibO2UgJiUMwP8mM5Be-Tsy69PMM8hBQ&s "
-                alt="Product image"
-                width={300}
-                height={300}
-                className="rounded-tr-3xl rounded-bl-3xl shadow-custom md:border-r-2 md:border-l-0 border-l-2 border-b-2 border-BgGolden bg-BgColor"
-              />
+        <section className="py-20 px-5 bg-gradient-to-b from-gray-50 to-white">
+          <div className="max-w-7xl mx-auto space-y-32">
+
+            {/* Who Are We Section */}
+            <div className="group">
+              <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div className="lg:w-1/2 space-y-6">
+                  <div className="space-y-4">
+                    <span className="inline-block px-4 py-2 bg-BgGolden/10 text-BgGolden rounded-full text-sm font-semibold uppercase tracking-wide">
+                      Our Story
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                      Who Are <span className="text-BgGolden">We?</span>
+                    </h2>
+                    <div className="w-24 h-1 bg-BgGolden rounded-full"></div>
+                  </div>
+
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    At CC Traders, we are dedicated to connecting businesses with the highest quality
+                    food products at wholesale prices. With years of experience in the industry, we
+                    understand the unique needs of restaurants, retailers, and distributors.
+                  </p>
+
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Our extensive network of trusted suppliers ensures that we deliver fresh, reliable, and
+                    sustainable products to meet the demands of your business. We are your one-stop
+                    solution for all your wholesale food needs.
+                  </p>
+                </div>
+
+                <div className="lg:w-1/2 relative">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-BgGolden/20 rounded-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgA-QibO2UgJiUMwP8mM5Be-Tsy69PMM8hBQ&s"
+                      alt="CC Traders Team"
+                      className="relative z-10 w-full h-96 object-cover rounded-3xl shadow-2xl group-hover:shadow-3xl transition-shadow duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="md:w-1/2  md:text-center text-start shadow-2xl bg-BgColor px-5 py-10 border-r-2 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-r-3xl">
-              <h2 className="md:text-3xl text-2xl font-bold mb-4">Who are We?</h2>
-              <p className="text-gray-600 md:text-base text-sm">
-                At CC Traders, we are dedicated to connecting businesses with the highest quality
-                food products at wholesale prices. With years of experience in the industry, we
-                understand the unique needs of restaurants, retailers, and distributors. Our
-                extensive network of trusted suppliers ensures that we deliver fresh, reliable, and
-                sustainable products to meet the demands of your business. We are your one-stop
-                solution for all your wholesale food needs.
-              </p>
-            </div>
-          </div>
-          {/* <div className="lg:w-2/3 w-full md:h-[600px] h-auto flex items-center justify-center">
-            <video
-              src={fresh_spices}
-              autoPlay
-              loop
-              muted
-              className="h-full w-full object-fill"
-            />
-          </div> */}
-          <div className="flex  md:flex-row flex-col items-center justify-center md:gap-0 gap-5">
-            <div className="md:order-2 order-first">
-              <img
-                // src="https://www.mahmoodrice.com/Media/Uploads/4kg_web.png"
-                src={Mission}
-                alt="Product image"
-                width={300}
-                height={300}
-                className="rounded-br-3xl rounded-tl-3xl shadow-custom border-l-2 border-b-2 border-BgGolden bg-BgColor"
-              />
-            </div>
-            <div className="md:w-1/2 md:text-center text-start shadow-2xl bg-BgColor px-5 py-10 md:border-l-2 border-r-2 md:border-r-0 border-BgGolden md:border-t-2 border-b-2 md:border-b-0 rounded-l-3xl">
-              <h2 className="md:text-3xl text-2xl font-bold mb-4">Our Mission</h2>
-              <p className="text-gray-600 md:text-base text-sm">
-                Our mission at CC Traders is to make high-quality food accessible and affordable for
-                businesses of all sizes. We strive to simplify the food supply chain by offering a
-                seamless and reliable wholesale experience. Sustainability, integrity, and customer
-                satisfaction are at the heart of everything we do. We aim to foster long-term
-                partnerships with our clients by consistently delivering fresh, high-grade products
-                and helping them thrive in a competitive marketplace.
-              </p>
+
+            {/* Our Mission Section */}
+            <div className="group">
+              <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
+                <div className="lg:w-1/2 space-y-6">
+                  <div className="space-y-4">
+                    <span className="inline-block px-4 py-2 bg-BgGolden/10 text-BgGolden rounded-full text-sm font-semibold uppercase tracking-wide">
+                      Our Purpose
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                      Our <span className="text-BgGolden">Mission</span>
+                    </h2>
+                    <div className="w-24 h-1 bg-BgGolden rounded-full"></div>
+                  </div>
+
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Our mission at CC Traders is to make high-quality food accessible and affordable for
+                    businesses of all sizes. We strive to simplify the food supply chain by offering a
+                    seamless and reliable wholesale experience.
+                  </p>
+
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Sustainability, integrity, and customer satisfaction are at the heart of everything we do.
+                    We aim to foster long-term partnerships with our clients by consistently delivering fresh,
+                    high-grade products and helping them thrive in a competitive marketplace.
+                  </p>
+
+                  <div className="space-y-4 pt-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-3 h-3 bg-BgGolden rounded-full"></div>
+                      <span className="text-gray-700 font-medium">Quality Assurance</span>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="w-3 h-3 bg-BgGolden rounded-full"></div>
+                      <span className="text-gray-700 font-medium">Sustainable Sourcing</span>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="w-3 h-3 bg-BgGolden rounded-full"></div>
+                      <span className="text-gray-700 font-medium">Customer-Centric Approach</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:w-1/2 relative">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-BgGolden/20 rounded-3xl transform -rotate-6 group-hover:-rotate-12 transition-transform duration-500"></div>
+                    <img
+                      src={Mission}
+                      alt="Our Mission"
+                      className="relative z-10 w-full h-96 object-cover rounded-3xl shadow-2xl group-hover:shadow-3xl transition-shadow duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -219,98 +262,3 @@ export default function AboutUs() {
   );
 }
 
-{
-  /* <section className="relative py-16 h-screen mb-20 overflow-hidden">
-  <div className='relative w-full h-full'>
-    <img
-      src={aboutImg}
-      alt="Fresh vegetables"
-      layout="fill"
-      objectFit="contain"
-      className='h-[50vh] w-full'
-    />
-    <div className='gradient-blur '></div>
-    <div className='gradient-blur2'></div>
-    <div className='gradient-blur3'></div>
-  </div>
-  <div className="absolute top-16 bg-opacity-50 w-full h-[50vh] bg-black flex justify-center items-center flex-col gap-5 text-black mx-auto">
-    <div className='pt-96'>
-      <h2 className="text-5xl font-bold text-white mb-10 text-center">Our Team</h2>
-      <div className="flex justify-center items-center space-x-8">
-        <span className="w-fit h-fit custom-prev-review md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
-          <BsArrowLeft />
-        </span>
-        {[...Array(2)].map((i) => (
-          <div key={i} className="p-6 rounded-lg w-96 flex flex-col gap-3">
-            <div className='rounded-tr-3xl rounded-bl-3xl  p-1 border-2 border-white w-80 h-72'>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
-                alt={`Team member ${i}`}
-                className="bg-white rounded-tr-3xl rounded-bl-3xl p-10 w-full h-full"
-              />
-            </div>
-            <div className='flex gap-2 items-center flex-col'>
-              <h3 className="text-xl font-bold text-center text-BgGolden">Neil G. Soni</h3>
-              <p className="text-center text-BgGolden">Position</p>
-              <p className="bg-BgColor p-5 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-          </div>
-        ))}
-        <span className="h-fit w-fit custom-next-review md:text-xl text-lg cursor-pointer border-2 border-BgGolden text-BgGolden rounded-tr-xl rounded-bl-xl md:p-2 p-1 text-BgPurple bg-BgLightPurple">
-          <BsArrowRight />
-        </span>
-      </div>
-    </div>
-  </div>
-</section> */
-}
-{
-  /* <Swiper
-                  modules={[Autoplay, Navigation]}
-                  slidesPerView={2}
-                  spaceBetween={24}
-                  loop={true}
-                  autoplay={{
-                    delay: 3500,
-                    disableOnInteraction: false,
-                  }}
-                  navigation={{
-                    nextEl: ".custom-next-review",
-                    prevEl: ".custom-prev-review",
-                  }}
-                  breakpoints={{
-                    320: {
-                      slidesPerView: 1,
-                      spaceBetween: 20,
-                    },
-                    640: {
-                      slidesPerView: 2,
-                      spaceBetween: 20,
-                    },
-                    768: {
-                      slidesPerView: 2,
-                      spaceBetween: 24,
-                    },
-                    1024: {
-                      slidesPerView: 2,
-                      spaceBetween: 24,
-                    },
-                  }}
-                  className="grid grid-cols-4 gap-5 md:p-5 p-0"
-                >
-                  {[...Array(2)].map((i) => (
-                    <SwiperSlide key={i} className="p-6 rounded-lg w-96">
-                      <div className='rounded-tr-3xl rounded-bl-3xl  p-1 border-2 border-white w-80 h-80'>
-                        <img
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s"
-                          alt={`Team member ${i}`}
-                          className="bg-white rounded-tr-3xl rounded-bl-3xl p-10 w-full h-full"
-                        />
-                      </div>
-                      <h3 className="text-xl font-bold text-center mb-2 text-BgGolden">Neil G. Soni</h3>
-                      <p className="text-center mb-4 text-BgGolden">Position</p>
-                      <p className="bg-BgColor p-3 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </SwiperSlide>
-                  ))}
-                </Swiper> */
-}

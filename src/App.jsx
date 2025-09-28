@@ -7,6 +7,7 @@ import ScrollToTop from "./Common/ScrollToTop";
 import MainLayout from "./Layout/MainLayout";
 import Signup from "./Modules/Auth/Signup";
 import Login from "./Modules/Auth/Login";
+import OtpVerification from "./Components/Auth/OtpVerification";
 import ProtectedRoute from "./Components/Auth/ProtectedRoute";
 import PublicRoute from "./Components/Auth/PublicRoute";
 import ShoppingCart from "./Modules/Product/ShoppingCart";
@@ -89,6 +90,14 @@ const router = createBrowserRouter([
     element: (
       <PublicRoute>
         <Signup />
+      </PublicRoute>
+    ),
+  },
+  {
+    path: "/auth/verify-otp",
+    element: (
+      <PublicRoute>
+        <OtpVerification />
       </PublicRoute>
     ),
   },

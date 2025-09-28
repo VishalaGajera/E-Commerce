@@ -1,4 +1,5 @@
 import { Eye, EyeOff } from "lucide-react";
+import { useState } from "react";
 import { useController } from "react-hook-form";
 
 const TextField = ({
@@ -7,8 +8,6 @@ const TextField = ({
   type = "text",
   placeholder,
   error,
-  showToggle,
-  toggleVisibility,
   control,
 }) => {
   const {
@@ -19,6 +18,19 @@ const TextField = ({
     defaultValue: "",
   });
 
+  const [showPassword, setShowPassword] = useState(false);
+
+  const isPasswordField = type === "password";
+
+  const togglePasswordType = showPassword ? "text" : "password";
+
+  const getPassswordIcon = () => {
+    if (showPassword) {
+      return <EyeOff className="h-5 w-5 text-gray-400 hover:text-gray-600" />;
+    }
+    return <Eye className="h-5 w-5 text-gray-400 hover:text-gray-600" />;
+  };
+
   return (
     <div className="mb-4">
       {label && (
@@ -28,14 +40,14 @@ const TextField = ({
       )}
       <div className="relative">
         <input
-          type={type}
+          type={isPasswordField ? togglePasswordType : type}
           name={name}
           id={name}
           value={value}
           onChange={(e) => {
-            const val = e.target.value || "";
-
-            onChange(type === "number" ? Number(val) : val);
+            const val = e.target.value;
+            const cleanedValue = type === "number" ? Number(val) : val;
+            onChange(cleanedValue);
           }}
           placeholder={placeholder}
           ref={ref}
@@ -43,17 +55,13 @@ const TextField = ({
           className={`w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 ${error ? "border-red-500" : ""
             }`}
         />
-        {showToggle && (
+        {isPasswordField && (
           <button
             type="button"
-            onClick={toggleVisibility}
+            onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-2.5 text-gray-500 hover:text-gray-700"
           >
-            {type === "password" ? (
-              <EyeOff className="h-5 w-5 text-gray-400 hover:text-gray-600" />
-            ) : (
-              <Eye className="h-5 w-5 text-gray-400 hover:text-gray-600" />
-            )}
+            {getPassswordIcon()}
           </button>
         )}
       </div>
@@ -63,3 +71,4 @@ const TextField = ({
 };
 
 export default TextField;
+

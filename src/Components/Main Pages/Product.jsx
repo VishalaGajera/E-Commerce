@@ -12,7 +12,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 // eslint-disable-next-line sonarjs/cognitive-complexity
 const Product = () => {
-  const { user } = useSession();
+  const { user, loading } = useSession();
 
   const [cartProductIds, setCartProductIds] = useState([]);
 
@@ -40,6 +40,10 @@ const Product = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   useEffect(() => {
     const fetchCartItems = async () => {

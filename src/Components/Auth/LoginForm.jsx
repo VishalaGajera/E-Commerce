@@ -262,9 +262,6 @@ export const LoginForm = () => {
     resolver: yupResolver(loginSchema),
     mode: "all",
   });
-
-  const [showPassword, setShowPassword] = useState(false);
-
   const [rememberMe, setRememberMe] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -278,19 +275,21 @@ export const LoginForm = () => {
 
     try {
       const res = await axiosInstance.post("/auth/login", data);
-
-      localStorage.setItem("token", res.data.token);
-
-      toast.success("Login successfully");
-
-      login(res.data);
-
-      setIsLoading(false);
-
-      navigate("/");
+      // Check if email is verified
+      if (res.data.user && res.data.user.status === "verified") {
+        localStorage.setItem("token", res.data.token);
+        toast.success("Login successfully");
+        login(res.data);
+        setIsLoading(false);
+        navigate("/");
+      } else {
+        // Redirect to OTP verification if email not verified
+        toast.error("Please verify your email before logging in");
+        localStorage.setItem("pendingEmail", data.email);
+        navigate("/auth/verify-otp", { state: { email: data.email } });
+      }
     } catch (err) {
-      setIsLoading(false);
-
+      setIsLoading(false); 
       toast.error(err.response?.data?.message || "Login failed");
     }
   };
@@ -321,12 +320,10 @@ export const LoginForm = () => {
             <TextField
               label="Password"
               name="password"
-              type={showPassword ? "text" : "password"}
+              type="password"
               placeholder="Enter your password"
               control={control}
               error={errors.password?.message}
-              showToggle
-              toggleVisibility={() => setShowPassword(!showPassword)}
             />
 
             {/* Remember Me + Forgot */}

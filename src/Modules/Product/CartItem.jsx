@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa6";
+import { AiOutlineClose } from "react-icons/ai";
 
-export default function CartItem({ item, onQuantityChange }) {
+export default function CartItem({ item, onQuantityChange, onRemove }) {
   const [quantity, setQuantity] = useState(item.quantity || 1);
 
   // useEffect(() => {
@@ -19,8 +20,21 @@ export default function CartItem({ item, onQuantityChange }) {
     onQuantityChange(item, quantity);
   };
 
+  const handleRemoveClick = () => {
+    if (onRemove) {
+      onRemove(item);
+    }
+  };
+
   return (
-    <div className="flex flex-col min-[500px]:flex-row min-[500px]:items-center gap-5 py-6 border-b border-gray-200 group">
+    <div className="flex flex-col min-[500px]:flex-row min-[500px]:items-center gap-5 py-6 border-b border-gray-200 group relative">
+      <button
+        onClick={handleRemoveClick}
+        className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white shadow-sm border border-gray-200 text-gray-400 hover:text-red-500 hover:bg-red-50 hover:border-red-200 transition-all duration-200 ease-in-out"
+        aria-label="Remove product"
+      >
+        <AiOutlineClose />
+      </button>
       <div className="w-full md:max-w-[126px]">
         <img
           src={item.productId.image}

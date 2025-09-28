@@ -67,6 +67,26 @@ const ShoppingCart = () => {
     }));
   };
 
+  const handleRemove = async (item) => {
+    try {
+      await axiosInstance.delete(`cart/removeProduct/${item._id}`, {
+        data: { userId: user._id },
+      });
+
+      setCartData((prevCart) => prevCart.filter((cartItem) => cartItem._id !== item._id));
+
+      setQuantities((prevQuantities) => {
+        const newQuantities = { ...prevQuantities };
+        delete newQuantities[item._id];
+        return newQuantities;
+      });
+
+      toast.success("Product removed from cart");
+    } catch (error) {
+      toast.error(error.response.data.message || "Failed to remove product");
+    }
+  };
+
   const totalItems = Object.values(quantities).reduce((sum, qty) => sum + qty, 0);
 
   const totalAmount = cartData.reduce(
@@ -107,6 +127,7 @@ const ShoppingCart = () => {
                     key={item._id}
                     item={item}
                     onQuantityChange={handleQuantityChange}
+                    onRemove={handleRemove}
                   />
                 ))}
               </div>
