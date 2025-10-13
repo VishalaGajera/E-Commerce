@@ -289,7 +289,7 @@ export const LoginForm = () => {
         navigate("/auth/verify-otp", { state: { email: data.email } });
       }
     } catch (err) {
-      setIsLoading(false); 
+      setIsLoading(false);
       toast.error(err.response?.data?.message || "Login failed");
     }
   };
@@ -337,9 +337,9 @@ export const LoginForm = () => {
                 />
                 <span className="ml-2 text-sm text-gray-700">Remember me</span>
               </label>
-              {/* <button className="text-sm text-blue-600 hover:text-blue-800 font-medium">
+              <button className="text-sm text-blue-600 hover:text-blue-800 font-medium">
                 Forgot Password?
-              </button> */}
+              </button>
             </div>
 
             {/* Submit */}
