@@ -284,7 +284,7 @@ export const LoginForm = () => {
         navigate("/");
       } else {
         // Redirect to OTP verification if email not verified
-        toast.error("Please verify your email before logging in");
+        toast.warn("Please verify your email before logging in");
         localStorage.setItem("pendingEmail", data.email);
         navigate("/auth/verify-otp", { state: { email: data.email } });
       }

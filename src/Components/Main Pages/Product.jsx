@@ -41,10 +41,6 @@ const Product = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  if (loading) {
-    return <Loader />;
-  }
-
   useEffect(() => {
     const fetchCartItems = async () => {
       if (!user) return;
@@ -189,7 +185,9 @@ const Product = () => {
     }
   };
 
-  console.log("cartProductIds :", cartProductIds);
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="flex justify-center items-center bg-BgColor">

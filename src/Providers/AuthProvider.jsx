@@ -14,19 +14,28 @@ export const AuthProvider = ({ children }) => {
   axios.defaults.withCredentials = true;
 
   useMemo(() => {
-    const fetchUser = async () => {
-      try {
-        const res = await axiosInstance.get("/auth/me");
+    const token = localStorage.getItem("token");
 
-        setUser(res.data.user);
-      } catch (err) {
-        setUser(null);
-      } finally {
-        setLoading(false);
-      }
-    };
+    // Only fetch user data if token exists
+    if (token) {
+      const fetchUser = async () => {
+        try {
+          const res = await axiosInstance.get("/auth/me");
+          setUser(res.data.user);
+        } catch (err) {
+          console.error("❌ Failed to fetch user:", err.response?.data || err.message);
+          setUser(null);
+          localStorage.removeItem("token"); 
+        } finally {
+          setLoading(false);
+        }
+      };
 
-    fetchUser();
+      fetchUser();
+    } else {
+      // No token — skip fetching
+      setLoading(false);
+    }
   }, []);
 
   const login = (data) => {

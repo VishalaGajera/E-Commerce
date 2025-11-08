@@ -10,7 +10,9 @@ export const ProductProvider = ({ children }) => {
 
   const [selectedCategoryId, setSelectedCategoryId] = useState("all");
 
-  // const { user } = useSession();
+  const { user } = useSession();
+  
+const token=  localStorage.getItem("token");
 
   const {
     data: categories,
@@ -21,10 +23,11 @@ export const ProductProvider = ({ children }) => {
     queryKey: ["categories"],
     queryFn: async () => {
       const res = await axiosInstance.get("/category/getAllCategory");
-
       return res.data;
     },
-    // enabled: !!user,
+    enabled: !!user && !!token,
+    retry: 2,
+    refetchOnWindowFocus: false,
   });
 
   const {
@@ -35,14 +38,14 @@ export const ProductProvider = ({ children }) => {
   } = useQuery({
     queryKey: ["products", currentPage, selectedCategoryId],
     queryFn: async () => {
-    
       const res = await axiosInstance.get(
         `/product/getAllProducts?page=${currentPage}&categoryId=${selectedCategoryId}`
       );
-
       return res.data;
     },
-    // enabled: !!user,
+    enabled: !!user && !!token,
+    retry: 2,
+    refetchOnWindowFocus: false,
   });
 
   return (
