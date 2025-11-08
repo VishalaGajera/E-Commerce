@@ -1,7 +1,7 @@
 import { createContext, useState, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "../Common/AxiosInstance.js";
-// import { useSession } from "./AuthProvider.jsx";
+import { useSession } from "./AuthProvider.jsx";
 
 const ProductContext = createContext();
 
